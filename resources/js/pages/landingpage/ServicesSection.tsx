@@ -109,7 +109,7 @@ export function ServicesSection() {
                   key={idx}
                   type="button"
                   onClick={() => setCurrent(idx)}
-                  className={`w-2.5 h-2.5 rounded-full border border-green-600 transition ${current === idx ? 'bg-[#FFD700] border-[#FFD700]' : 'bg-green-100'}`}
+                  className={`w-2.5 h-2.5 rounded-full transition ${current === idx ? 'bg-[#FFD700]' : 'bg-green-100'}`}
                   aria-label={`Go to service ${idx + 1}`}
                   style={{ boxShadow: 'none' }}
                 />
