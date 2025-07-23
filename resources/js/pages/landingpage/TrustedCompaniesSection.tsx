@@ -3,7 +3,7 @@ import React from 'react';
 export function TrustedCompaniesSection() {
   return (
     <section className="py-16 px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto">
         <div className="flex justify-center items-center space-x-12 md:space-x-16 lg:space-x-20">
           <div className="flex-shrink-0">
             <img src="/images/logos/ARLA_Propertymark_Protected.png" alt="ARLA Propertymark Protected" className="w-32 h-16 object-contain" />

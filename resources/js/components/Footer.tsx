@@ -6,7 +6,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="w-full bg-black text-white py-6">
+    <footer className="w-full bg-[#4f4e44] text-white py-6">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
         {/* Left side - Copyright */}
         <div className="text-sm text-gray-400 mb-4 md:mb-0">

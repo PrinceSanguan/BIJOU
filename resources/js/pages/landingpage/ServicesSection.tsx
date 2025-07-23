@@ -60,14 +60,14 @@ export function ServicesSection() {
       <div className="relative z-10 max-w-3xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-16">
-          <p className="text-green-600 text-sm font-medium tracking-[0.3em] mb-6 uppercase">
-            <span className="text-green-600">SERVICES</span>
+          <p className="text-[#4f4e44] text-sm font-medium tracking-[0.3em] mb-6 uppercase">
+            <span className="text-[#4f4e44]">SERVICES</span>
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-black mb-8">
-            What We <span className="text-green-600">Do</span>.
+            What We <span className="text-[#4f4e44]">Do</span>.
           </h2>
           <p className="text-lg leading-relaxed max-w-3xl mx-auto text-black">
-            We offer a full suite of property management and investment services tailored for <span className="text-green-600 font-semibold">landlords</span>, <span className="text-green-600 font-semibold">tenants</span>, and <span className="text-green-600 font-semibold">investors</span>.
+            We offer a full suite of property management and investment services tailored for <span className="text-[#4f4e44] font-semibold">landlords</span>, <span className="text-[#4f4e44] font-semibold">tenants</span>, and <span className="text-[#4f4e44] font-semibold">investors</span>.
           </p>
         </div>
 
@@ -77,13 +77,13 @@ export function ServicesSection() {
             <h3 className="text-2xl font-semibold text-black mb-4">
               {services[current].title.split(/(&|and|for|with|to|by|of|in|on|at|from|as|with|through|into|after|over|between|out|against|during|without|before|under|around|among)/gi).map((word, i) =>
                 ["Management", "Services", "Arrears", "Repairs", "Inventories", "Guidance", "Investors", "Support"].includes(word.trim()) ?
-                  <span key={i} className="text-green-600 font-semibold">{word}</span> : word
+                  <span key={i} className="text-[#4f4e44] font-semibold">{word}</span> : word
               )}
             </h3>
             <p className="leading-relaxed mb-4 text-black">
               {services[current].desc.split(/(secure|trusted|compliance|tenants|ROI|court|legal|support|network|documentation|accountability|advice|implementation|investment|properties|possession|experience|know-how)/gi).map((word, i) =>
                 ["secure", "trusted", "compliance", "tenants", "ROI", "court", "legal", "support", "network", "documentation", "accountability", "advice", "implementation", "investment", "properties", "possession", "experience", "know-how"].includes(word.trim()) ?
-                  <span key={i} className="text-green-600 font-semibold">{word}</span> : word
+                  <span key={i} className="text-[#4f4e44] font-semibold">{word}</span> : word
               )}
             </p>
             <img
@@ -98,7 +98,7 @@ export function ServicesSection() {
               type="button"
               onClick={goPrev}
               aria-label="Previous service"
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-green-600 bg-transparent text-green-600 hover:border-[#FFD700] hover:text-[#FFD700] transition"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] hover:border-[#FFD700] hover:text-[#FFD700] transition"
               style={{ boxShadow: 'none' }}
             >
               <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
@@ -109,7 +109,7 @@ export function ServicesSection() {
                   key={idx}
                   type="button"
                   onClick={() => setCurrent(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition ${current === idx ? 'bg-[#FFD700]' : 'bg-green-100'}`}
+                  className={`w-2.5 h-2.5 rounded-full transition ${current === idx ? 'bg-[#FFD700]' : 'bg-[#e5e5e0]'}`}
                   aria-label={`Go to service ${idx + 1}`}
                   style={{ boxShadow: 'none' }}
                 />
@@ -119,7 +119,7 @@ export function ServicesSection() {
               type="button"
               onClick={goNext}
               aria-label="Next service"
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-green-600 bg-transparent text-green-600 hover:border-[#FFD700] hover:text-[#FFD700] transition"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] hover:border-[#FFD700] hover:text-[#FFD700] transition"
               style={{ boxShadow: 'none' }}
             >
               <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>

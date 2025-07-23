@@ -42,22 +42,22 @@ export function HomeSection() {
       {/* Main content */}
       <div className="relative z-30 text-center px-6 max-w-5xl mx-auto">
         <div className="mb-8">
-          <p className="text-white text-sm font-medium tracking-[0.3em] mb-6 opacity-90">
-            <span className="text-green-500">WE ARE INFINITY.</span>
+          <p className="text-white text-sm font-medium tracking-[0.3em] mb-6 opacity-90 drop-shadow-lg">
+            <span className="text-white drop-shadow-lg">WE ARE INFINITY.</span>
           </p>
-          <h1 className="text-white text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4">
-            Property Management Made <span className="text-green-500">Personal</span>
+          <h1 className="text-white text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4 drop-shadow-2xl">
+            Property Management Made <span className="text-white drop-shadow-2xl">Personal</span>
           </h1>
-          <p className="text-white text-sm md:text-base font-light opacity-90 mb-8">
-            Trusted Experts in <span className="text-green-500">HMO</span> & <span className="text-green-500">Buy-to-Let</span> Services Across <span className="text-green-500">Sheffield</span> and <span className="text-green-500">South Yorkshire</span>
+          <p className="text-white text-sm md:text-base font-light opacity-90 mb-8 drop-shadow-lg">
+            Trusted Experts in <span className="text-white drop-shadow-lg">HMO</span> & <span className="text-white drop-shadow-lg">Buy-to-Let</span> Services Across <span className="text-white drop-shadow-lg">Sheffield</span> and <span className="text-white drop-shadow-lg">South Yorkshire</span>
           </p>
         </div>
 
         <div className="flex justify-center gap-4">
-          <button className="inline-block px-5 py-2 bg-green-600 text-white font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-white hover:text-[#FFD700]">
+          <button className="inline-block px-5 py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#4f4e44] hover:text-white shadow-xl">
             I'm a Landlord
           </button>
-          <button className="inline-block px-5 py-2 bg-green-600 text-white font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-white hover:text-[#FFD700]">
+          <button className="inline-block px-5 py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#4f4e44] hover:text-white shadow-xl">
             I'm Looking for Properties
           </button>
         </div>

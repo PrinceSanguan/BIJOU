@@ -28,15 +28,15 @@ export function TestimonialsSection() {
     <section className="py-20 px-6 bg-white">
       <div className="max-w-4xl mx-auto text-center">
         {/* Section header */}
-        <p className="text-green-600 text-sm font-medium tracking-[0.3em] mb-12 uppercase">
-          <span className="text-green-600">WHAT OUR CLIENTS SAY</span>
+        <p className="text-[#4f4e44] text-sm font-medium tracking-[0.3em] mb-12 uppercase">
+          <span className="text-[#4f4e44]">WHAT OUR CLIENTS SAY</span>
         </p>
         {/* Testimonial content */}
         <div className="mb-12">
           <p className="text-2xl md:text-3xl leading-relaxed text-black font-light mb-10">
             {testimonials[active].text.split(/(Bijou Group|seamless|Professional|reliable|legally sharp|portfolio|source|stage|let|rental|worth|experience)/gi).map((word, i) =>
               ["Bijou Group", "seamless", "Professional", "reliable", "legally sharp", "portfolio", "source", "stage", "let", "rental", "worth", "experience"].includes(word.trim()) ?
-                <span key={i} className="text-green-600 font-semibold">{word}</span> : word
+                <span key={i} className="text-[#4f4e44] font-semibold">{word}</span> : word
             )}
           </p>
           {/* Author section */}
@@ -49,7 +49,7 @@ export function TestimonialsSection() {
               />
             </div>
             <h4 className="text-lg font-medium text-black mb-1">{testimonials[active].author}</h4>
-            <p className="text-green-600 text-sm">{testimonials[active].role}</p>
+            <p className="text-[#4f4e44] text-sm">{testimonials[active].role}</p>
           </div>
         </div>
         {/* Pagination dots */}
@@ -57,7 +57,7 @@ export function TestimonialsSection() {
           {testimonials.map((_, idx) => (
             <button
               key={idx}
-              className={`w-2 h-2 rounded-full border border-[#FFD700] transition-colors ${active === idx ? 'bg-green-600' : 'bg-[#FFD700]'}`}
+              className={`w-2 h-2 rounded-full border border-[#FFD700] transition-colors ${active === idx ? 'bg-[#4f4e44]' : 'bg-[#FFD700]'}`}
               onClick={() => setActive(idx)}
               aria-label={`Show testimonial ${idx + 1}`}
             />
