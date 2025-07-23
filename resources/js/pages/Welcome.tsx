@@ -1,6 +1,15 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Head, Link } from '@inertiajs/react';
+import { HomeSection } from '@/pages/landingpage/HomeSection';
+import { AboutSection } from '@/pages/landingpage/AboutSection';
+import { ServicesSection } from '@/pages/landingpage/ServicesSection';
+import { ContactSection } from '@/pages/landingpage/ContactSection';
+import { TestimonialsSection } from '@/pages/landingpage/TestimonialsSection';
+import { TrustedCompaniesSection } from '@/pages/landingpage/TrustedCompaniesSection';
+import { BlogSection } from '@/pages/landingpage/BlogSection';
+import Header from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 export default function Welcome() {
     return (
@@ -9,25 +18,26 @@ export default function Welcome() {
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
             </Head>
-
-            <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100 p-6">
-                <Card className="w-full max-w-md rounded-2xl shadow-xl">
-                    <CardContent className="p-8 text-center">
-                        <h1 className="mb-4 text-4xl font-bold text-gray-800">THIS IS MY PERSONAL BOILERPLATE</h1>
-                        <p className="mb-6 text-lg text-gray-600">Simple and straightforward starter template.</p>
-
-                        <div className="flex justify-center gap-4">
-                            <Button variant="default" asChild>
-                                <Link href={route('auth.login')}>Login</Link>
-                            </Button>
-
-                            <Button variant="outline" asChild>
-                                <Link href={route('auth.register')}>Register</Link>
-                            </Button>
-                        </div>
-                    </CardContent>
-                </Card>
+            
+            {/* Header with absolute positioning over hero */}
+            <div className="relative z-50">
+                <Header />
             </div>
+            
+            {/* Hero section takes full viewport */}
+            <HomeSection />
+            
+            {/* Other sections with full width layout */}
+            <main className="w-full">
+                <AboutSection />
+                <ServicesSection />
+                <ContactSection />
+                <TestimonialsSection />
+                <TrustedCompaniesSection />
+                {/* <BlogSection /> */}
+            </main>
+            
+            <Footer />
         </>
     );
 }

@@ -14,6 +14,11 @@ use App\Http\Middleware\GuestMiddleware;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', [App\Http\Controllers\AboutController::class, 'index'])->name('about');
+Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index'])->name('services');
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
+Route::get('/testimonials', [App\Http\Controllers\TestimonialsController::class, 'index'])->name('testimonials');
+Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
 
 /*
 |--------------------------------------------------------------------------
