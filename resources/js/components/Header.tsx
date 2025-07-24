@@ -8,26 +8,26 @@ export default function Header() {
     <header className="w-full bg-transparent absolute top-0 left-0 z-50">
       <nav className="flex items-center justify-between py-6 px-6 w-full">
         {/* Logo */}
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-3 group/logo cursor-pointer">
           <span className="w-9 h-9 rounded-full bg-white flex items-center justify-center overflow-hidden">
             <img src="/images/Circular logo.png" alt="Bijou Group Logo" className="w-full h-full object-cover rounded-full" />
           </span>
-          <span className="text-white font-medium text-lg">Bijou Group</span>
+          <span className="text-white font-medium text-lg transition-colors group-hover/logo:text-[#4f4e44]">Bijou Group</span>
         </div>
         
         {/* Hamburger Menu Button */}
         <button 
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="flex items-center gap-3 group"
+          className="flex items-center gap-3 group/hamburger"
           aria-label="Toggle menu"
         >
-          <span className="text-white font-medium tracking-widest text-sm hover:text-opacity-80 transition-colors">
+          <span className="text-white font-medium tracking-widest text-sm transition-colors group-hover/hamburger:text-[#4f4e44]">
             MENU
           </span>
           <div className="flex flex-col gap-1">
-            <span className="w-6 h-0.5 bg-white transition-all duration-300 group-hover:bg-opacity-80"></span>
-            <span className="w-6 h-0.5 bg-white transition-all duration-300 group-hover:bg-opacity-80"></span>
-            <span className="w-6 h-0.5 bg-white transition-all duration-300 group-hover:bg-opacity-80"></span>
+            <span className="w-6 h-0.5 bg-white transition-all duration-300 group-hover/hamburger:bg-[#4f4e44]"></span>
+            <span className="w-6 h-0.5 bg-white transition-all duration-300 group-hover/hamburger:bg-[#4f4e44]"></span>
+            <span className="w-6 h-0.5 bg-white transition-all duration-300 group-hover/hamburger:bg-[#4f4e44]"></span>
           </div>
         </button>
       </nav>
@@ -50,7 +50,7 @@ export default function Header() {
                 <Link 
                   href="/" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-amber-600 transition-colors"
+                  className="hover:text-[#4f4e44] transition-colors"
                 >
                   Home
                 </Link>
@@ -59,7 +59,7 @@ export default function Header() {
                 <Link 
                   href="/about" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-amber-600 transition-colors"
+                  className="hover:text-[#4f4e44] transition-colors"
                 >
                   About
                 </Link>
@@ -68,7 +68,7 @@ export default function Header() {
                 <Link 
                   href="/services" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-amber-600 transition-colors"
+                  className="hover:text-[#4f4e44] transition-colors"
                 >
                   Services
                 </Link>
@@ -77,7 +77,7 @@ export default function Header() {
                 <Link 
                   href="/contact" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-amber-600 transition-colors"
+                  className="hover:text-[#4f4e44] transition-colors"
                 >
                   Contact
                 </Link>
@@ -86,7 +86,7 @@ export default function Header() {
                 <Link 
                   href="/testimonials" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-amber-600 transition-colors"
+                  className="hover:text-[#4f4e44] transition-colors"
                 >
                   Testimonials
                 </Link>
@@ -95,7 +95,7 @@ export default function Header() {
                 <Link 
                   href="/blog" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="hover:text-amber-600 transition-colors"
+                  className="hover:text-[#4f4e44] transition-colors"
                 >
                   Blog
                 </Link>

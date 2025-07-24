@@ -69,25 +69,25 @@ export function HomeSection() {
         {/* Social links - horizontal on mobile, vertical on larger screens */}
         <div className="flex flex-row sm:flex-col space-x-4 sm:space-x-0 sm:space-y-4 lg:space-y-6">
           {/* Instagram */}
-          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-opacity-70 transition-colors" aria-label="Instagram">
+          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-[#4f4e44] transition-colors" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
             </svg>
           </a>
           {/* Facebook */}
-          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-opacity-70 transition-colors" aria-label="Facebook">
+          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-[#4f4e44] transition-colors" aria-label="Facebook">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 5.019 3.676 9.163 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.324 21.163 22 17.019 22 12z"/>
             </svg>
           </a>
           {/* LinkedIn */}
-          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-opacity-70 transition-colors" aria-label="LinkedIn">
+          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-[#4f4e44] transition-colors" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.25c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.25h-3v-4.5c0-1.104-.896-2-2-2s-2 .896-2 2v4.5h-3v-9h3v1.25c.414-.586 1.36-1.25 2.5-1.25 1.933 0 3.5 1.567 3.5 3.5v5.5z"/>
             </svg>
           </a>
           {/* X (Twitter) */}
-          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-opacity-70 transition-colors" aria-label="X">
+          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-[#4f4e44] transition-colors" aria-label="X">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.53 3.5h3.47l-7.57 8.62 8.93 10.38h-7.03l-5.61-6.52-6.41 6.52H2.47l8.09-9.21L1.53 3.5h7.18l5.01 5.83 5.81-5.83zm-2.01 16.13h2.13l-6.01-6.98-2.13 2.36 6.01 6.98z"/>
             </svg>

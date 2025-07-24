@@ -103,7 +103,7 @@ export function ServicesSection() {
               type="button"
               onClick={goPrev}
               aria-label="Previous service"
-              className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] hover:border-[#FFD700] hover:text-[#FFD700] transition mb-2 sm:mb-0"
+              className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] hover:bg-[#4f4e44] hover:text-white hover:border-[#4f4e44] transition mb-2 sm:mb-0"
               style={{ boxShadow: 'none' }}
             >
               <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
@@ -124,7 +124,7 @@ export function ServicesSection() {
               type="button"
               onClick={goNext}
               aria-label="Next service"
-              className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] hover:border-[#FFD700] hover:text-[#FFD700] transition mt-2 sm:mt-0"
+              className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] hover:bg-[#4f4e44] hover:text-white hover:border-[#4f4e44] transition mt-2 sm:mt-0"
               style={{ boxShadow: 'none' }}
             >
               <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
