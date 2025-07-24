@@ -25,15 +25,20 @@ export function TestimonialsSection() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="py-20 px-6 bg-white">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="relative py-12 sm:py-20 px-3 sm:px-6 bg-white overflow-hidden">
+      {/* Geometric accent elements - fewer on mobile */}
+      <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
+      <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
+      <div className="hidden sm:block absolute bottom-1/3 left-1/2 w-1.5 h-1.5 bg-[#FFD700] rounded-full opacity-50 z-10"></div>
+
+      <div className="max-w-4xl mx-auto text-center relative z-20">
         {/* Section header */}
-        <p className="text-[#4f4e44] text-sm font-medium tracking-[0.3em] mb-12 uppercase">
+        <p className="text-[#4f4e44] text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] mb-8 sm:mb-12 uppercase">
           <span className="text-[#4f4e44]">WHAT OUR CLIENTS SAY</span>
         </p>
         {/* Testimonial content */}
-        <div className="mb-12">
-          <p className="text-2xl md:text-3xl leading-relaxed text-black font-light mb-10">
+        <div className="mb-8 sm:mb-12">
+          <p className="text-lg sm:text-2xl md:text-3xl leading-relaxed text-black font-light mb-6 sm:mb-10 px-2">
             {testimonials[active].text.split(/(Bijou Group|seamless|Professional|reliable|legally sharp|portfolio|source|stage|let|rental|worth|experience)/gi).map((word, i) =>
               ["Bijou Group", "seamless", "Professional", "reliable", "legally sharp", "portfolio", "source", "stage", "let", "rental", "worth", "experience"].includes(word.trim()) ?
                 <span key={i} className="text-[#4f4e44] font-semibold">{word}</span> : word
@@ -41,19 +46,19 @@ export function TestimonialsSection() {
           </p>
           {/* Author section */}
           <div className="flex flex-col items-center">
-            <div className="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-[#FFD700]">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden mb-3 sm:mb-4 border-2 border-[#FFD700]">
               <img 
                 src={testimonials[active].img}
                 alt={testimonials[active].author}
                 className="w-full h-full object-cover"
               />
             </div>
-            <h4 className="text-lg font-medium text-black mb-1">{testimonials[active].author}</h4>
-            <p className="text-[#4f4e44] text-sm">{testimonials[active].role}</p>
+            <h4 className="text-base sm:text-lg font-medium text-black mb-0.5 sm:mb-1">{testimonials[active].author}</h4>
+            <p className="text-[#4f4e44] text-xs sm:text-sm">{testimonials[active].role}</p>
           </div>
         </div>
         {/* Pagination dots */}
-        <div className="flex justify-center space-x-3">
+        <div className="flex justify-center space-x-2 sm:space-x-3">
           {testimonials.map((_, idx) => (
             <button
               key={idx}
@@ -64,6 +69,17 @@ export function TestimonialsSection() {
           ))}
         </div>
       </div>
+
+      {/* Custom CSS for mobile tweaks */}
+      <style>
+        {`
+          @media (max-width: 640px) {
+            .testimonial-img {
+              object-position: center;
+            }
+          }
+        `}
+      </style>
     </section>
   );
 }
