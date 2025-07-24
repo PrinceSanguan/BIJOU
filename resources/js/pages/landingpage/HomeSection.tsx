@@ -31,13 +31,13 @@ export function HomeSection() {
       </div>
       
       {/* Architectural lines overlay (simplified for mobile) */}
-      <div className="absolute inset-0 opacity-10 sm:opacity-15 lg:opacity-20">
+      {/* <div className="absolute inset-0 opacity-10 sm:opacity-15 lg:opacity-20">
         <svg className="w-full h-full" viewBox="0 0 1200 800" fill="none">
           <path d="M0 400L200 200L400 400L600 150L800 350L1000 100L1200 300" stroke="rgba(255,255,255,0.3)" strokeWidth="2"/>
           <path d="M0 500L150 350L350 500L550 250L750 450L950 200L1200 400" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
           <path d="M0 300L250 100L450 300L650 50L850 250L1050 0L1200 200" stroke="rgba(255,255,255,0.1)" strokeWidth="1"/>
         </svg>
-      </div>
+      </div> */}
 
       {/* Main content */}
       <div className="relative z-30 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
