@@ -15,20 +15,21 @@ export default function Welcome() {
     return (
         <>
             <Head title="Welcome">
+                <title>Welcome | The Bijou Group</title>
+                <meta name="description" content="The Bijou Group: Comprehensive property management, sourcing, staging, tenant management, maintenance, and legal support for landlords and investors." />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta charSet="utf-8" />
                 <link rel="preconnect" href="https://fonts.bunny.net" />
                 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
             </Head>
-            
             {/* Header with absolute positioning over hero */}
-            <div className="relative z-50">
+            <header className="relative z-50" role="banner">
                 <Header />
-            </div>
-            
+            </header>
             {/* Hero section takes full viewport */}
             <HomeSection />
-            
             {/* Other sections with full width layout */}
-            <main className="w-full">
+            <main className="w-full" role="main">
                 <AboutSection />
                 <ServicesSection />
                 <ContactSection />
@@ -36,7 +37,6 @@ export default function Welcome() {
                 <TrustedCompaniesSection />
                 {/* <BlogSection /> */}
             </main>
-            
             <Footer />
         </>
     );
