@@ -1,8 +1,36 @@
-import React from 'react';
+
+import React, { useEffect, useRef, useState } from 'react';
 
 export function HomeSection() {
+
+  const [shineOnce, setShineOnce] = useState(false);
+  const [shineHold, setShineHold] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    let triggered = false;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !triggered) {
+          setShineOnce(true);
+          triggered = true;
+          observer.disconnect();
+          setTimeout(() => {
+            setShineHold(true);
+            setShineOnce(false);
+          }, 2500);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <section ref={sectionRef} className="relative w-full h-screen flex items-center justify-center overflow-hidden">
       {/* Video background */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -12,8 +40,10 @@ export function HomeSection() {
         muted
         playsInline
       />
-      {/* Edge vignette overlay (top, bottom, left, right) */}
+      {/* Edge vignette overlay (top, bottom, left, right) and dark overlay */}
       <div className="absolute inset-0 z-10 pointer-events-none">
+        {/* Dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black/60" />
         {/* Top vignette */}
         <div className="absolute top-0 left-0 w-full h-16 sm:h-24 lg:h-32 bg-gradient-to-b from-black/70 to-transparent" />
         {/* Bottom vignette */}
@@ -23,12 +53,12 @@ export function HomeSection() {
         {/* Right vignette */}
         <div className="absolute top-0 right-0 w-8 sm:w-16 lg:w-32 h-full bg-gradient-to-l from-black/70 to-transparent" />
       </div>
-      {/* Background geometric pattern (solid on all breakpoints) */}
-      <div className="absolute inset-0 opacity-100 pointer-events-none">
+      {/* Background geometric pattern (hidden) */}
+      {/* <div className="absolute inset-0 opacity-100 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-gradient-to-br from-amber-600 to-orange-700 transform rotate-45 rounded-lg shadow-2xl"></div>
         <div className="absolute top-1/3 right-1/4 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-gradient-to-br from-yellow-500 to-amber-600 transform -rotate-12 rounded-lg shadow-xl"></div>
         <div className="absolute bottom-1/4 left-1/3 w-36 h-36 sm:w-54 sm:h-54 lg:w-72 lg:h-72 bg-gradient-to-br from-orange-500 to-red-600 transform rotate-12 rounded-lg shadow-lg"></div>
-      </div>
+      </div> */}
       
       {/* Architectural lines overlay (simplified for mobile) */}
       {/* <div className="absolute inset-0 opacity-10 sm:opacity-15 lg:opacity-20">
@@ -42,14 +72,27 @@ export function HomeSection() {
       {/* Main content */}
       <div className="relative z-30 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div className="mb-6 sm:mb-8">
-          <p className="text-white text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 opacity-90 drop-shadow-lg">
-            <span className="text-white drop-shadow-lg">WE ARE INFINITY.</span>
+          <p className="text-white text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 opacity-90" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #222' }}>
+            <span className="text-white">WE ARE INFINITY.</span>
           </p>
-          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-3 sm:mb-4 drop-shadow-2xl px-2">
-            Property Management Made <span className="text-white drop-shadow-2xl">Personal</span>
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-3 sm:mb-4 px-2" style={{ textShadow: '0 4px 16px #000, 0 2px 4px #222' }}>
+            Property Management Made <span className="gold-gradient-text" style={{ textShadow: 'none' }}>
+              <span
+                className={
+                  shineOnce
+                    ? "metallic-gold-shine"
+                    : shineHold
+                    ? "metallic-gold-shine-hold"
+                    : ""
+                }
+                style={shineHold ? { backgroundPosition: '68% 0' } : {}}
+              >
+                Personal
+              </span>
+            </span>
           </h1>
-          <p className="text-white text-xs sm:text-sm md:text-base font-light opacity-90 mb-6 sm:mb-8 drop-shadow-lg max-w-4xl mx-auto px-2">
-            Trusted Experts in <span className="text-white drop-shadow-lg">HMO</span> & <span className="text-white drop-shadow-lg">Buy-to-Let</span> Services Across <span className="text-white drop-shadow-lg">Sheffield</span> and <span className="text-white drop-shadow-lg">South Yorkshire</span>
+          <p className="text-white text-xs sm:text-sm md:text-base font-light opacity-90 mb-6 sm:mb-8 max-w-4xl mx-auto px-2" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #222' }}>
+            Trusted Experts in <span className="text-white">HMO</span> & <span className="text-white">Buy-to-Let</span> Services Across <span className="text-white">Sheffield</span> and <span className="text-white">South Yorkshire</span>
           </p>
         </div>
 
@@ -113,14 +156,55 @@ export function HomeSection() {
       <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white rounded-full opacity-40"></div>
       <div className="hidden sm:block absolute bottom-1/3 left-1/2 w-1.5 h-1.5 bg-white rounded-full opacity-50"></div>
       
-      {/* Custom CSS for vertical text */}
+      {/* Custom CSS for vertical text and gold gradient */}
       <style>
         {`
           .writing-mode-vertical {
             writing-mode: vertical-rl;
             text-orientation: mixed;
           }
-          
+
+          /* Metallic gold gradient text */
+          .gold-gradient-text {
+            background: linear-gradient(90deg, #FFD700 0%, #FFB300 40%, #FFF8DC 60%, #FFD700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+          }
+
+          /* Shine animation INSIDE the text */
+          .metallic-gold-shine,
+          .metallic-gold-shine-hold {
+            background: linear-gradient(90deg, #FFD700 0%, #FFB300 30%, #FFF8DC 50%, #FFD700 70%, #FFB300 100%);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            display: inline-block;
+          }
+          .metallic-gold-shine {
+            background-position: 120% 0;
+            animation: shine-inside 2.5s 1 linear;
+          }
+          .metallic-gold-shine-hold {
+            background-position: 45% 0 !important;
+          }
+          @keyframes shine-inside {
+            0% {
+              background-position: 120% 0;
+            }
+            70% {
+              background-position: 45% 0;
+            }
+            100% {
+              background-position: 45% 0;
+            }
+          }
+
           /* Ensure video covers properly on mobile */
           @media (max-width: 640px) {
             video {

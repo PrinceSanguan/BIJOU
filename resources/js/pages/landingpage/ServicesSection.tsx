@@ -50,12 +50,12 @@ export function ServicesSection() {
 
   return (
     <section className="relative w-full py-16 sm:py-20 px-3 sm:px-6 bg-white text-black overflow-hidden min-h-[80vh] flex items-center justify-center">
-      {/* Background geometric pattern with accent gold (responsive) */}
-      <div className="absolute inset-0 opacity-20 sm:opacity-10 pointer-events-none z-0">
+      {/* Background geometric pattern with accent gold (hidden) */}
+      {/* <div className="absolute inset-0 opacity-20 sm:opacity-10 pointer-events-none z-0">
         <div className="absolute top-1/4 right-0 w-40 h-40 sm:w-96 sm:h-96 border border-[#FFD700] transform rotate-45 rounded-lg"></div>
         <div className="absolute bottom-0 right-1/4 w-32 h-32 sm:w-80 sm:h-80 border border-[#FFD700] transform -rotate-12 rounded-lg"></div>
         <div className="absolute top-0 right-1/3 w-28 h-28 sm:w-72 sm:h-72 border border-[#FFD700] transform rotate-12 rounded-lg"></div>
-      </div>
+      </div> */}
 
       {/* Geometric accent elements - fewer on mobile */}
       <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
