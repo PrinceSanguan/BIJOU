@@ -98,10 +98,10 @@ export function HomeSection() {
 
         {/* Buttons - stacked on mobile, side by side on larger screens */}
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
-          <button className="inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#4f4e44] hover:text-white shadow-xl w-full sm:w-auto">
+          <button className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-[#FFD700] text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFB300] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden">
             I'm a Landlord
           </button>
-          <button className="inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#4f4e44] hover:text-white shadow-xl w-full sm:w-auto">
+          <button className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-[#FFD700] text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFB300] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden">
             I'm Looking for Properties
           </button>
         </div>
@@ -159,6 +159,37 @@ export function HomeSection() {
       {/* Custom CSS for vertical text and gold gradient */}
       <style>
         {`
+          /* Shine effect for hero buttons */
+          .hero-shine-btn {
+            position: relative;
+            overflow: hidden;
+          }
+          .hero-shine-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 60%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+            opacity: 0.7;
+            pointer-events: none;
+            transition: left 0.3s;
+          }
+          .hero-shine-btn:hover::before {
+            animation: btn-shine 1.1s forwards;
+          }
+          @keyframes btn-shine {
+            0% {
+              left: -75%;
+            }
+            60% {
+              left: 110%;
+            }
+            100% {
+              left: 60%;
+            }
+          }
           .writing-mode-vertical {
             writing-mode: vertical-rl;
             text-orientation: mixed;

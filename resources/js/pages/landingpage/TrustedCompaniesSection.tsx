@@ -30,12 +30,7 @@ export function TrustedCompaniesSection() {
           </div>
         </div>
 
-        {/* Pagination dots */}
-        <div className="flex justify-center space-x-2 mt-8 sm:mt-12">
-          <div className="w-2 h-2 bg-[#FFD700] rounded-full"></div>
-          <div className="w-2 h-2 bg-[#FFD700] rounded-full"></div>
-          <div className="w-2 h-2 bg-[#FFD700] rounded-full"></div>
-        </div>
+        {/* Pagination dots removed */}
       </div>
 
       {/* Custom CSS for mobile tweaks */}

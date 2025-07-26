@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export function TestimonialsSection() {
   const testimonials = [
@@ -23,6 +23,14 @@ export function TestimonialsSection() {
   ];
 
   const [active, setActive] = useState(0);
+
+  // Auto-advance testimonial every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive(prev => (prev + 1) % testimonials.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
   return (
     <section className="relative py-12 sm:py-20 px-3 sm:px-6 bg-white overflow-hidden">
@@ -57,17 +65,7 @@ export function TestimonialsSection() {
             <p className="text-[#4f4e44] text-xs sm:text-sm">{testimonials[active].role}</p>
           </div>
         </div>
-        {/* Pagination dots */}
-        <div className="flex justify-center space-x-2 sm:space-x-3">
-          {testimonials.map((_, idx) => (
-            <button
-              key={idx}
-              className={`w-2 h-2 rounded-full border border-[#FFD700] transition-colors ${active === idx ? 'bg-[#4f4e44]' : 'bg-[#FFD700]'}`}
-              onClick={() => setActive(idx)}
-              aria-label={`Show testimonial ${idx + 1}`}
-            />
-          ))}
-        </div>
+        {/* Pagination dots removed; now auto-advances */}
       </div>
 
       {/* Custom CSS for mobile tweaks */}
