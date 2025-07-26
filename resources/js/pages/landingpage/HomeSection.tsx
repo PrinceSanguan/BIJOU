@@ -112,29 +112,102 @@ export function HomeSection() {
         {/* Social links - horizontal on mobile, vertical on larger screens */}
         <div className="flex flex-row sm:flex-col space-x-4 sm:space-x-0 sm:space-y-4 lg:space-y-6">
           {/* Instagram */}
-          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-[#4f4e44] transition-colors" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor">
+          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" className="icon-gold-shine">
+              <defs>
+                <linearGradient id="icon-gold-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#FFD700" />
+                  <stop offset="40%" stopColor="#FFB300" />
+                  <stop offset="60%" stopColor="#FFF8DC" />
+                  <stop offset="100%" stopColor="#FFD700" />
+                </linearGradient>
+              </defs>
               <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3.25a5.25 5.25 0 1 1 0 10.5 5.25 5.25 0 0 1 0-10.5zm0 1.5a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5zm5.25.75a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
             </svg>
           </a>
           {/* Facebook */}
-          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-[#4f4e44] transition-colors" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor">
+          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" className="icon-gold-shine">
               <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 5.019 3.676 9.163 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.324 21.163 22 17.019 22 12z"/>
             </svg>
           </a>
           {/* LinkedIn */}
-          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-[#4f4e44] transition-colors" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor">
+          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" className="icon-gold-shine">
               <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.25c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.25h-3v-4.5c0-1.104-.896-2-2-2s-2 .896-2 2v4.5h-3v-9h3v1.25c.414-.586 1.36-1.25 2.5-1.25 1.933 0 3.5 1.567 3.5 3.5v5.5z"/>
             </svg>
           </a>
           {/* X (Twitter) */}
-          <a href="#" className="w-5 h-5 sm:w-6 sm:h-6 text-white hover:text-[#4f4e44] transition-colors" aria-label="X">
-            <svg viewBox="0 0 24 24" fill="currentColor">
+          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6" aria-label="X">
+            <svg viewBox="0 0 24 24" className="icon-gold-shine">
               <path d="M17.53 3.5h3.47l-7.57 8.62 8.93 10.38h-7.03l-5.61-6.52-6.41 6.52H2.47l8.09-9.21L1.53 3.5h7.18l5.01 5.83 5.81-5.83zm-2.01 16.13h2.13l-6.01-6.98-2.13 2.36 6.01 6.98z"/>
             </svg>
           </a>
+      {/* Social icon gold shine effect inside icon */}
+      <style>
+        {`
+          .icon-gold-shine path {
+            fill: #fff;
+            transition: fill 0.4s, background-position 1.1s;
+          }
+          .social-gold-shine:hover .icon-gold-shine path {
+            fill: url(#icon-gold-gradient);
+            background: linear-gradient(90deg, #FFD700 0%, #FFB300 40%, #FFF8DC 60%, #FFD700 100%);
+            background-size: 200% 100%;
+            background-position: 120% 0;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: shine-inside-icon 1.1s 1 linear;
+          }
+          @keyframes shine-inside-icon {
+            0% {
+              background-position: 120% 0;
+            }
+            70% {
+              background-position: 45% 0;
+            }
+            100% {
+              background-position: 45% 0;
+            }
+          }
+        `}
+      </style>
+      {/* Social icon gold shine effect */}
+      <style>
+        {`
+          .social-gold-shine {
+            display: inline-block;
+          }
+          .icon-gold-shine path {
+            fill: #fff;
+            transition: fill 0.4s, background-position 1.1s;
+          }
+          .social-gold-shine:hover .icon-gold-shine path {
+            fill: url(#icon-gold-gradient);
+            background: linear-gradient(90deg, #FFD700 0%, #FFB300 40%, #FFF8DC 60%, #FFD700 100%);
+            background-size: 200% 100%;
+            background-position: 120% 0;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            animation: shine-inside-icon 1.1s 1 linear;
+          }
+          @keyframes shine-inside-icon {
+            0% {
+              background-position: 120% 0;
+            }
+            70% {
+              background-position: 45% 0;
+            }
+            100% {
+              background-position: 45% 0;
+            }
+          }
+        `}
+      </style>
         </div>
 
         {/* Scroll indicator - hidden on mobile, visible on larger screens */}
@@ -159,27 +232,34 @@ export function HomeSection() {
       {/* Custom CSS for vertical text and gold gradient */}
       <style>
         {`
-          /* Shine effect for hero buttons */
+          /* Shine effect for hero buttons with gold gradient */
           .hero-shine-btn {
             position: relative;
             overflow: hidden;
+            background: linear-gradient(90deg, #FFD700 0%, #FFB300 40%, #FFF8DC 60%, #FFD700 100%);
+            color: #4f4e44;
+            transition: background 0.3s, color 0.3s;
           }
           .hero-shine-btn::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 60%;
-            width: 50%;
+            left: -75%;
+            width: 60%;
             height: 100%;
             background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
             opacity: 0.7;
             pointer-events: none;
             transition: left 0.3s;
           }
-          .hero-shine-btn:hover::before {
-            animation: btn-shine 1.1s forwards;
+          .hero-shine-btn:hover {
+            background: linear-gradient(90deg, #FFD700 0%, #FFF8DC 50%, #FFD700 100%);
+            color: #4f4e44;
           }
-          @keyframes btn-shine {
+          .hero-shine-btn:hover::before {
+            animation: btn-gold-shine 1.1s forwards;
+          }
+          @keyframes btn-gold-shine {
             0% {
               left: -75%;
             }
@@ -187,7 +267,7 @@ export function HomeSection() {
               left: 110%;
             }
             100% {
-              left: 60%;
+              left: 110%;
             }
           }
           .writing-mode-vertical {

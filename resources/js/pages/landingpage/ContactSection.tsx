@@ -85,6 +85,29 @@ export function ContactSection() {
                 <a href="tel:+447495747930" className="underline text-[#4f4e44] font-semibold hover:text-[#FFD700] transition">+44 7495 747930</a>
               </div>
             </div>
+            {/* Info Cards */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-stretch">
+              <div className="flex-1 min-w-[220px] rounded-2xl border border-[#4f4e44] bg-[#4f4e44] shadow-lg px-6 py-5 flex flex-col items-start">
+                <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2 tracking-tight leading-tight">
+                  <svg width="22" height="22" fill="none" stroke="#fff" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                  The Bijou Group
+                </h3>
+                <p className="text-white text-sm leading-snug font-normal">
+                  Your trusted property management partner in <span className="font-semibold text-[#FFD700]">South Yorkshire</span>.<br />
+                  <span className="block mt-1">Call us at <a href="tel:+447495747930" className="underline text-[#FFD700] hover:text-white transition font-semibold">+44 7495 747930</a> for expert landlord, tenant, and investor support.</span>
+                </p>
+              </div>
+              <div className="flex-1 min-w-[220px] rounded-2xl border border-[#4f4e44] bg-[#4f4e44] shadow-lg px-6 py-5 flex flex-col items-start">
+                <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2 tracking-tight leading-tight">
+                  <svg width="22" height="22" fill="none" stroke="#fff" strokeWidth="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 12h8"/></svg>
+                  Contact & Website
+                </h3>
+                <p className="text-white text-sm leading-snug font-normal">
+                  Email us at <a href="mailto:info@bijourelocation.co.uk" className="underline text-[#FFD700] hover:text-white transition font-semibold">info@bijourelocation.co.uk</a><br />
+                  <span className="block mt-1">or visit <a href="https://bijourelocation.co.uk" className="underline text-[#FFD700] hover:text-white transition font-semibold" target="_blank" rel="noopener">bijourelocation.co.uk</a> for more about our <span className="font-semibold text-[#FFD700]">award-winning services</span>.</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         {/* Right side - Contact form */}

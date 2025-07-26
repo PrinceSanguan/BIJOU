@@ -4,7 +4,7 @@ export function ServicesSection() {
   const services = [
     {
       title: 'Comprehensive HMO & Buy-to-Let Management',
-      desc: 'We handle day-to-day operations, tenant issues, and compliance—so you don’t have to.',
+      desc: 'We handle day-to-day operations, tenant issues, and compliance—so you don\'t have to.',
       img: '/images/servicesimg/IMG-20250701-WA0001.jpg'
     },
     {
@@ -50,14 +50,7 @@ export function ServicesSection() {
 
   return (
     <section className="relative w-full py-16 sm:py-20 px-3 sm:px-6 bg-white text-black overflow-hidden min-h-[80vh] flex items-center justify-center">
-      {/* Background geometric pattern with accent gold (hidden) */}
-      {/* <div className="absolute inset-0 opacity-20 sm:opacity-10 pointer-events-none z-0">
-        <div className="absolute top-1/4 right-0 w-40 h-40 sm:w-96 sm:h-96 border border-[#FFD700] transform rotate-45 rounded-lg"></div>
-        <div className="absolute bottom-0 right-1/4 w-32 h-32 sm:w-80 sm:h-80 border border-[#FFD700] transform -rotate-12 rounded-lg"></div>
-        <div className="absolute top-0 right-1/3 w-28 h-28 sm:w-72 sm:h-72 border border-[#FFD700] transform rotate-12 rounded-lg"></div>
-      </div> */}
-
-      {/* Geometric accent elements - fewer on mobile */}
+      {/* Geometric accent elements */}
       <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
       <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
       <div className="hidden sm:block absolute bottom-1/3 left-1/2 w-1.5 h-1.5 bg-[#FFD700] rounded-full opacity-50 z-10"></div>
@@ -66,24 +59,60 @@ export function ServicesSection() {
         {/* Section header */}
         <div className="text-center mb-10 sm:mb-16 px-2">
           <p className="text-[#4f4e44] text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 uppercase opacity-90">
-            <span className="text-[#4f4e44]">SERVICES</span>
+            SERVICES
           </p>
           <div className="flex flex-row items-center justify-center gap-3 sm:gap-6 mb-4 sm:mb-8">
-            <span className="hidden sm:inline-block">
-              <svg width="64" height="20" viewBox="0 0 64 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 10 Q16 0 32 10 Q48 20 64 10" stroke="#4f4e44" strokeWidth="2" fill="none"/>
-                <circle cx="8" cy="10" r="2" fill="#4f4e44"/>
-                <circle cx="56" cy="10" r="2" fill="#4f4e44"/>
+            <span className="hidden sm:inline-block gold-vine-shine">
+              <svg width="64" height="24" viewBox="0 0 64 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="goldVineGradientL" x1="0" y1="12" x2="64" y2="12" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#FFD700"/>
+                    <stop offset="0.4" stopColor="#FFB300"/>
+                    <stop offset="0.6" stopColor="#FFF8DC"/>
+                    <stop offset="1" stopColor="#FFD700"/>
+                  </linearGradient>
+                  <linearGradient id="goldVineShineL">
+                    <stop offset="0%" stopColor="#fff" stopOpacity="0"/>
+                    <stop offset="50%" stopColor="#fff" stopOpacity="0.7"/>
+                    <stop offset="100%" stopColor="#fff" stopOpacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 12 Q16 0 32 12 Q48 24 64 12" stroke="url(#goldVineGradientL)" strokeWidth="2" fill="none"/>
+                <ellipse cx="8" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientL)"/>
+                <ellipse cx="56" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientL)"/>
+                <rect className="gold-vine-shine-rect" x="0" y="0" width="64" height="24" fill="url(#goldVineShineL)" style={{mixBlendMode:'lighten'}}/>
               </svg>
             </span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-black leading-tight">
-              What We <span className="text-[#4f4e44]">Do</span>.
-            </h2>
-            <span className="hidden sm:inline-block">
-              <svg width="64" height="20" viewBox="0 0 64 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 10 Q16 0 32 10 Q48 20 64 10" stroke="#4f4e44" strokeWidth="2" fill="none"/>
-                <circle cx="8" cy="10" r="2" fill="#4f4e44"/>
-                <circle cx="56" cy="10" r="2" fill="#4f4e44"/>
+            <div className="relative inline-block">
+              <img
+                src="/images/11532497.png"
+                alt="Badge"
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700%] h-[700%] object-contain -z-10 select-none pointer-events-none"
+                draggable="false"
+              />
+                <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight relative inline-block px-8 py-3 gold-title">
+                  <span className="gold-gradient-title-shine-text">WHAT WE DO.</span>
+              </h2>
+            </div>
+            <span className="hidden sm:inline-block gold-vine-shine">
+              <svg width="64" height="24" viewBox="0 0 64 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="goldVineGradientR" x1="0" y1="12" x2="64" y2="12" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#FFD700"/>
+                    <stop offset="0.4" stopColor="#FFB300"/>
+                    <stop offset="0.6" stopColor="#FFF8DC"/>
+                    <stop offset="1" stopColor="#FFD700"/>
+                  </linearGradient>
+                  <linearGradient id="goldVineShineR">
+                    <stop offset="0%" stopColor="#fff" stopOpacity="0"/>
+                    <stop offset="50%" stopColor="#fff" stopOpacity="0.7"/>
+                    <stop offset="100%" stopColor="#fff" stopOpacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0 12 Q16 0 32 12 Q48 24 64 12" stroke="url(#goldVineGradientR)" strokeWidth="2" fill="none"/>
+                <ellipse cx="8" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientR)"/>
+                <ellipse cx="56" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientR)"/>
+                <rect className="gold-vine-shine-rect" x="0" y="0" width="64" height="24" fill="url(#goldVineShineR)" style={{mixBlendMode:'lighten'}}/>
               </svg>
             </span>
           </div>
@@ -103,14 +132,18 @@ export function ServicesSection() {
                 className="absolute left-0 top-1/2 -translate-y-1/2 w-36 sm:w-64 h-36 sm:h-64 object-cover rounded-xl bg-[#FFD700]/10 opacity-60 scale-90 transition-all duration-500 z-0 shadow-md"
                 style={{ filter: 'blur(1px)' }}
                 aria-hidden="true"
-                onError={e => { e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; }}
+                onError={(e) => { 
+                  e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
+                }}
               />
               {/* Current image */}
               <img
                 src={services[current].img}
                 alt={services[current].title}
                 className="relative z-10 w-64 sm:w-[32rem] h-56 sm:h-[20rem] object-cover rounded-2xl bg-[#FFD700]/10 shadow-xl transition-all duration-500"
-                onError={e => { e.currentTarget.src = 'https://placehold.co/512x224/FFD700/fff?text=Service+Image'; }}
+                onError={(e) => { 
+                  e.currentTarget.src = 'https://placehold.co/512x224/FFD700/fff?text=Service+Image'; 
+                }}
               />
               {/* Next image */}
               <img
@@ -119,11 +152,13 @@ export function ServicesSection() {
                 className="absolute right-0 top-1/2 -translate-y-1/2 w-36 sm:w-64 h-36 sm:h-64 object-cover rounded-xl bg-[#FFD700]/10 opacity-60 scale-90 transition-all duration-500 z-0 shadow-md"
                 style={{ filter: 'blur(1px)' }}
                 aria-hidden="true"
-                onError={e => { e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; }}
+                onError={(e) => { 
+                  e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
+                }}
               />
             </div>
             <h3 className="text-lg sm:text-2xl font-semibold text-black mb-2 sm:mb-4 leading-snug">
-              {services[current].title.split(/(&|and|for|with|to|by|of|in|on|at|from|as|with|through|into|after|over|between|out|against|during|without|before|under|around|among)/gi).map((word, i) =>
+              {services[current].title.split(/(&|and|for|with|to|by|of|in|on|at|from|as|through|into|after|over|between|out|against|during|without|before|under|around|among)/gi).map((word, i) =>
                 ["Management", "Services", "Arrears", "Repairs", "Inventories", "Guidance", "Investors", "Support"].includes(word.trim()) ?
                   <span key={i} className="text-[#4f4e44] font-semibold">{word}</span> : word
               )}
@@ -143,42 +178,54 @@ export function ServicesSection() {
               className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] hover:bg-[#4f4e44] hover:text-white hover:border-[#4f4e44] transition mb-2 sm:mb-0"
               style={{ boxShadow: 'none' }}
             >
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M15 19l-7-7 7-7"/>
+              </svg>
             </button>
-            <div className="flex gap-2">
-              {services.map((_, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => setCurrent(idx)}
-                  className={`w-2.5 h-2.5 rounded-full transition ${current === idx ? 'bg-[#FFD700]' : 'bg-[#e5e5e0]'}`}
-                  aria-label={`Go to service ${idx + 1}`}
-                  style={{ boxShadow: 'none' }}
-                />
-              ))}
-            </div>
             <button
               type="button"
               onClick={goNext}
               aria-label="Next service"
-              className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] hover:bg-[#4f4e44] hover:text-white hover:border-[#4f4e44] transition mt-2 sm:mt-0"
+              className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] hover:bg-[#4f4e44] hover:text-white hover:border-[#4f4e44] transition"
               style={{ boxShadow: 'none' }}
             >
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7"/>
+              </svg>
             </button>
           </div>
         </div>
       </div>
-      {/* Custom CSS for mobile tweaks */}
-      <style>
-        {`
-          @media (max-width: 640px) {
-            .services-section-img {
-              object-position: center;
-            }
-          }
-        `}
-      </style>
+      <style>{`
+        .gold-gradient-title-shine-text {
+          background: linear-gradient(90deg, #FFD700 0%, #FFB300 40%, #FFF8DC 60%, #FFD700 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-fill-color: transparent;
+          position: relative;
+          display: inline-block;
+        }
+        .gold-gradient-title-shine-text::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -60%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
+          opacity: 0.7;
+          pointer-events: none;
+          transition: none;
+          z-index: 2;
+          animation: gold-title-shine 2.2s 1 linear;
+        }
+        @keyframes gold-title-shine {
+          0% { left: -60%; }
+          70% { left: 70%; }
+          100% { left: 70%; }
+        }
+      `}</style>
     </section>
   );
 }
