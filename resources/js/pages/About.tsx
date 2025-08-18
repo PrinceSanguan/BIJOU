@@ -25,7 +25,7 @@ export default function About() {
           <TrustedCompaniesSection />
         </main>
         <footer>
-          <Footer />
+          <Footer className="mt-auto" />
         </footer>
       </div>
     </>

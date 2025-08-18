@@ -1,12 +1,16 @@
 import React from 'react';
 
-export function Footer() {
+interface FooterProps {
+  className?: string;
+}
+
+export function Footer({ className = '' }: FooterProps) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="relative w-full bg-[#4f4e44] text-white py-6 px-3 sm:px-6 overflow-hidden">
+    <footer className={`relative w-full bg-[#4f4e44] text-white py-6 px-3 sm:px-6 overflow-hidden ${className}`}>
       {/* Geometric accent elements - fewer on mobile */}
       <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
       <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>

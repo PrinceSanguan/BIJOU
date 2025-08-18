@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from '@inertiajs/react';
 
-export default function Header() {
+interface HeaderProps {
+  className?: string;
+}
+
+export default function Header({ className = '' }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="w-full bg-transparent absolute top-0 left-0 z-50">
+    <header className={`w-full bg-transparent absolute top-0 left-0 z-50 ${className}`}>
       <nav className="flex items-center justify-between py-6 px-6 w-full">
         {/* Logo */}
         <div className="flex items-center space-x-3 group/logo cursor-pointer">
