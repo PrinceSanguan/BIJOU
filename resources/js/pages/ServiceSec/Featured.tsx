@@ -61,7 +61,6 @@ export default function Featured() {
                         className="p-8 bg-white/5 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-[#FFD700] hover:bg-white/10 transform hover:-translate-y-1 cursor-pointer"
                     >
                         <div className="flex items-center">
-                            <div className="text-3xl font-bold text-[#EFBF04] mr-4">{index + 1}.</div>
                             <h3 className="text-xl font-medium text-white leading-relaxed">{service.title}</h3>
                         </div>
                     </div>
