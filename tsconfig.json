@@ -114,9 +114,14 @@
         },
         "jsx": "react-jsx"
     },
+    "typeRoots": [
+        "./node_modules/@types",
+        "./resources/js/types"
+    ],
     "include": [
         "resources/js/**/*.ts",
         "resources/js/**/*.d.ts",
         "resources/js/**/*.tsx",
+        "resources/js/types/**/*.ts",
     ]
 }

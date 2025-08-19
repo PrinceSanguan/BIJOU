@@ -1,5 +1,5 @@
 
-import React from 'react';
+
 import { Footer } from '@/components/Footer';
 import Hero from '@/pages/ServiceSec/Hero';
 import HeaderBlack from '@/components/HeaderBlack';
