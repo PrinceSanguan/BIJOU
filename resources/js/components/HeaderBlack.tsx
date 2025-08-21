@@ -137,7 +137,7 @@ export default function Header({ className = '' }: HeaderProps) {
                   Testimonials
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link 
                   href="/blog" 
                   onClick={() => setIsMenuOpen(false)}
@@ -145,7 +145,7 @@ export default function Header({ className = '' }: HeaderProps) {
                 >
                   Blog
                 </Link>
-              </li>
+              </li> HIDDEN FOR NOW */}
       {/* Gold shine effect for menu items */}
       <style>
         {`

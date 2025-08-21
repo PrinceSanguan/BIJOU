@@ -33,7 +33,7 @@ export function TestimonialsSection() {
   }, [testimonials.length]);
 
   return (
-    <section className="relative py-12 sm:py-20 px-3 sm:px-6 bg-white overflow-hidden">
+  <section className="relative pt-12 sm:pt-20 px-3 sm:px-6 bg-white overflow-hidden">
       {/* Geometric accent elements - fewer on mobile */}
       <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
       <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
@@ -41,70 +41,17 @@ export function TestimonialsSection() {
 
       <div className="max-w-4xl mx-auto text-center relative z-20">
         {/* Section header */}
-        <div className="flex flex-row items-center justify-center gap-3 sm:gap-6 mb-8 sm:mb-12">
-          <span className="hidden sm:inline-block gold-vine-shine">
-            <svg width="64" height="24" viewBox="0 0 64 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="goldVineGradientL" x1="0" y1="12" x2="64" y2="12" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#FFD700"/>
-                  <stop offset="0.4" stopColor="#FFB300"/>
-                  <stop offset="0.6" stopColor="#FFF8DC"/>
-                  <stop offset="1" stopColor="#FFD700"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 12 Q16 0 32 12 Q48 24 64 12" stroke="url(#goldVineGradientL)" strokeWidth="2" fill="none"/>
-              <ellipse cx="8" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientL)"/>
-              <ellipse cx="56" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientL)"/>
-              <circle cx="16" cy="8" r="1.2" fill="#4f4e44"/>
-              <circle cx="48" cy="16" r="1.2" fill="#4f4e44"/>
-              <rect className="gold-vine-shine-rect" x="0" y="0" width="64" height="24" fill="url(#goldVineShineL)" style={{mixBlendMode:'lighten'}}/>
-              <defs>
-                <linearGradient id="goldVineShineL">
-                  <stop offset="0%" stopColor="rgba(255,255,255,0)"/>
-                  <stop offset="50%" stopColor="rgba(255,255,255,0.7)"/>
-                  <stop offset="100%" stopColor="rgba(255,255,255,0)"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </span>
-          <div className="relative inline-block">
-            <span className="absolute inset-0 rounded-lg bg-[#4f4e44] opacity-90 -z-10 w-full h-full block shadow-lg"></span>
-            <p className="text-xs sm:text-sm font-extrabold tracking-[0.2em] sm:tracking-[0.3em] uppercase gold-gradient-title-shine relative px-4 py-1">
-              <span className="gold-gradient-title-shine-text">WHAT OUR CLIENTS SAY</span>
-            </p>
-          </div>
-          <span className="hidden sm:inline-block gold-vine-shine">
-            <svg width="64" height="24" viewBox="0 0 64 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="goldVineGradientR" x1="0" y1="12" x2="64" y2="12" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#FFD700"/>
-                  <stop offset="0.4" stopColor="#FFB300"/>
-                  <stop offset="0.6" stopColor="#FFF8DC"/>
-                  <stop offset="1" stopColor="#FFD700"/>
-                </linearGradient>
-              </defs>
-              <path d="M0 12 Q16 0 32 12 Q48 24 64 12" stroke="url(#goldVineGradientR)" strokeWidth="2" fill="none"/>
-              <ellipse cx="8" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientR)"/>
-              <ellipse cx="56" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientR)"/>
-              <circle cx="16" cy="8" r="1.2" fill="#4f4e44"/>
-              <circle cx="48" cy="16" r="1.2" fill="#4f4e44"/>
-              <rect className="gold-vine-shine-rect" x="0" y="0" width="64" height="24" fill="url(#goldVineShineR)" style={{mixBlendMode:'lighten'}}/>
-              <defs>
-                <linearGradient id="goldVineShineR">
-                  <stop offset="0%" stopColor="rgba(255,255,255,0)"/>
-                  <stop offset="50%" stopColor="rgba(255,255,255,0.7)"/>
-                  <stop offset="100%" stopColor="rgba(255,255,255,0)"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </span>
+        <div className="mb-8 sm:mb-12 w-full flex items-center justify-center gap-4">
+          <span className="block h-0.5 w-32 bg-[#FFD700]" />
+          <span className="text-sm sm:text-base font-extrabold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[#0E5248]">WHAT OUR CLIENTS SAY</span>
+          <span className="block h-0.5 w-32 bg-[#FFD700]" />
         </div>
         {/* Testimonial content */}
         <div className="mb-8 sm:mb-12">
-          <p className="text-lg sm:text-2xl md:text-3xl leading-relaxed text-black font-light mb-6 sm:mb-10 px-2">
+          <p className="text-lg sm:text-2xl md:text-3xl leading-relaxed font-light mb-6 sm:mb-10 px-2" style={{ color: '#0E5248' }}>
             {testimonials[active].text.split(/(Bijou Group|seamless|Professional|reliable|legally sharp|portfolio|source|stage|let|rental|worth|experience)/gi).map((word, i) =>
               ["Bijou Group", "seamless", "Professional", "reliable", "legally sharp", "portfolio", "source", "stage", "let", "rental", "worth", "experience"].includes(word.trim()) ?
-                <span key={i} className="text-[#4f4e44] font-semibold">{word}</span> : word
+                <span key={i} className="font-semibold" style={{ color: '#0E5248' }}>{word}</span> : word
             )}
           </p>
           {/* Author section */}
@@ -117,7 +64,18 @@ export function TestimonialsSection() {
               />
             </div>
             <h4 className="text-base sm:text-lg font-medium text-black mb-0.5 sm:mb-1">{testimonials[active].author}</h4>
-            <p className="text-[#4f4e44] text-xs sm:text-sm">{testimonials[active].role}</p>
+            <p className="text-xs sm:text-sm" style={{ color: '#0E5248' }}>{testimonials[active].role}</p>
+          </div>
+          {/* Navigation dots */}
+          <div className="flex justify-center items-center gap-2 mt-4">
+            {testimonials.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActive(idx)}
+                className={`w-2 h-2 rounded-full border transition-all ${active === idx ? 'bg-[#0E5248] border-[#0E5248]' : 'bg-[#FFD700] border-[#FFD700]'}`}
+                aria-label={`Go to testimonial ${idx + 1}`}
+              />
+            ))}
           </div>
         </div>
         {/* Pagination dots removed; now auto-advances */}
