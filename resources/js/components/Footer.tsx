@@ -7,7 +7,7 @@ export function Footer() {
         {/* Left: Logo and Contact */}
         <div className="flex flex-col md:w-1/3 gap-2">
           <div className="flex items-center gap-3 mb-2">
-            <img src="/images/logo.svg" alt="Bijou Group Logo" className="w-12 h-12 bg-white rounded-full p-1" />
+            <img src="/images/Circular logo.png" alt="Bijou Group Logo" className="w-12 h-12 bg-white rounded-full p-1" />
             <span className="text-[#EFBF04] text-lg font-bold tracking-wide">BIJOU GROUP</span>
           </div>
           <div className="text-sm leading-relaxed text-white">
@@ -58,7 +58,7 @@ export function Footer() {
         </div>
       </div>
       <div className="w-full flex justify-center mt-8">
-        <div className="text-xs text-white font-space text-center">
+        <div className="text-xs text-white font-space text-centpublic/images/Circular logo.pnger">
           © <a href="https://choros.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#EFBF04]">Choros.io</a> 2025 | All rights reserved.
         </div>
       </div>
