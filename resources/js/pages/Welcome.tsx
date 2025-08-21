@@ -7,7 +7,7 @@ import { ServicesSection } from '@/pages/landingpage/ServicesSection';
 import { ContactSection } from '@/pages/landingpage/ContactSection';
 import { TestimonialsSection } from '@/pages/landingpage/TestimonialsSection';
 import { TrustedCompaniesSection } from '@/pages/landingpage/TrustedCompaniesSection';
-import { BlogSection } from '@/pages/landingpage/BlogSection';
+// import { BlogSection } from '@/pages/landingpage/BlogSection';
 import Header from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
@@ -35,7 +35,7 @@ export default function Welcome() {
                 <ContactSection />
                 <TestimonialsSection />
                 <TrustedCompaniesSection />
-                {/* <BlogSection /> */}
+                {/* <BlogSection /> HIDDEN FOR NOW */}
             </main>
             <Footer />
         </>

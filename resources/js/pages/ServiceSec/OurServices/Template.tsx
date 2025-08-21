@@ -36,7 +36,7 @@ export default function Template({ service }: TemplateProps) {
                                 className="w-full h-full object-cover"
                                 onError={(e) => {
                                     const target = e.target as HTMLImageElement;
-                                    target.src = '/images/services/rent-arrears.jpg';
+                                    target.src = '/images/servicesimg/20240415_134340~2.jpg';
                                 }}
                             />
                            

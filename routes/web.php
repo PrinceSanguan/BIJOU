@@ -19,7 +19,7 @@ Route::get('/services', [App\Http\Controllers\ServicesController::class, 'index'
 Route::get('/services/{servicesID}', [App\Http\Controllers\ServicesController::class, 'show'])->name('services.show');
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 Route::get('/testimonials', [App\Http\Controllers\TestimonialsController::class, 'index'])->name('testimonials');
-Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog');
+// Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index'])->name('blog'); // HIDDEN FOR NOW
 
 /*
 |--------------------------------------------------------------------------

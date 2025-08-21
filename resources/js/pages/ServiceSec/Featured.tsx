@@ -9,35 +9,22 @@ interface Service {
     details: string[];
 }
 
-const services: Service[] = [
-    {
-        id: 1,
-        title: 'Rent Arrears Management',
-        description: 'Expert management of rent arrears with professional communication and legal procedures to recover outstanding payments while maintaining positive landlord-tenant relationships.',
-        image: '/images/services/rent-arrears.jpg',
-        details: [
-            'Professional rent collection and monitoring',
-            'Personalized payment plans',
-            'Legal notice serving',
-            'Court representation if needed',
-            'Debt recovery assistance'
-        ]
-    },
-    {
-        id: 2,
-        title: 'Eviction and Possession Assistance',
-        description: 'Comprehensive support through the eviction process, ensuring legal compliance and efficient property recovery.',
-        image: '/images/services/eviction.jpg',
-        details: [
-            'Legal compliance checks',
-            'Notice serving',
-            'Court application support',
-            'Bailiff coordination',
-            'Property handover'
-        ]
-    },
-    // Add more services with the same structure as above
-    // ...
+const services = [
+    'Rent Arrears Management',
+    'Eviction and Possession Assistance',
+    'Property Staging and Room Setup',
+    'Inventories with Photographic Evidence',
+    'Property Compliance & Certification',
+    'Tenancy Management',
+    'Landlord Support and Advice',
+    'Rent Management and Collection',
+    'Property Maintenance and Repair',
+    'Bespoke Property Sourcing',
+    'Tenant Find Services',
+    'Full-Service Property',
+    'Marketing for Rooms & Units',
+    'Renters Compliance Advice',
+    'Check-ins and Check-outs',
 ];
 
 export default function Featured() {
@@ -49,20 +36,21 @@ export default function Featured() {
         <div className="py-12 px-4 max-w-7xl mx-auto">
             <div className="flex items-center justify-center gap-6 max-w-4xl mx-auto mb-12">
                 <hr className="flex-1 border-t-2 border-[#FFD700]" />
-                <h1 className="text-3xl font-serif text-center whitespace-nowrap">OUR SERVICES</h1>
+                <h1 className="text-3xl font-serif text-center whitespace-nowrap">OTHER FEATURED SERVICES</h1>
                 <hr className="flex-1 border-t-2 border-[#FFD700]" />
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto bg-[#0E5248] p-8 rounded-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto bg-[#0E5248] p-8 rounded-xl">
                 {services.map((service, index) => (
-                    <div 
-                        key={service.id}
-                        onClick={() => navigateToService(service.id)}
-                        className="p-8 bg-white/5 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 border-l-4 border-[#FFD700] hover:bg-white/10 transform hover:-translate-y-1 cursor-pointer"
+                    <div
+                        key={index}
+                        onClick={() => navigateToService(index + 1)}
+                        className="p-0 flex items-center min-h-[40px] cursor-pointer transition hover:bg-white/10 rounded"
+                        tabIndex={0}
+                        role="button"
+                        onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') navigateToService(index + 1); }}
                     >
-                        <div className="flex items-center">
-                            <h3 className="text-xl font-medium text-white leading-relaxed">{service.title}</h3>
-                        </div>
+                        <h3 className="text-lg md:text-xl font-normal text-white leading-relaxed">{service}</h3>
                     </div>
                 ))}
             </div>
