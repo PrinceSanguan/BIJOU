@@ -24,34 +24,50 @@ export function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="w-full max-w-5xl mx-auto mt-24 mb-16 px-4">
+    <section className="w-full max-w-5xl mx-auto mt-24 mb-16 px-2 sm:px-4">
       <div className="flex items-center justify-center mb-8">
-        <span className="flex-1 h-0.5 bg-[#FFD700] max-w-[120px] mr-6" />
-        <h2 className="text-center text-[#0E5248] text-lg sm:text-xl md:text-2xl font-normal tracking-[0.2em] font-['Roboto_Serif',serif] uppercase">
+        <span className="flex-1 h-0.5 bg-[#FFD700] max-w-[120px] mr-2 sm:mr-6" />
+        <h2 className="text-center text-[#0E5248] text-base sm:text-lg md:text-xl lg:text-2xl font-normal tracking-[0.2em] font-['Roboto_Serif',serif] uppercase">
           Frequently Asked Questions
         </h2>
-        <span className="flex-1 h-0.5 bg-[#FFD700] max-w-[120px] ml-6" />
+        <span className="flex-1 h-0.5 bg-[#FFD700] max-w-[120px] ml-2 sm:ml-6" />
       </div>
       <div className="bg-white rounded-xl shadow-sm divide-y divide-gray-200">
-        {faqs.map((faq, idx) => (
-          <div key={faq.question}>
-            <button
-              className={`w-full text-left px-6 py-5 focus:outline-none flex items-center justify-between group ${openIndex === idx ? 'text-[#0E5248] font-semibold' : 'text-[#12443A] font-medium'}`}
-              onClick={() => setOpenIndex(openIndex === idx ? -1 : idx)}
-              aria-expanded={openIndex === idx}
-            >
-              <span className="text-[20px] leading-6">
-                {faq.question}
-              </span>
-              <span className={`ml-2 transition-transform duration-200 ${openIndex === idx ? 'rotate-180' : ''} text-[#0E5248] text-2xl`}>▾</span>
-            </button>
-            {openIndex === idx && faq.answer && (
-              <div className="px-6 pb-5 text-[15px] text-[#12443A] opacity-80">
+        {faqs.map((faq, idx) => {
+          const isOpen = openIndex === idx;
+          return (
+            <div key={faq.question}>
+              <button
+                className={`w-full text-left px-4 sm:px-6 py-4 sm:py-5 focus:outline-none flex items-center justify-between group transition-colors duration-150 ${isOpen ? 'text-[#0E5248] font-semibold bg-[#FFD700]/5' : 'text-[#12443A] font-medium'} rounded-lg focus-visible:ring-2 focus-visible:ring-[#FFD700]`}
+                onClick={() => setOpenIndex(isOpen ? -1 : idx)}
+                aria-expanded={isOpen}
+                aria-controls={`faq-answer-${idx}`}
+                tabIndex={0}
+                onKeyDown={e => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setOpenIndex(isOpen ? -1 : idx);
+                  }
+                }}
+                style={{ minHeight: '56px' }}
+              >
+                <span className="text-base sm:text-lg md:text-xl lg:text-[20px] leading-6 select-text">
+                  {faq.question}
+                </span>
+                <span className={`ml-2 flex items-center justify-center w-8 h-8 rounded-full transition-transform duration-200 ${isOpen ? 'rotate-180 bg-[#FFD700]/20' : 'bg-transparent'} text-[#0E5248] text-xl sm:text-2xl`}>
+                  ▾
+                </span>
+              </button>
+              <div
+                id={`faq-answer-${idx}`}
+                className={`overflow-hidden transition-all duration-300 ease-in-out px-4 sm:px-6 ${isOpen ? 'max-h-40 sm:max-h-56 md:max-h-72 py-3 sm:py-5' : 'max-h-0 py-0'} text-sm sm:text-base md:text-[15px] text-[#12443A] opacity-80`}
+                aria-hidden={!isOpen}
+              >
                 {faq.answer}
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

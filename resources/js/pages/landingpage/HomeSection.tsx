@@ -30,7 +30,11 @@ export function HomeSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden touch-pan-y"
+      style={{ WebkitOverflowScrolling: 'touch' }}
+    >
       {/* Video background */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -39,6 +43,8 @@ export function HomeSection() {
         loop
         muted
         playsInline
+        poster="/images/11532497.png"
+        preload="none"
       />
       {/* Edge vignette overlay (top, bottom, left, right) and dark overlay */}
       <div className="absolute inset-0 z-10 pointer-events-none">
@@ -70,73 +76,28 @@ export function HomeSection() {
       </div> */}
 
       {/* Main content */}
-      <div className="relative z-30 text-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+      <div className="relative z-30 text-center px-2 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="mb-6 sm:mb-8">
-          <p className="text-white text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 opacity-90" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #222' }}>
+          <p className="text-white text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 opacity-90 drop-shadow-md">
             <span className="text-white">WE ARE INFINITY.</span>
           </p>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-3 sm:mb-4 px-2" style={{ textShadow: '0 4px 16px #000, 0 2px 4px #222', margin: 0 }}>
-              <span
-                style={{
-                  display: 'block',
-                  width: '1440px',
-                  height: '252px',
-                  margin: '0 auto',
-                  color: 'rgba(255,255,255,0.80)',
-                  textAlign: 'center',
-                  textShadow: '0 7px 4px rgba(0,0,0,0.25)',
-                  fontFamily: 'Roboto Serif, serif',
-                  fontSize: '96px',
-                  fontStyle: 'normal',
-                  fontWeight: 500,
-                  lineHeight: 'normal',
-                }}
-              >
-                <span style={{ color: '#fff' }}>HMO Management Sheffield</span><br />
-                <span
-                  style={{
-                    color: '#EFBF04',
-                    fontFamily: 'Roboto Serif, serif',
-                    fontSize: '96px',
-                    fontStyle: 'normal',
-                    fontWeight: 500,
-                    lineHeight: 'normal',
-                    display: 'inline',
-                  }}
-                >
-                  Stress-Free Property{' '}
-                  <span style={{ color: '#fff' }}>Solutions</span>
+          <div className="flex justify-center items-center w-full">
+            <h1 className="text-white text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-3 sm:mb-4 px-2 drop-shadow-lg font-serif">
+              <span className="block w-full max-w-full mx-auto text-center text-white/80 font-serif font-medium leading-none">
+                <span className="block text-white">HMO Management Sheffield</span>
+                <span className="block text-[#EFBF04] font-serif font-medium leading-none">
+                  Stress-Free Property <span className="text-white">Solutions</span>
                 </span>
               </span>
             </h1>
           </div>
-          <p className="text-white text-xs sm:text-sm md:text-base font-light opacity-90 mb-6 sm:mb-8 max-w-4xl mx-auto px-2" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #222' }}>
-            <span
-              style={{
-                display: 'block',
-                maxWidth: '1173px',
-                height: '107px',
-                flexShrink: 0,
-                color: '#FFF',
-                textAlign: 'center',
-                textShadow: '0 4px 4px rgba(0,0,0,0.25)',
-                fontFamily: 'Space Grotesk, sans-serif',
-                fontSize: '16px',
-                fontStyle: 'normal',
-                fontWeight: 400,
-                lineHeight: '36px',
-                letterSpacing: '2.4px',
-                margin: '0 auto',
-              }}
-            >
-              We're Sheffield's trusted HMO management specialists, offering professional property services that eliminate your stress while maximizing your returns. Professional HMO letting agents serving Sheffield landlords & investors.
-            </span>
+          <p className="text-white text-xs sm:text-sm md:text-base font-light opacity-90 mb-6 sm:mb-8 max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto px-2 drop-shadow-md font-space text-center leading-[1.5]">
+            We're Sheffield's trusted HMO management specialists, offering professional property services that eliminate your stress while maximizing your returns. Professional HMO letting agents serving Sheffield landlords & investors.
           </p>
         </div>
 
         {/* Buttons - stacked on mobile, side by side on larger screens */}
-        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-none mx-auto w-full">
           <button className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden">
             I'm a Landlord
           </button>
@@ -147,11 +108,11 @@ export function HomeSection() {
       </div>
 
       {/* Bottom section with social links and scroll indicator */}
-      <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-0 right-0 flex justify-between items-end px-4 sm:px-6 z-40">
+  <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-0 right-0 flex flex-col sm:flex-row justify-between items-end px-2 sm:px-6 z-40 w-full">
         {/* Social links - horizontal on mobile, vertical on larger screens */}
-        <div className="flex flex-row sm:flex-col space-x-4 sm:space-x-0 sm:space-y-4 lg:space-y-6">
+  <div className="flex flex-row sm:flex-col space-x-4 sm:space-x-0 sm:space-y-4 lg:space-y-6">
           {/* Instagram */}
-          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6" aria-label="Instagram">
+          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6 focus:outline-none focus:ring-2 focus:ring-[#EFBF04] rounded" aria-label="Instagram" tabIndex={0}>
             <svg viewBox="0 0 24 24" className="icon-gold-shine">
               <defs>
                 <linearGradient id="icon-gold-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -165,19 +126,19 @@ export function HomeSection() {
             </svg>
           </a>
           {/* Facebook */}
-          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6" aria-label="Facebook">
+          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6 focus:outline-none focus:ring-2 focus:ring-[#EFBF04] rounded" aria-label="Facebook" tabIndex={0}>
             <svg viewBox="0 0 24 24" className="icon-gold-shine">
               <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 5.019 3.676 9.163 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.507 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.324 21.163 22 17.019 22 12z"/>
             </svg>
           </a>
           {/* LinkedIn */}
-          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6" aria-label="LinkedIn">
+          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6 focus:outline-none focus:ring-2 focus:ring-[#EFBF04] rounded" aria-label="LinkedIn" tabIndex={0}>
             <svg viewBox="0 0 24 24" className="icon-gold-shine">
               <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.25c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 10.25h-3v-4.5c0-1.104-.896-2-2-2s-2 .896-2 2v4.5h-3v-9h3v1.25c.414-.586 1.36-1.25 2.5-1.25 1.933 0 3.5 1.567 3.5 3.5v5.5z"/>
             </svg>
           </a>
           {/* X (Twitter) */}
-          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6" aria-label="X">
+          <a href="#" className="social-gold-shine w-5 h-5 sm:w-6 sm:h-6 focus:outline-none focus:ring-2 focus:ring-[#EFBF04] rounded" aria-label="X" tabIndex={0}>
             <svg viewBox="0 0 24 24" className="icon-gold-shine">
               <path d="M17.53 3.5h3.47l-7.57 8.62 8.93 10.38h-7.03l-5.61-6.52-6.41 6.52H2.47l8.09-9.21L1.53 3.5h7.18l5.01 5.83 5.81-5.83zm-2.01 16.13h2.13l-6.01-6.98-2.13 2.36 6.01 6.98z"/>
             </svg>
@@ -264,9 +225,9 @@ export function HomeSection() {
       </div>
 
       {/* Geometric accent elements - fewer on mobile */}
-      <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full opacity-60 animate-pulse"></div>
-      <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white rounded-full opacity-40"></div>
-      <div className="hidden sm:block absolute bottom-1/3 left-1/2 w-1.5 h-1.5 bg-white rounded-full opacity-50"></div>
+  <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full opacity-60 animate-pulse"></div>
+  <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-white rounded-full opacity-40"></div>
+  <div className="hidden sm:block absolute bottom-1/3 left-1/2 w-1.5 h-1.5 bg-white rounded-full opacity-50"></div>
       
       {/* Custom CSS for vertical text and gold gradient */}
       <style>

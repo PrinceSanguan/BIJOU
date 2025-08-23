@@ -33,56 +33,43 @@ export function TestimonialsSection() {
   }, [testimonials.length]);
 
   return (
-  <section className="relative pt-12 sm:pt-20 px-3 sm:px-6 bg-white overflow-hidden">
+  <section className="relative pt-12 sm:pt-20 px-3 sm:px-6 bg-white overflow-x-hidden">
       {/* Geometric accent elements - fewer on mobile */}
       <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
       <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
       <div className="hidden sm:block absolute bottom-1/3 left-1/2 w-1.5 h-1.5 bg-[#FFD700] rounded-full opacity-50 z-10"></div>
 
-      <div className="max-w-4xl mx-auto text-center relative z-20">
+  <div className="max-w-4xl mx-auto text-center relative z-20 w-full">
         {/* Section header */}
-    <div className="mb-8 sm:mb-12 w-full flex items-center justify-center gap-4" style={{ alignItems: 'center' }}>
-              <span style={{ display: 'inline-block', width: '103px', height: 0, borderBottom: '2px solid #FFD700', verticalAlign: 'middle', position: 'relative', top: '-4px' }} />
-          <span
-            className="uppercase"
-            style={{
-              width: '386px',
-              height: '34.795px',
-              display: 'inline-block',
-              color: '#0E5248',
-              textAlign: 'center',
-              fontFamily: 'Roboto Serif, serif',
-              fontSize: '24px',
-              fontStyle: 'normal',
-              fontWeight: 400,
-              lineHeight: 'normal',
-              letterSpacing: '2.4px',
-              flexShrink: 0
-            }}
-          >
-            WHAT OUR CLIENTS SAY
-          </span>
-              <span style={{ display: 'inline-block', width: '103px', height: 0, borderBottom: '2px solid #FFD700', verticalAlign: 'middle', position: 'relative', top: '-4px' }} />
-        </div>
+    <div className="mb-8 sm:mb-12 w-full flex items-center justify-center gap-2 sm:gap-4">
+      <span className="hidden sm:inline-block border-b-2 border-[#FFD700] align-middle relative top-[-4px] w-24 sm:w-32 lg:w-[103px]" />
+      <span
+  className="uppercase text-base sm:text-lg md:text-xl lg:text-[24px] tracking-[0.15em] font-normal text-[#17635C] text-center font-serif max-w-full mx-2 lg:w-[386px] lg:h-[34.8px] flex-shrink-0"
+  style={{ fontFamily: 'Roboto Serif, serif', letterSpacing: '2.4px', color: '#17635C' }}
+      >
+        WHAT OUR CLIENTS SAY
+      </span>
+      <span className="hidden sm:inline-block border-b-2 border-[#FFD700] align-middle relative top-[-4px] w-24 sm:w-32 lg:w-[103px]" />
+    </div>
         {/* Testimonial content */}
         <div className="mb-8 sm:mb-12">
-          <p className="text-lg sm:text-2xl md:text-3xl leading-relaxed font-light mb-6 sm:mb-10 px-2" style={{ color: '#0E5248' }}>
+          <p className="text-base sm:text-lg md:text-2xl lg:text-3xl leading-relaxed font-light mb-6 sm:mb-10 px-2 text-[#0E5248] break-words max-w-full overflow-x-auto">
             {testimonials[active].text.split(/(Bijou Group|seamless|Professional|reliable|legally sharp|portfolio|source|stage|let|rental|worth|experience)/gi).map((word, i) =>
               ["Bijou Group", "seamless", "Professional", "reliable", "legally sharp", "portfolio", "source", "stage", "let", "rental", "worth", "experience"].includes(word.trim()) ?
-                <span key={i} className="font-semibold" style={{ color: '#0E5248' }}>{word}</span> : word
+                <span key={i} className="font-semibold text-[#0E5248]">{word}</span> : word
             )}
           </p>
           {/* Author section */}
           <div className="flex flex-col items-center">
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden mb-3 sm:mb-4 border-2 border-[#FFD700]">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden mb-3 sm:mb-4 border-2 border-[#FFD700] mx-auto max-w-full">
               <img 
                 src={testimonials[active].img}
                 alt={testimonials[active].author}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover mx-auto max-w-full"
               />
             </div>
-            <h4 className="text-base sm:text-lg font-medium text-black mb-0.5 sm:mb-1">{testimonials[active].author}</h4>
-            <p className="text-xs sm:text-sm" style={{ color: '#0E5248' }}>{testimonials[active].role}</p>
+            <h4 className="text-base sm:text-lg font-medium text-black mb-0.5 sm:mb-1 text-center">{testimonials[active].author}</h4>
+            <p className="text-xs sm:text-sm text-[#0E5248] text-center">{testimonials[active].role}</p>
           </div>
           {/* Navigation dots */}
           <div className="flex justify-center items-center gap-2 mt-4">
