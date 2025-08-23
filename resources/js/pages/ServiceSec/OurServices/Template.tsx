@@ -4,6 +4,8 @@ import { Footer } from '@/components/Footer';
 import HeaderBlack from '@/components/HeaderBlack';
 import { Service } from '@/types';
 import Featured from '../Featured';
+import WithUs from '../WithUs';
+import { Cta } from '@/pages/landingpage/Cta';
 
 interface TemplateProps {
     service: Service;
@@ -50,8 +52,10 @@ export default function Template({ service }: TemplateProps) {
                     </div>
                 </section>
                 <div className="mt-12 mb-12">
-                        <Featured />
-                        </div>  
+                    <Featured />
+                    <WithUs />
+                    <Cta />
+                </div>
             </main>
             <Footer />
         </>

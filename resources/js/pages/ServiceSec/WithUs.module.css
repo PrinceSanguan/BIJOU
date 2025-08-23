@@ -1,0 +1,108 @@
+.withUsSection {
+  width: 100%;
+  background: #fff;
+  padding: 3.5rem 1rem 3.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.heading {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #17544c;
+  margin-bottom: 2.5rem;
+}
+
+.cardGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+.card {
+  background: #17544c;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 16px 0 rgba(23,84,76,0.10);
+  padding: 1.4rem 1.2rem 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  color: #fff;
+  border-top: 6px solid #EFBF04;
+  width: 100%;
+  max-width: none;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  margin-bottom: 1.1rem;
+  text-align: center;
+  line-height: 1.2;
+  max-width: 18ch;
+  min-height: 2.6em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: pre-line;
+}
+
+.cardDesc {
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.95;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (min-width: 641px) {
+  .cardGrid {
+    flex-direction: row;
+    gap: 1.1rem;
+    max-width: 1550px;
+  }
+  .card {
+    flex: 1 1 25%;
+    min-width: 270px;
+    align-items: flex-start;
+    padding: 1.2rem 1.5rem;
+    max-width: none;
+    min-height: 120px;
+  }
+  .cardTitle {
+    font-size: 1.35rem;
+  }
+  .cardDesc {
+    font-size: 1.05rem;
+  }
+  .heading {
+    font-size: 2.2rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .withUsSection {
+    padding: 5rem 0 5rem 0;
+  }
+  .cardGrid {
+    gap: 3rem;
+  }
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+  .cardDesc {
+    font-size: 1.1rem;
+  }
+  .heading {
+    font-size: 2.5rem;
+  }
+}
