@@ -1,0 +1,109 @@
+/* ReadMore.module.css */
+
+.readMoreSection {
+  width: 100%;
+  background: #fff;
+  padding: 2.5rem 1rem;
+}
+
+.readMoreContainer {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.readMoreCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.readMoreCard.reverse {
+  flex-direction: column-reverse;
+}
+
+.readMoreImage {
+  width: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 4px 32px rgba(14,82,72,0.10);
+}
+
+.readMoreContent {
+  width: 100%;
+  text-align: center;
+}
+
+.readMoreTitle {
+  font-size: 2rem;
+  font-family: 'Roboto Serif', serif;
+  font-weight: 700;
+  color: #0E5248;
+  margin-bottom: 0.5rem;
+}
+
+.readMoreText {
+  font-size: 1.1rem;
+  color: #333;
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.readMoreButton {
+  background: #0E5248;
+  color: #fff;
+  font-size: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.readMoreButton:hover {
+  background: #E5C100;
+  color: #0E5248;
+}
+
+@media (min-width: 641px) {
+  .readMoreSection {
+    padding: 3.5rem 2rem;
+  }
+  .readMoreContainer {
+    gap: 5rem;
+  }
+  .readMoreCard,
+  .readMoreCard.reverse {
+    flex-direction: row;
+    align-items: center;
+    gap: 3rem;
+  }
+  .readMoreCard.reverse {
+    flex-direction: row-reverse;
+  }
+  .readMoreContent {
+    width: 50%;
+    text-align: left;
+  }
+  .readMoreImage {
+    width: 50%;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .readMoreSection {
+    padding: 5rem 0;
+  }
+  .readMoreTitle {
+    font-size: 2.5rem;
+  }
+  .readMoreText {
+    font-size: 1.25rem;
+  }
+}

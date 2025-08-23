@@ -1,15 +1,9 @@
 
+
 import { router } from '@inertiajs/react';
+import styles from './Featured.module.css';
 
-interface Service {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    details: string[];
-}
-
-const services = [
+const services: string[] = [
     'Rent Arrears Management',
     'Eviction and Possession Assistance',
     'Property Staging and Room Setup',
@@ -27,33 +21,45 @@ const services = [
     'Check-ins and Check-outs',
 ];
 
+type ServiceCardProps = {
+    title: string;
+    onClick: () => void;
+};
+
+function ServiceCard({ title, onClick }: ServiceCardProps) {
+    return (
+        <li>
+            <button
+                type="button"
+                className={styles.serviceCard}
+                onClick={onClick}
+                tabIndex={0}
+                aria-label={title}
+            >
+                <span className={styles.serviceTitle}>{title}</span>
+            </button>
+        </li>
+    );
+}
+
+
 export default function Featured() {
     const navigateToService = (id: number) => {
         router.get(`/services/${id}`);
     };
 
     return (
-        <div className="py-12 px-4 max-w-7xl mx-auto">
-            <div className="flex items-center justify-center gap-6 max-w-4xl mx-auto mb-12">
-                <hr className="flex-1 border-t-2 border-[#FFD700]" />
-                <h1 className="text-3xl font-serif text-center whitespace-nowrap">OTHER FEATURED SERVICES</h1>
-                <hr className="flex-1 border-t-2 border-[#FFD700]" />
+        <section className={styles.featuredSection} aria-labelledby="featured-services-title">
+            <div className={styles.headerRow}>
+                <hr className={styles.headerLine} />
+                <h2 id="featured-services-title" className={styles.headerTitle}>Other Featured Services</h2>
+                <hr className={styles.headerLine} />
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto bg-[#0E5248] p-8 rounded-xl">
-                {services.map((service, index) => (
-                    <div
-                        key={index}
-                        onClick={() => navigateToService(index + 1)}
-                        className="p-0 flex items-center min-h-[40px] cursor-pointer transition hover:bg-white/10 rounded"
-                        tabIndex={0}
-                        role="button"
-                        onKeyPress={e => { if (e.key === 'Enter' || e.key === ' ') navigateToService(index + 1); }}
-                    >
-                        <h3 className="text-lg md:text-xl font-normal text-white leading-relaxed">{service}</h3>
-                    </div>
+            <ul className={styles.servicesGrid}>
+                {services.map((service, idx) => (
+                    <ServiceCard key={service} title={service} onClick={() => navigateToService(idx + 1)} />
                 ))}
-            </div>
-        </div>
+            </ul>
+        </section>
     );
 }
