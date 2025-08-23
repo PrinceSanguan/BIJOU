@@ -29,7 +29,7 @@ export default function Template({ service }: TemplateProps) {
             <main role="main">  
                 <section className="py-16 px-4">
                     <div className="max-w-7xl mx-auto">
-                        <h1 className="text-5xl md:text-7xl font-bold text-[#EFBF04] text-center px-4">Our Services</h1>
+                        <h1 className="text-3xl md:text-5xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8">Our Services</h1>
                         <div className="relative h-96 rounded-2xl overflow-hidden mb-16">
                            
                             <img 
