@@ -75,33 +75,72 @@ export function HomeSection() {
           <p className="text-white text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 opacity-90" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #222' }}>
             <span className="text-white">WE ARE INFINITY.</span>
           </p>
-          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-3 sm:mb-4 px-2" style={{ textShadow: '0 4px 16px #000, 0 2px 4px #222' }}>
-            Property Management Made <span className="gold-gradient-text" style={{ textShadow: 'none' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-3 sm:mb-4 px-2" style={{ textShadow: '0 4px 16px #000, 0 2px 4px #222', margin: 0 }}>
               <span
-                className={
-                  shineOnce
-                    ? "metallic-gold-shine"
-                    : shineHold
-                    ? "metallic-gold-shine-hold"
-                    : ""
-                }
-                style={shineHold ? { backgroundPosition: '68% 0' } : {}}
+                style={{
+                  display: 'block',
+                  width: '1440px',
+                  height: '252px',
+                  margin: '0 auto',
+                  color: 'rgba(255,255,255,0.80)',
+                  textAlign: 'center',
+                  textShadow: '0 7px 4px rgba(0,0,0,0.25)',
+                  fontFamily: 'Roboto Serif, serif',
+                  fontSize: '96px',
+                  fontStyle: 'normal',
+                  fontWeight: 500,
+                  lineHeight: 'normal',
+                }}
               >
-                Personal
+                <span style={{ color: '#fff' }}>HMO Management Sheffield</span><br />
+                <span
+                  style={{
+                    color: '#EFBF04',
+                    fontFamily: 'Roboto Serif, serif',
+                    fontSize: '96px',
+                    fontStyle: 'normal',
+                    fontWeight: 500,
+                    lineHeight: 'normal',
+                    display: 'inline',
+                  }}
+                >
+                  Stress-Free Property{' '}
+                  <span style={{ color: '#fff' }}>Solutions</span>
+                </span>
               </span>
-            </span>
-          </h1>
+            </h1>
+          </div>
           <p className="text-white text-xs sm:text-sm md:text-base font-light opacity-90 mb-6 sm:mb-8 max-w-4xl mx-auto px-2" style={{ textShadow: '0 2px 8px #000, 0 1px 2px #222' }}>
-            Trusted Experts in <span className="text-white">HMO</span> & <span className="text-white">Buy-to-Let</span> Services Across <span className="text-white">Sheffield</span> and <span className="text-white">South Yorkshire</span>
+            <span
+              style={{
+                display: 'block',
+                maxWidth: '1173px',
+                height: '107px',
+                flexShrink: 0,
+                color: '#FFF',
+                textAlign: 'center',
+                textShadow: '0 4px 4px rgba(0,0,0,0.25)',
+                fontFamily: 'Space Grotesk, sans-serif',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '36px',
+                letterSpacing: '2.4px',
+                margin: '0 auto',
+              }}
+            >
+              We're Sheffield's trusted HMO management specialists, offering professional property services that eliminate your stress while maximizing your returns. Professional HMO letting agents serving Sheffield landlords & investors.
+            </span>
           </p>
         </div>
 
         {/* Buttons - stacked on mobile, side by side on larger screens */}
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-md sm:max-w-none mx-auto">
-          <button className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-[#FFD700] text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFB300] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden">
+          <button className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden">
             I'm a Landlord
           </button>
-          <button className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-[#FFD700] text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFB300] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden">
+          <button className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden">
             I'm Looking for Properties
           </button>
         </div>
@@ -236,7 +275,7 @@ export function HomeSection() {
           .hero-shine-btn {
             position: relative;
             overflow: hidden;
-            background: linear-gradient(90deg, #FFD700 0%, #FFB300 40%, #FFF8DC 60%, #FFD700 100%);
+            background: #fff;
             color: #4f4e44;
             transition: background 0.3s, color 0.3s;
           }
@@ -253,7 +292,7 @@ export function HomeSection() {
             transition: left 0.3s;
           }
           .hero-shine-btn:hover {
-            background: linear-gradient(90deg, #FFD700 0%, #FFF8DC 50%, #FFD700 100%);
+            background: linear-gradient(90deg, #FFD700 0%, #FFB300 100%);
             color: #4f4e44;
           }
           .hero-shine-btn:hover::before {

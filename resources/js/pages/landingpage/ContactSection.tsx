@@ -40,189 +40,156 @@ export function ContactSection() {
   return (
     <section
       className="relative py-10 sm:py-16 px-2 sm:px-6 min-h-[60vh] bg-white flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: "url('/images/YghbMKtbAHDfM5m2u6bnMXpG8.avif')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundColor: '#fff',
-      }}
+      style={{ backgroundColor: '#fff' }}
     >
-      {/* Geometric accent elements - fewer on mobile */}
-      <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
-      <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
-      <div className="hidden sm:block absolute bottom-1/3 left-1/2 w-1.5 h-1.5 bg-[#FFD700] rounded-full opacity-50 z-10"></div>
-      {/* Minimal geometric accent */}
-      <div className="absolute top-0 right-0 w-24 sm:w-32 h-8 sm:h-16 bg-[#e5e5e0] rounded-bl-3xl opacity-60"></div>
-      <div className="absolute bottom-0 left-0 w-16 sm:w-24 h-6 sm:h-12 bg-[#e5e5e0] rounded-tr-3xl opacity-50"></div>
-      <div className="relative z-10 w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 items-center">
-        {/* Left side - Info and contact */}
-        <div className="text-center md:text-left px-2 md:px-0">
-          <div className="mb-6 sm:mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-black mb-3 sm:mb-4 tracking-tight">
-              Ready to <span className="text-[#4f4e44] font-semibold">simplify</span> your property journey?
-            </h2>
-            <p className="text-base sm:text-lg mb-4 sm:mb-6 text-black">
-              Reach out to us today. Whether you’re a <span className="text-[#4f4e44] font-semibold">landlord</span>, <span className="text-[#4f4e44] font-semibold">investor</span>, or <span className="text-[#4f4e44] font-semibold">tenant</span>—we’re here to help.
-            </p>
-            <div className="mt-6 sm:mt-8 text-left text-black text-sm sm:text-base space-y-2">
-              <div className="flex items-center">
-                <span className="mr-2 inline-block" aria-label="Location">
-                  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path d="M12 21c-.3 0-.6-.1-.8-.3C8.1 17.2 5 13.3 5 10a7 7 0 1 1 14 0c0 3.3-3.1 7.2-6.2 10.7-.2.2-.5.3-.8.3z"/><circle cx="12" cy="10" r="2.5"/></svg>
-                </span>
-                <span>Based in <span className="text-[#4f4e44] font-semibold">Sheffield</span> – Covering <span className="text-[#4f4e44] font-semibold">South Yorkshire</span> and <span className="text-[#4f4e44] font-semibold">30km radius</span></span>
-              </div>
-              <div className="flex items-center">
-                <span className="mr-2 inline-block" aria-label="Email">
-                  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
-                </span>
-                <a href="mailto:info@bijourelocation.co.uk" className="underline text-[#4f4e44] font-semibold hover:text-[#FFD700] transition">info@bijourelocation.co.uk</a>
-              </div>
-              <div className="flex items-center">
-                <span className="mr-2 inline-block" aria-label="Phone">
-                  <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13 1.13.37 2.24.72 3.29a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c1.05.35 2.16.59 3.29.72A2 2 0 0 1 22 16.92z"/></svg>
-                </span>
-                <a href="tel:+447495747930" className="underline text-[#4f4e44] font-semibold hover:text-[#FFD700] transition">+44 7495 747930</a>
-              </div>
+  <div className="relative z-10 w-full max-w-[1700px] mx-auto flex justify-center items-center">
+  <div className="w-full bg-white rounded-2xl border border-gray-100 flex flex-col md:flex-row items-stretch min-h-[800px] p-6" style={{ backgroundColor: '#fff', boxShadow: '0 8px 24px 0 rgba(0,0,0,0.12), inset 0 0 8px 1px rgba(0,0,0,0.10)' }}>
+          {/* Map side - always first */}
+          <div className="order-1 md:order-none relative w-full md:w-1/2 h-[320px] md:h-auto flex items-end">
+            <div className="w-full h-full overflow-hidden flex items-stretch">
+              <iframe
+                title="Google Map Sheffield"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: '320px', width: '100%', height: '100%', display: 'block', boxSizing: 'border-box' }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23714.96407326213!2d-1.5070706!3d53.3780556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879826d2b7b1b0b%3A0x6e8b2e7b2e7b2e7b!2sSheffield!5e0!3m2!1sen!2suk!4v1690000000000!5m2!1sen!2suk"
+              ></iframe>
             </div>
-            {/* Info Cards */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-stretch">
-              <div className="flex-1 min-w-[220px] rounded-2xl border border-[#4f4e44] bg-[#4f4e44] shadow-lg px-6 py-5 flex flex-col items-start">
-                <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2 tracking-tight leading-tight">
-                  <svg width="22" height="22" fill="none" stroke="#fff" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-                  The Bijou Group
-                </h3>
-                <p className="text-white text-sm leading-snug font-normal">
-                  Your trusted property management partner in <span className="font-semibold text-[#FFD700]">South Yorkshire</span>.<br />
-                  <span className="block mt-1">Call us at <a href="tel:+447495747930" className="underline text-[#FFD700] hover:text-white transition font-semibold">+44 7495 747930</a> for expert landlord, tenant, and investor support.</span>
-                </p>
+            {/* Contact info card */}
+            <div className="absolute left-4 bottom-4 bg-[#0E5248] bg-opacity-95 text-white rounded-xl shadow-lg px-6 py-3 flex flex-col gap-2 min-w-[220px] max-w-[320px]">
+              <div className="flex items-center gap-2 text-sm">
+                <span aria-label="Location">
+                  <svg width="18" height="18" fill="none" stroke="#fff" strokeWidth="1.5" viewBox="0 0 24 24"><path d="M12 21c-.3 0-.6-.1-.8-.3C8.1 17.2 5 13.3 5 10a7 7 0 1 1 14 0c0 3.3-3.1 7.2-6.2 10.7-.2.2-.5.3-.8.3z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                </span>
+                70 Clarkehouse Road, Sheffield, South Yorkshire, England, S10 2LJ
               </div>
-              <div className="flex-1 min-w-[220px] rounded-2xl border border-[#4f4e44] bg-[#4f4e44] shadow-lg px-6 py-5 flex flex-col items-start">
-                <h3 className="text-base font-bold text-white mb-3 flex items-center gap-2 tracking-tight leading-tight">
-                  <svg width="22" height="22" fill="none" stroke="#fff" strokeWidth="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 12h8"/></svg>
-                  Contact & Website
-                </h3>
-                <p className="text-white text-sm leading-snug font-normal">
-                  Email us at <a href="mailto:info@bijourelocation.co.uk" className="underline text-[#FFD700] hover:text-white transition font-semibold">info@bijourelocation.co.uk</a><br />
-                  <span className="block mt-1">or visit <a href="https://bijourelocation.co.uk" className="underline text-[#FFD700] hover:text-white transition font-semibold" target="_blank" rel="noopener">bijourelocation.co.uk</a> for more about our <span className="font-semibold text-[#FFD700]">award-winning services</span>.</span>
-                </p>
+              <div className="flex items-center gap-2 text-sm">
+                <span aria-label="Phone">
+                  <svg width="18" height="18" fill="none" stroke="#fff" strokeWidth="1.5" viewBox="0 0 24 24"><path d="M22 16.92V19a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 0 0 1 5 3h2.09a2 2 0 0 1 2 1.72c.13 1.13.37 2.24.72 3.29a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c1.05.35 2.16.59 3.29.72A2 2 0 0 1 22 16.92z"/></svg>
+                </span>
+                <a href="tel:+447495747930" className="underline text-[#FFD700] hover:text-white transition font-semibold">+447495747930</a>
               </div>
             </div>
           </div>
-        </div>
-        {/* Right side - Contact form */}
-        <div className="w-full max-w-md mx-auto md:mx-0">
-          <form className="space-y-4 sm:space-y-5 bg-white bg-opacity-90 rounded-2xl shadow-lg p-4 sm:p-5 border border-gray-100">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <input
-                type="text"
-                name="firstName"
-                placeholder="First Name"
-                value={formData.firstName}
-                onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-transparent border-b border-[#4f4e44] focus:border-[#4f4e44] focus:outline-none placeholder-gray-400 text-black transition"
-                autoComplete="given-name"
-              />
-              <input
-                type="text"
-                name="lastName"
-                placeholder="Last Name"
-                value={formData.lastName}
-                onChange={handleInputChange}
-                className="w-full px-3 py-2 bg-transparent border-b border-[#4f4e44] focus:border-[#4f4e44] focus:outline-none placeholder-gray-400 text-black transition"
-                autoComplete="family-name"
-              />
-            </div>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="w-full px-3 py-2 bg-transparent border-b border-[#4f4e44] focus:border-[#4f4e44] focus:outline-none placeholder-gray-400 text-black transition"
-              autoComplete="email"
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleInputChange}
-              className="w-full px-3 py-2 bg-transparent border-b border-[#4f4e44] focus:border-[#4f4e44] focus:outline-none placeholder-gray-400 text-black transition"
-              autoComplete="tel"
-            />
-            <select
-              name="role"
-              value={formData.role}
-              onChange={handleInputChange}
-              className="w-full px-3 py-2 bg-transparent border-b border-[#4f4e44] focus:border-[#4f4e44] focus:outline-none text-black transition"
-            >
-              <option value="">I am a...</option>
-              <option value="Landlord">Landlord</option>
-              <option value="Estate Agent">Estate Agent</option>
-              <option value="Tenant">Tenant</option>
-              <option value="Investor">Investor</option>
-              <option value="Other">Other</option>
-            </select>
-            <div className="relative">
-              <label className="block text-black mb-2 font-medium">I am interested in:</label>
-              <div className="">
-                <button
-                  type="button"
-                  className="w-full px-3 py-2 bg-transparent border-b border-[#4f4e44] text-black rounded focus:outline-none flex justify-between items-center"
-                  onClick={() => setDropdownOpen(v => !v)}
-                >
-                  <span>{formData.interests.length > 0 ? formData.interests.map(i => <span key={i} className="text-green-600 font-semibold">{i}</span>) : 'Select interests'}</span>
-                  <svg className={`ml-2 w-4 h-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-                </button>
-                {dropdownOpen && (
-                  <div className="absolute left-0 right-0 mt-2 bg-white border border-[#4f4e44] rounded shadow-lg z-20 max-h-56 overflow-auto">
-                    {['Comprehensive HMO & Buy-to-Let Management','Tenant Find Services','Rent Collection & Arrears','Maintenance & Repairs','Check-ins, Check-outs & Inventories','Renters (Reform) Bill Guidance','Property Sourcing & Staging for Investors','Eviction & Legal Support'].map(service => (
-                      <button
-                        type="button"
-                        key={service}
-                        className={`w-full text-left px-4 py-2 text-sm hover:bg-[#e5e5e0] focus:bg-[#e5e5e0] ${formData.interests.includes(service) ? 'bg-[#e5e5e0] text-[#4f4e44]' : 'bg-white text-black'}`}
-                        onClick={() => handleDropdownSelect(service)}
-                      >
-                        <span className="inline-block mr-2 align-middle text-[#4f4e44] font-semibold">
-                          {formData.interests.includes(service) ? '✔️' : ''}
-                        </span>
-                        <span className={formData.interests.includes(service) ? 'text-[#4f4e44] font-semibold' : ''}>{service}</span>
-                      </button>
-                    ))}
-                  </div>
-                )}
+          {/* Form side - always second */}
+          <div className="order-2 md:order-none w-full md:w-1/2 flex flex-col h-full p-0">
+            <form className="flex flex-col flex-1 h-full w-full px-8 pt-6 pb-0 gap-0 bg-white bg-opacity-90 rounded-none shadow-none border-0" style={{ minHeight: '100%' }}>
+              <h2 className="text-3xl sm:text-4xl font-semibold text-[#12443A] leading-tight mb-2" style={{ fontFamily: 'Roboto Serif, serif' }}>Ready to simplify your property journey?</h2>
+              <p className="text-[15px] text-[#12443A] mb-6 leading-snug">Reach out to us today. Whatever you're a landlord, investor, or tenant - we're here to help.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="Full Name *"
+                  value={formData.firstName}
+                  onChange={handleInputChange}
+                  className="w-full px-4 pb-6 pt-2 bg-transparent focus:outline-none placeholder-gray-400 text-black text-[15px] mb-8 transition rounded-md"
+                  style={{ boxShadow: 'inset 0 4px 24px 0 rgba(0,0,0,0.10)', border: 'none', borderRadius: '0.375rem' }}
+                  autoComplete="given-name"
+                />
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name *"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  className="w-full px-4 pb-6 pt-2 bg-transparent focus:outline-none placeholder-gray-400 text-black text-[15px] mb-8 transition rounded-md"
+                  style={{ boxShadow: 'inset 0 4px 24px 0 rgba(0,0,0,0.10)', border: 'none', borderRadius: '0.375rem' }}
+                  autoComplete="family-name"
+                />
               </div>
-            </div>
-            <textarea
-              name="message"
-              placeholder="Message"
-              rows={3}
-              value={formData.message}
-              onChange={handleInputChange}
-              className="w-full px-3 py-2 bg-transparent border-b border-[#4f4e44] focus:border-[#4f4e44] focus:outline-none placeholder-gray-400 text-black transition resize-none"
-            />
-            <button
-              type="submit"
-              onClick={handleSubmit}
-              className="w-full py-2 bg-[#4f4e44] text-white font-semibold rounded-xl shadow hover:bg-[#35352c] focus:bg-[#35352c] transition-colors duration-200 focus:outline-none"
-            >
-              Submit
-            </button>
-          </form>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email *"
+                value={formData.email}
+                onChange={handleInputChange}
+                className="w-full px-4 pb-6 pt-2 bg-transparent focus:outline-none placeholder-gray-400 text-black text-[15px] mb-8 transition rounded-md"
+                style={{ boxShadow: 'inset 0 4px 24px 0 rgba(0,0,0,0.10)', border: 'none', borderRadius: '0.375rem' }}
+                autoComplete="email"
+              />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number *"
+                value={formData.phone}
+                onChange={handleInputChange}
+                className="w-full px-4 pb-6 pt-2 bg-transparent focus:outline-none placeholder-gray-400 text-black text-[15px] mb-8 transition rounded-md"
+                style={{ boxShadow: 'inset 0 4px 24px 0 rgba(0,0,0,0.10)', border: 'none', borderRadius: '0.375rem' }}
+                autoComplete="tel"
+              />
+                <select
+                  name="role"
+                  value={formData.role}
+                  onChange={handleInputChange}
+                  className="w-full px-4 pb-6 pt-2 bg-transparent focus:outline-none text-black text-[15px] mb-8 transition rounded-md"
+                  style={{ boxShadow: 'inset 0 4px 24px 0 rgba(0,0,0,0.10)', border: 'none', borderRadius: '0.375rem' }}
+                >
+                  <option value="">I am a...</option>
+                  <option value="Landlord">Landlord</option>
+                  <option value="Estate Agent">Estate Agent</option>
+                  <option value="Tenant">Tenant</option>
+                  <option value="Investor">Investor</option>
+                  <option value="Other">Other</option>
+                </select>
+                <div className="relative mb-8" style={{ position: 'relative' }}>
+                  <label className="block text-[#12443A] mb-2 font-medium text-[15px]">I am interested in:</label>
+                  <div className="">
+                    <button
+                      type="button"
+                      className="w-full px-4 pb-6 pt-2 bg-transparent text-black rounded-md focus:outline-none flex justify-between items-center text-[15px] mb-8"
+                      style={{ boxShadow: 'inset 0 4px 24px 0 rgba(0,0,0,0.10)', border: 'none', borderRadius: '0.375rem' }}
+                      onClick={() => setDropdownOpen(v => !v)}
+                    >
+                      <span>{formData.interests.length > 0 ? formData.interests.map(i => <span key={i} className="text-[#12443A] font-semibold">{i}</span>) : 'Select interests'}</span>
+                      <svg className={`ml-2 w-4 h-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    {dropdownOpen && (
+                      <div className="absolute left-0 right-0 mt-2 bg-white border border-[#12443A] rounded shadow-lg z-20 max-h-56 overflow-auto">
+                        {['Comprehensive HMO & Buy-to-Let Management','Tenant Find Services','Rent Collection & Arrears','Maintenance & Repairs','Check-ins, Check-outs & Inventories','Renters (Reform) Bill Guidance','Property Sourcing & Staging for Investors','Eviction & Legal Support'].map(service => (
+                          <button
+                            type="button"
+                            key={service}
+                            className={`w-full text-left px-4 py-2 text-sm hover:bg-[#e5e5e0] focus:bg-[#e5e5e0] ${formData.interests.includes(service) ? 'bg-[#e5e5e0] text-[#12443A]' : 'bg-white text-black'}`}
+                            onClick={() => handleDropdownSelect(service)}
+                          >
+                            <span className="inline-block mr-2 align-middle text-[#12443A] font-semibold">
+                              {formData.interests.includes(service) ? '✔️' : ''}
+                            </span>
+                            <span className={formData.interests.includes(service) ? 'text-[#12443A] font-semibold' : ''}>{service}</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              <div className="mb-0 mt-2">
+                <label className="block text-[#12443A] mb-2 font-medium text-[15px]">Message</label>
+                <div className="relative">
+                  <textarea
+                    name="message"
+                    placeholder="Message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className="w-full px-4 pb-6 pt-2 bg-transparent focus:outline-none placeholder-gray-400 text-black text-[15px] min-h-[120px] pr-32 transition rounded-md mb-8"
+                    style={{ minHeight: '120px', resize: 'none', border: 'none', borderRadius: '0.375rem', boxShadow: 'inset 0 4px 24px 0 rgba(0,0,0,0.10)' }}
+                  />
+                  <button
+                    type="submit"
+                    className="absolute bottom-[3rem] right-4 bg-[#12443A] text-white px-8 py-2 rounded-lg shadow-md hover:bg-[#0E5248] transition font-semibold text-[15px]"
+                    onClick={handleSubmit}
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-
-      {/* Custom CSS for mobile tweaks */}
-      <style>
-        {`
-          @media (max-width: 640px) {
-            .contact-section-img {
-              object-position: center;
-            }
-          }
-        `}
-      </style>
     </section>
   );
 }

@@ -7,6 +7,8 @@ import { ServicesSection } from '@/pages/landingpage/ServicesSection';
 import { ContactSection } from '@/pages/landingpage/ContactSection';
 import { TestimonialsSection } from '@/pages/landingpage/TestimonialsSection';
 import { TrustedCompaniesSection } from '@/pages/landingpage/TrustedCompaniesSection';
+import { Cta } from '@/pages/landingpage/Cta';
+import { Faq } from '@/pages/landingpage/Faq';
 // import { BlogSection } from '@/pages/landingpage/BlogSection';
 import Header from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -32,9 +34,11 @@ export default function Welcome() {
             <main className="w-full" role="main">
                 <AboutSection />
                 <ServicesSection />
+                <Faq />
                 <ContactSection />
                 <TestimonialsSection />
                 <TrustedCompaniesSection />
+                <Cta />
                 {/* <BlogSection /> HIDDEN FOR NOW */}
             </main>
             <Footer />

@@ -2,60 +2,99 @@ import React from 'react';
 
 export function AboutSection() {
   return (
-    <section className="relative py-10 sm:py-20 px-3 sm:px-6" style={{ backgroundColor: '#4f4e44' }}>
+    <section
+  className="relative flex items-center justify-center min-h-[320px] py-10 sm:py-20 px-3 sm:px-6"
+      style={{ backgroundColor: '#0E5248' }}
+    >
       {/* Geometric accent elements - fewer on mobile */}
       <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
       <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
       <div className="hidden sm:block absolute bottom-1/3 left-1/2 w-1.5 h-1.5 bg-[#FFD700] rounded-full opacity-50 z-10"></div>
 
-      <div className="max-w-4xl mx-auto text-center relative z-20">
+      <div
+        className="flex flex-col items-center justify-center text-center relative z-20"
+  style={{ width: '1159px', height: '320px' }}
+      >
         {/* Section header with decorative line */}
-        <div className="flex flex-col sm:flex-row items-center justify-center mb-8 sm:mb-12 px-2">
+        <div className="flex flex-col sm:flex-row items-center justify-center px-2 gap-[29px]">
           <div className="hidden sm:block mr-4">
-            <svg width="64" height="16" viewBox="0 0 64 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="vine-shine-gradient-left" x1="0" y1="8" x2="64" y2="8" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#FFD700" />
-                  <stop offset="40%" stop-color="#FFD700" />
-                  <stop offset="50%" stop-color="#fff" stop-opacity="0.7">
-                    <animate attributeName="offset" values="0.4;0.7;0.4" keyTimes="0;0.5;1" dur="2.5s" repeatCount="1" fill="freeze" />
-                  </stop>
-                  <stop offset="60%" stop-color="#FFD700" />
-                  <stop offset="100%" stop-color="#FFD700" />
-                </linearGradient>
-              </defs>
-              <path d="M0 8 Q16 0 32 8 Q48 16 64 8" stroke="url(#vine-shine-gradient-left)" strokeWidth="2" fill="none"/>
-              <circle cx="8" cy="8" r="2" fill="#FFD700"/>
-              <circle cx="56" cy="8" r="2" fill="#FFD700"/>
+            <svg width="103" height="2" viewBox="0 0 103 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0" y1="1" x2="103" y2="1" stroke="#FFD700" strokeWidth="2" />
             </svg>
           </div>
-          <h2 className="text-lg sm:text-xl md:text-2xl font-extrabold tracking-[0.2em] sm:tracking-[0.3em] text-white uppercase">
-            <span className="gold-gradient-text metallic-gold-shine">ABOUT US</span>
+          <h2 className="text-[24px] font-normal tracking-[0.2em] sm:tracking-[0.3em] text-white uppercase font-['Roboto_Serif',serif]">
+            ABOUT US
           </h2>
           <div className="hidden sm:block ml-4">
-            <svg width="64" height="16" viewBox="0 0 64 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="vine-shine-gradient-right" x1="0" y1="8" x2="64" y2="8" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stop-color="#FFD700" />
-                  <stop offset="40%" stop-color="#FFD700" />
-                  <stop offset="50%" stop-color="#fff" stop-opacity="0.7">
-                    <animate attributeName="offset" values="0.4;0.7;0.4" keyTimes="0;0.5;1" dur="2.5s" repeatCount="1" fill="freeze" />
-                  </stop>
-                  <stop offset="60%" stop-color="#FFD700" />
-                  <stop offset="100%" stop-color="#FFD700" />
-                </linearGradient>
-              </defs>
-              <path d="M0 8 Q16 0 32 8 Q48 16 64 8" stroke="url(#vine-shine-gradient-right)" strokeWidth="2" fill="none"/>
-              <circle cx="8" cy="8" r="2" fill="#FFD700"/>
-              <circle cx="56" cy="8" r="2" fill="#FFD700"/>
+            <svg width="103" height="2" viewBox="0 0 103 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="0" y1="1" x2="103" y2="1" stroke="#FFD700" strokeWidth="2" />
             </svg>
           </div>
         </div>
-        {/* Main content */}
-        <div className="max-w-3xl mx-auto">
-          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white font-light px-1 sm:px-0">
-            At <span className="text-white font-medium">The Bijou Group</span>, property management is more than a service—it’s our legacy. With over 20 years of experience in the housing sector, 15+ years supporting a family property business, and 8 years running our own firm, we offer landlords and investors a fully informed, hands-on approach. Whether you're navigating compliance, dealing with tenants, or growing your portfolio, we’re here as your one-stop property solution.
-          </p>
+        {/* Main content with 57px gap from title */}
+  <div style={{ marginTop: '40px' }} className="w-full flex items-center justify-center">
+          <div className="flex flex-col items-center w-full">
+            <p className="text-sm sm:text-base md:text-lg text-white font-medium px-1 sm:px-0 font-space" style={{ letterSpacing: 0, lineHeight: '36px' }}>
+              At <span className="gold-gradient-text font-medium">Bijou Group</span>, HMO management is more than a service - it's our legacy. With years of experience managing HMO’s across Sheffield, we know the local market inside out. From student areas in S2 and S10 to professional house shares near Sheffield hospitals, our local knowledge ensures your property performs at its best.
+            </p>
+            <p className="text-sm sm:text-base md:text-lg text-white font-medium px-1 sm:px-0 font-space" style={{ letterSpacing: 0, lineHeight: '36px', marginTop: '24px' }}>
+              Whether you're navigating complex HMO licensing Sheffield requirements, dealing with problem tenants, or seeking to maximize your rental returns, we're here to provide expert guidance with a personal touch that sets us apart from other letting agents.
+            </p>
+            
+              <ul className="mt-8 flex flex-row justify-center items-center gap-12 text-white text-base font-space" style={{ listStyle: 'none', padding: 0, width: '100%' }}>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '24px',
+                    height: '24px',
+                    borderRadius: '50%',
+                    background: '#EFBF04',
+                    color: '#fff',
+                    fontSize: '0.8em',
+                    fontWeight: 700,
+                  }}>
+                    ✓
+                  </span> No voids
+                </li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '24px',
+                    height: '24px',
+                    borderRadius: '50%',
+                    background: '#EFBF04',
+                    color: '#fff',
+                    fontSize: '0.8em',
+                    fontWeight: 700,
+                  }}>
+                    ✓
+                  </span> Full Compliance
+                </li>
+                <li style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <span style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '24px',
+                    height: '24px',
+                    borderRadius: '50%',
+                    background: '#EFBF04',
+                    color: '#fff',
+                    fontSize: '0.8em',
+                    fontWeight: 700,
+                  }}>
+                    ✓
+                  </span> Transparent Fees
+                </li>
+            </ul>
+            <p className="text-white text-base font-space mt-6" style={{ textAlign: 'center', letterSpacing: 0, lineHeight: '32px' }}>
+              <span style={{ color: '#EFBF04' }}>We handle everything so you can focus on building your property portfolio.</span>
+            </p>
+          </div>
         </div>
       </div>
 

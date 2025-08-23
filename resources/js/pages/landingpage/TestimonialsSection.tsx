@@ -41,10 +41,28 @@ export function TestimonialsSection() {
 
       <div className="max-w-4xl mx-auto text-center relative z-20">
         {/* Section header */}
-        <div className="mb-8 sm:mb-12 w-full flex items-center justify-center gap-4">
-          <span className="block h-0.5 w-32 bg-[#FFD700]" />
-          <span className="text-sm sm:text-base font-extrabold tracking-[0.2em] sm:tracking-[0.3em] uppercase text-[#0E5248]">WHAT OUR CLIENTS SAY</span>
-          <span className="block h-0.5 w-32 bg-[#FFD700]" />
+    <div className="mb-8 sm:mb-12 w-full flex items-center justify-center gap-4" style={{ alignItems: 'center' }}>
+              <span style={{ display: 'inline-block', width: '103px', height: 0, borderBottom: '2px solid #FFD700', verticalAlign: 'middle', position: 'relative', top: '-4px' }} />
+          <span
+            className="uppercase"
+            style={{
+              width: '386px',
+              height: '34.795px',
+              display: 'inline-block',
+              color: '#0E5248',
+              textAlign: 'center',
+              fontFamily: 'Roboto Serif, serif',
+              fontSize: '24px',
+              fontStyle: 'normal',
+              fontWeight: 400,
+              lineHeight: 'normal',
+              letterSpacing: '2.4px',
+              flexShrink: 0
+            }}
+          >
+            WHAT OUR CLIENTS SAY
+          </span>
+              <span style={{ display: 'inline-block', width: '103px', height: 0, borderBottom: '2px solid #FFD700', verticalAlign: 'middle', position: 'relative', top: '-4px' }} />
         </div>
         {/* Testimonial content */}
         <div className="mb-8 sm:mb-12">

@@ -58,172 +58,228 @@ export function ServicesSection() {
       <div className="relative z-10 w-full max-w-3xl mx-auto">
         {/* Section header */}
         <div className="text-center mb-10 sm:mb-16 px-2">
-          <p className="text-[#4f4e44] text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 uppercase opacity-90">
+          <p
+            className="text-[#4f4e44] mb-0 uppercase opacity-90"
+            style={{ fontFamily: 'Roboto Serif, serif', fontSize: '24px', fontWeight: 400, letterSpacing: '0.2em' }}
+          >
             SERVICES
           </p>
-          <div className="flex flex-row items-center justify-center gap-3 sm:gap-6 mb-4 sm:mb-8">
-            <span className="hidden sm:inline-block gold-vine-shine">
-              <svg width="64" height="24" viewBox="0 0 64 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="goldVineGradientL" x1="0" y1="12" x2="64" y2="12" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#FFD700"/>
-                    <stop offset="0.4" stopColor="#FFB300"/>
-                    <stop offset="0.6" stopColor="#FFF8DC"/>
-                    <stop offset="1" stopColor="#FFD700"/>
-                  </linearGradient>
-                  <linearGradient id="goldVineShineL">
-                    <stop offset="0%" stopColor="#fff" stopOpacity="0"/>
-                    <stop offset="50%" stopColor="#fff" stopOpacity="0.7"/>
-                    <stop offset="100%" stopColor="#fff" stopOpacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0 12 Q16 0 32 12 Q48 24 64 12" stroke="url(#goldVineGradientL)" strokeWidth="2" fill="none"/>
-                <ellipse cx="8" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientL)"/>
-                <ellipse cx="56" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientL)"/>
-                <rect className="gold-vine-shine-rect" x="0" y="0" width="64" height="24" fill="url(#goldVineShineL)" style={{mixBlendMode:'lighten'}}/>
-              </svg>
-            </span>
-            <div className="relative inline-block">
-              <img
-                src="/images/11532497.png"
-                alt="Badge"
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700%] h-[700%] object-contain -z-10 select-none pointer-events-none"
-                draggable="false"
-              />
-                <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight relative inline-block px-8 py-3 gold-title">
-                  <span className="gold-gradient-title-shine-text">WHAT WE DO.</span>
-              </h2>
-            </div>
-            <span className="hidden sm:inline-block gold-vine-shine">
-              <svg width="64" height="24" viewBox="0 0 64 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="goldVineGradientR" x1="0" y1="12" x2="64" y2="12" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#FFD700"/>
-                    <stop offset="0.4" stopColor="#FFB300"/>
-                    <stop offset="0.6" stopColor="#FFF8DC"/>
-                    <stop offset="1" stopColor="#FFD700"/>
-                  </linearGradient>
-                  <linearGradient id="goldVineShineR">
-                    <stop offset="0%" stopColor="#fff" stopOpacity="0"/>
-                    <stop offset="50%" stopColor="#fff" stopOpacity="0.7"/>
-                    <stop offset="100%" stopColor="#fff" stopOpacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0 12 Q16 0 32 12 Q48 24 64 12" stroke="url(#goldVineGradientR)" strokeWidth="2" fill="none"/>
-                <ellipse cx="8" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientR)"/>
-                <ellipse cx="56" cy="12" rx="2.5" ry="3" fill="url(#goldVineGradientR)"/>
-                <rect className="gold-vine-shine-rect" x="0" y="0" width="64" height="24" fill="url(#goldVineShineR)" style={{mixBlendMode:'lighten'}}/>
-              </svg>
-            </span>
+          <div className="flex flex-row items-center justify-center mt-0" style={{ marginTop: '-8px' }}>
+            <h2 className="font-medium leading-tight relative inline-block px-8 py-3 gold-title" style={{ fontFamily: 'Roboto Serif, serif', fontSize: '96px' }}>
+              <span className="gold-gradient-title-static">What We Do</span>
+            </h2>
           </div>
-          <p className="text-xs sm:text-lg leading-relaxed max-w-3xl mx-auto text-black">
-            We offer a full suite of property management and investment services tailored for <span className="text-[#4f4e44] font-semibold">landlords</span>, <span className="text-[#4f4e44] font-semibold">tenants</span>, and <span className="text-[#4f4e44] font-semibold">investors</span>.
-          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', width: '100%', marginTop: '.5px' }}>
+            <p
+              style={{
+                width: '965px',
+                height: '75px',
+                flexShrink: 0,
+                color: '#0E5248',
+                textAlign: 'center',
+                fontFamily: 'var(--font-space)',
+                fontSize: '24px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '36px',
+                letterSpacing: 0,
+                margin: 0
+              }}
+            >
+              We offer a full suite of property management and investment services tailored for <span style={{ color: '#FFD700', fontWeight: 600 }}>landlords</span>, <span style={{ color: '#FFD700', fontWeight: 600 }}>tenants</span>, and <span style={{ color: '#FFD700', fontWeight: 600 }}>investors</span>.
+            </p>
+          </div>
         </div>
 
         {/* Carousel */}
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center" style={{ marginTop: '-100px' }}>
           <div className="w-full max-w-2xl mx-auto flex flex-col items-center">
-            <div className="relative w-full flex items-center justify-center h-44 sm:h-80 mb-3 sm:mb-4">
+            <div
+              className="relative flex items-center justify-center mb-3 sm:mb-4"
+              style={{ width: '1301px', height: '631px', flexShrink: 0 }}
+            >
+              {/* Third (outer left) card */}
+              <img
+                src={services[(current - 2 + services.length) % services.length].img}
+                alt={services[(current - 2 + services.length) % services.length].title}
+                className="absolute top-1/2 -translate-y-1/2 object-cover bg-[#FFD700]/10 opacity-100 scale-75 transition-all duration-500 shadow-md"
+                style={{
+                  left: '0px',
+                  width: '503px',
+                  height: '303px',
+                  flexShrink: 0,
+                  borderRadius: '30px',
+                  filter: 'none',
+                  zIndex: 0
+                }}
+                aria-hidden="true"
+                onError={(e) => { 
+                  e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
+                }}
+              />
               {/* Previous image */}
               <img
                 src={services[(current === 0 ? services.length - 1 : current - 1)].img}
                 alt={services[(current === 0 ? services.length - 1 : current - 1)].title}
-                className="absolute left-0 top-1/2 -translate-y-1/2 w-36 sm:w-64 h-36 sm:h-64 object-cover rounded-xl bg-[#FFD700]/10 opacity-60 scale-90 transition-all duration-500 z-0 shadow-md"
-                style={{ filter: 'blur(1px)' }}
+                className="absolute top-1/2 -translate-y-1/2 object-cover bg-[#FFD700]/10 opacity-100 scale-90 transition-all duration-500 shadow-md"
+                style={{
+                  left: '120px',
+                  width: '671px',
+                  height: '404px',
+                  flexShrink: 0,
+                  borderRadius: '30px',
+                  filter: 'none',
+                  zIndex: 1
+                }}
                 aria-hidden="true"
                 onError={(e) => { 
                   e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
                 }}
               />
               {/* Current image */}
-              <img
-                src={services[current].img}
-                alt={services[current].title}
-                className="relative z-10 w-64 sm:w-[32rem] h-56 sm:h-[20rem] object-cover rounded-2xl bg-[#FFD700]/10 shadow-xl transition-all duration-500"
-                onError={(e) => { 
-                  e.currentTarget.src = 'https://placehold.co/512x224/FFD700/fff?text=Service+Image'; 
+              <div
+                className="relative z-10 flex items-center justify-center opacity-100 transition-all duration-500"
+                style={{
+                  width: '797px',
+                  height: '480px',
+                  flexShrink: 0,
+                  borderRadius: '30px',
+                  background: `url(${services[current].img}) lightgray 50% / cover no-repeat`
                 }}
-              />
+              ></div>
               {/* Next image */}
               <img
                 src={services[(current === services.length - 1 ? 0 : current + 1)].img}
                 alt={services[(current === services.length - 1 ? 0 : current + 1)].title}
-                className="absolute right-0 top-1/2 -translate-y-1/2 w-36 sm:w-64 h-36 sm:h-64 object-cover rounded-xl bg-[#FFD700]/10 opacity-60 scale-90 transition-all duration-500 z-0 shadow-md"
-                style={{ filter: 'blur(1px)' }}
+                className="absolute top-1/2 -translate-y-1/2 object-cover bg-[#FFD700]/10 opacity-100 scale-90 transition-all duration-500 shadow-md"
+                style={{
+                  right: '120px',
+                  width: '671px',
+                  height: '404px',
+                  flexShrink: 0,
+                  borderRadius: '30px',
+                  filter: 'none',
+                  zIndex: 1
+                }}
+                aria-hidden="true"
+                onError={(e) => { 
+                  e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
+                }}
+              />
+              {/* Third (outer right) card */}
+              <img
+                src={services[(current + 2) % services.length].img}
+                alt={services[(current + 2) % services.length].title}
+                className="absolute top-1/2 -translate-y-1/2 object-cover bg-[#FFD700]/10 opacity-100 scale-75 transition-all duration-500 shadow-md"
+                style={{
+                  right: '0px',
+                  width: '503px',
+                  height: '303px',
+                  flexShrink: 0,
+                  borderRadius: '30px',
+                  filter: 'none',
+                  zIndex: 0
+                }}
                 aria-hidden="true"
                 onError={(e) => { 
                   e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
                 }}
               />
             </div>
-            <h3 className="text-lg sm:text-2xl font-semibold text-black mb-2 sm:mb-4 leading-snug">
-              {services[current].title.split(/(&|and|for|with|to|by|of|in|on|at|from|as|through|into|after|over|between|out|against|during|without|before|under|around|among)/gi).map((word, i) =>
-                ["Management", "Services", "Arrears", "Repairs", "Inventories", "Guidance", "Investors", "Support"].includes(word.trim()) ?
-                  <span key={i} className="text-[#4f4e44] font-semibold">{word}</span> : word
-              )}
-            </h3>
-            <p className="text-xs sm:text-base leading-relaxed mb-2 sm:mb-4 text-black">
-              {services[current].desc.split(/(secure|trusted|compliance|tenants|ROI|court|legal|support|network|documentation|accountability|advice|implementation|investment|properties|possession|experience|know-how)/gi).map((word, i) =>
-                ["secure", "trusted", "compliance", "tenants", "ROI", "court", "legal", "support", "network", "documentation", "accountability", "advice", "implementation", "investment", "properties", "possession", "experience", "know-how"].includes(word.trim()) ?
-                  <span key={i} className="text-[#4f4e44] font-semibold">{word}</span> : word
-              )}
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center mt-6 sm:mt-8 gap-4 sm:gap-8 w-full">
-            <button
-              type="button"
-              onClick={goPrev}
-              aria-label="Previous service"
-              className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] hover:bg-[#4f4e44] hover:text-white hover:border-[#4f4e44] transition mb-2 sm:mb-0"
-              style={{ boxShadow: 'none' }}
-            >
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M15 19l-7-7 7-7"/>
-              </svg>
-            </button>
-            <button
-              type="button"
-              onClick={goNext}
-              aria-label="Next service"
-              className="hidden sm:flex w-8 h-8 items-center justify-center rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] hover:bg-[#4f4e44] hover:text-white hover:border-[#4f4e44] transition"
-              style={{ boxShadow: 'none' }}
-            >
-              <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M9 5l7 7-7 7"/>
-              </svg>
-            </button>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', marginTop: '-32px' }}>
+              <h3
+                style={{
+                  width: '745px',
+                  height: 'auto',
+                  flexShrink: 0,
+                  color: '#EFBF04',
+                  textAlign: 'center',
+                  fontFamily: 'var(--font-space)',
+                  fontSize: '32px',
+                  fontStyle: 'normal',
+                  fontWeight: 700,
+                  lineHeight: '42px',
+                  marginBottom: '8px',
+                  marginTop: '0px'
+                }}
+              >
+                  {services[current].title}
+              </h3>
+              <p
+                style={{
+                  width: '1024px',
+                  height: '35px',
+                  flexShrink: 0,
+                  color: '#0E5248',
+                  textAlign: 'center',
+                  fontFamily: 'var(--font-space)',
+                  fontSize: '24px',
+                  fontStyle: 'normal',
+                  fontWeight: 400,
+                  lineHeight: '36px',
+                  marginBottom: '16px',
+                  marginTop: '0px'
+                }}
+              >
+                {services[current].desc}
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '20px', marginTop: '24px' }}>
+                <button
+                  type="button"
+                  onClick={goPrev}
+                  aria-label="Previous service"
+                  style={{
+                    width: '32px', height: '32px', borderRadius: '50%', border: '1px solid #4f4e44', background: 'transparent', color: '#4f4e44', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'background 0.2s, color 0.2s'
+                  }}
+                  onMouseOver={e => { e.currentTarget.style.background = '#4f4e44'; e.currentTarget.style.color = '#fff'; }}
+                  onMouseOut={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#4f4e44'; }}
+                >
+                  &#8592;
+                </button>
+                <button
+                  style={{
+                    padding: '10px 32px',
+                    background: '#EFBF04',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: '8px',
+                    fontFamily: 'var(--font-space)',
+                    fontSize: '20px',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    boxShadow: '0 2px 8px rgba(239,191,4,0.08)',
+                    transition: 'background 0.2s, color 0.2s'
+                  }}
+                  onMouseOver={e => { e.currentTarget.style.background = '#0E5248'; e.currentTarget.style.color = '#fff'; }}
+                  onMouseOut={e => { e.currentTarget.style.background = '#EFBF04'; e.currentTarget.style.color = '#fff'; }}
+                >
+                  View Services
+                </button>
+                <button
+                  type="button"
+                  onClick={goNext}
+                  aria-label="Next service"
+                  style={{
+                    width: '32px', height: '32px', borderRadius: '50%', border: '1px solid #4f4e44', background: 'transparent', color: '#4f4e44', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', transition: 'background 0.2s, color 0.2s'
+                  }}
+                  onMouseOver={e => { e.currentTarget.style.background = '#4f4e44'; e.currentTarget.style.color = '#fff'; }}
+                  onMouseOut={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#4f4e44'; }}
+                >
+                  &#8594;
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <style>{`
-        .gold-gradient-title-shine-text {
-          background: linear-gradient(90deg, #FFD700 0%, #FFB300 40%, #FFF8DC 60%, #FFD700 100%);
+        .gold-gradient-title-static {
+          background: linear-gradient(90deg, #FFD700 0%, #FFB300 50%, #FFD700 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
           text-fill-color: transparent;
-          position: relative;
           display: inline-block;
-        }
-        .gold-gradient-title-shine-text::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: -60%;
-          width: 50%;
-          height: 100%;
-          background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0) 100%);
-          opacity: 0.7;
-          pointer-events: none;
-          transition: none;
-          z-index: 2;
-          animation: gold-title-shine 2.2s 1 linear;
-        }
-        @keyframes gold-title-shine {
-          0% { left: -60%; }
-          70% { left: 70%; }
-          100% { left: 70%; }
         }
       `}</style>
     </section>
