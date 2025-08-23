@@ -5,7 +5,10 @@ import HeaderBlack from '@/components/HeaderBlack';
 import Hero from '@/pages/Testimonials/Hero';
 import { TestimonialsSection } from '@/pages/landingpage/TestimonialsSection';
 import { TrustedCompaniesSection } from '@/pages/landingpage/TrustedCompaniesSection';
+
 import MissionandVision from './AboutUs/MissionandVision';
+import Record from './Testimonials/Record';
+import { Cta } from '@/pages/landingpage/Cta';
 
 export default function Testimonials() {
   return (
@@ -15,7 +18,9 @@ export default function Testimonials() {
       <Hero />
       <TestimonialsSection />
       <TrustedCompaniesSection />
-      <MissionandVision />
+  <MissionandVision />
+  <Record />
+  <Cta />
       </main>
       <Footer />
     </>

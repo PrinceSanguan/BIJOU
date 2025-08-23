@@ -1,0 +1,146 @@
+
+.recordSection {
+  width: 100%;
+  background: #fff;
+  padding: 3.5rem 1rem 3.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.headingWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #17544c;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+.headingDivider {
+  height: 2px;
+  width: 60px;
+  background: #EFBF04;
+  border-radius: 1px;
+}
+
+.recordGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.recordCard {
+  background: #17544c;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 16px 0 rgba(23,84,76,0.07);
+  padding: 2.2rem 1.5rem 2.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  color: #fff;
+  min-height: 220px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: none;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.highlight {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #EFBF04;
+  font-family: 'Playfair Display', serif;
+  margin-right: 0.2rem;
+}
+
+.gold {
+  color: #EFBF04;
+}
+
+.cardTitleText {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.description {
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.95;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+}
+
+@media (min-width: 641px) {
+  .recordGrid {
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+  .recordCard {
+    flex: 1 1 0;
+    align-items: flex-start;
+    padding: 2.5rem 2rem;
+    min-height: 240px;
+    max-width: none;
+  }
+  .highlight {
+    font-size: 1.7rem;
+  }
+  .cardTitleText {
+    font-size: 1.35rem;
+  }
+  .description {
+    font-size: 1.05rem;
+  }
+  .heading {
+    font-size: 1.5rem;
+  }
+  .headingDivider {
+    width: 90px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .recordSection {
+    padding: 5rem 0 5rem 0;
+  }
+  .recordGrid {
+    gap: 3rem;
+  }
+  .highlight {
+    font-size: 2rem;
+  }
+  .cardTitleText {
+    font-size: 1.5rem;
+  }
+  .description {
+    font-size: 1.1rem;
+  }
+  .heading {
+    font-size: 1.7rem;
+  }
+  .headingDivider {
+    width: 120px;
+  }
+}

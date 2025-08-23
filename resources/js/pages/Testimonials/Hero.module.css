@@ -1,0 +1,133 @@
+
+.heroSection {
+  width: 100%;
+  background: #fff;
+  color: #0E5248;
+  padding: 3.5rem 1rem 2.5rem 1rem;
+  box-sizing: border-box;
+}
+
+.heroGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.heroTextCol {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #EFBF04;
+  margin-bottom: 0;
+  font-family: 'Playfair Display', serif;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.heroDescCol {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  color: #17544c;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+}
+
+.heroButtonRow {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1.5rem;
+}
+
+.heroButtonPrimary {
+  background: #17544c;
+  color: #fff;
+  padding: 0.7rem 2.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 16px 0 rgba(23,84,76,0.10);
+  transition: background 0.2s;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+.heroButtonPrimary:hover {
+  background: #0E5248;
+}
+
+.heroButtonSecondary {
+  background: #fff;
+  color: #17544c;
+  padding: 0.7rem 2.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 16px 0 rgba(23,84,76,0.10);
+  transition: background 0.2s, color 0.2s;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+.heroButtonSecondary:hover {
+  background: #f5f5f5;
+  color: #0E5248;
+}
+
+@media (min-width: 641px) {
+  .heroSection {
+    padding: 5rem 2rem 3rem 2rem;
+  }
+  .heroGrid {
+    flex-direction: row;
+    gap: 3rem;
+    align-items: flex-start;
+  }
+  .heroTextCol, .heroDescCol {
+    width: 50%;
+    text-align: left;
+  }
+  .heroTitle {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+  .heroSubtitle {
+    font-size: 1.18rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .heroSection {
+    padding: 7rem 0 4rem 0;
+  }
+  .heroTitle {
+    font-size: 5rem;
+    font-weight: 700;
+  }
+  .heroSubtitle {
+    font-size: 1.22rem;
+  }
+}
