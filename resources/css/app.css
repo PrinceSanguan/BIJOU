@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import './robot-serif.css';
+@import './space-grotesk.css';
 
 @plugin 'tailwindcss-animate';
 

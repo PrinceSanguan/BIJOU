@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 
 class ServicesController extends Controller {
     private $services = [
-        1 => [
+    1 => [
             'id' => 1,
             'title' => 'Rent Arrears Management',
             'description' => 'Sheffield landlords lose thousands annually due to rent arrears and late payments. The National Residential Landlords Association reports that 47% of UK landlords experienced rent arrears in 2024, with average collection delays costing £2,100 per property yearly.'
                 . ' Managing rent collection manually creates endless stress: chasing tenants via phone calls, tracking multiple payment dates, handling excuses, and maintaining complex spreadsheets. HMO landlords face even greater challenges with multiple tenants per property, increasing arrears risk exponentially.'
                 . ' Our professional rent management service eliminates these headaches completely. We handle everything from automated collection to legal compliance, ensuring your rental income flows reliably whilst you focus on growing your property portfolio. With Sheffield\'s rental market tightening and the Renters Reform Bill introducing stricter landlord obligations, professional rent management isn\'t luxury, it\'s essential protection for your investment.',
             'image' => '/images/services/rent-arrears.jpg',
+            'subtext' => "Stop chasing rent. We'll get your money back professionally - without destroying tenant relationships",
             'details' => [
                 'Professional rent collection and monitoring',
                 'Personalized payment plans',
@@ -21,11 +22,12 @@ class ServicesController extends Controller {
                 'Debt recovery assistance'
             ]
         ],
-        2 => [
+    2 => [
             'id' => 2,
             'title' => 'Eviction and Possession Assistance',
             'description' => 'Evicting tenants is one of the most stressful experiences any landlord faces. Whether dealing with rent arrears, property damage, or tenants who simply refuse to leave, the legal process is complex and mistakes are costly. One wrong move incorrect notice periods, improper serving procedures, or missing court deadlines can delay possession by months and cost thousands in legal fees. Meanwhile, mortgage payments continue and rental income stops. Our eviction assistance service handles every aspect of the legal process professionally. From serving compliant notices to court representation, we ensure fast, lawful possession recovery whilst protecting your rights as a landlord throughout Sheffield and South Yorkshire.',
             'image' => '/images/services/eviction.jpg',
+            'subtext' => 'From difficult tenants to court proceedings, we handle the legal side so you can take back control of your property  fast and fairly.',
             'details' => [
                 'Legal compliance checks',
                 'Notice serving',
@@ -34,11 +36,12 @@ class ServicesController extends Controller {
                 'Property handover'
             ]
         ],
-        3 => [
+    3 => [
             'id' => 3,
             'title' => 'Property Staging and Room Setup',
             'description' => 'Sheffield\'s rental market moves fast, and empty properties cost money every single day through mortgage payments, council tax, and lost rental income. Professional property staging transforms cold, empty spaces into aspirational homes that tenants can immediately envision living in, using contemporary furnishings, optimal lighting, and strategic layouts that maximize perceived space while highlighting each property\'s unique selling points. With over 15 years of Sheffield rental market experience and 500+ properties staged, Bijou Group understands what different tenant demographics want across Sheffield\'s diverse neighborhoods - from students near university areas to young professionals in trendy districts and families in suburban locations. Our complete staging service handles everything from furniture selection and delivery to room optimization and styling, creating spaces that photograph beautifully online and impress during viewings. The results speak for themselves: staged properties rent 40% faster than unstaged equivalents, command £50-80 higher monthly rents, and 85% receive multiple tenant applications. Whether you need rapid turnaround staging for HMO rooms, student property staging, family home transformation, or executive-level staging for professional lets, we offer flexible packages that pay for themselves within weeks through dramatically reduced void periods and consistently higher rental rates from quality tenants.',
             'image' => '/images/services/staging.jpg',
+            'subtext' => 'Transform empty rentals into tenant magnets. Professional staging that fills properties 40% faster with higher rents.',
             'details' => [
                 'Furniture arrangement',
                 'Decor and accessories',
@@ -57,22 +60,24 @@ class ServicesController extends Controller {
                 'Digital and paper copies',
             ]
         ],
-        5 => [
+    5 => [
             'id' => 5,
             'title' => 'Property Compliance & Certification',
             'description' => 'Managing property compliance is complex and time-consuming. Gas Safety certificates expire annually, EICR electrical checks are required every five years, EPC renewals last ten years, plus HMO licensing, fire safety requirements, and Legionella assessments all demand attention. Missing deadlines results in council fines, potential prosecution, and safety risks. Sheffield City Council issued over 200 compliance penalties in 2024, with fines ranging from £1,000 to £30,000 for serious breaches. Our comprehensive compliance management service eliminates these risks. We handle every certificate, renewal, and legal requirement so your properties remain safe, legal, and profitable whilst you focus on growing your portfolio.',
             'image' => '/images/services/compliance.jpg',
+            'subtext' => 'From Gas Safety to EICR and EPC  we handle every legal requirement so your property is always safe, compliant, and worry-free.',
             'details' => [
                 'Gas safety certificates',
                 'EPCs',
                 'Electrical safety checks',
             ]
         ],
-        6 => [
+    6 => [
             'id' => 6,
             'title' => 'Tenancy Management',
             'description' => 'Running rental properties shouldn\'t feel like a second job. Between drafting agreements, handling deposits, coordinating inspections, and managing renewals, many landlords find themselves overwhelmed by the administrative demands of modern property management. We take care of it all. Our comprehensive approach ensures your properties remain compliant with current legislation while maintaining professional standards that keep tenants satisfied and your investment protected. Working with landlords across Sheffield and beyond, we\'ve refined our process to deliver results that matter: reduced stress, improved compliance, and better rental returns.',
             'image' => '/images/services/tenancy.jpg',
+            'subtext' => 'From tenancy agreements and deposits to renewals and inspections, we ensure your tenancies are compliant and professionally managed.',
             'details' => [
                 'Tenancy agreements',
                 'Renewals and terminations',
@@ -90,24 +95,26 @@ class ServicesController extends Controller {
                 'Ongoing support',
             ]
         ],
-        8 => [
+    8 => [
             'id' => 8,
             'title' => 'Rent Management and Collection',
             'description' => 'Sheffield landlords lose thousands annually due to rent arrears and late payments. The National Residential Landlords Association reports that 47% of UK landlords experienced rent arrears in 2024, with average collection delays costing £2,100 per property yearly.'
                 . ' Managing rent collection manually creates endless stress: chasing tenants via phone calls, tracking multiple payment dates, handling excuses, and maintaining complex spreadsheets. HMO landlords face even greater challenges with multiple tenants per property, increasing arrears risk exponentially.'
                 . ' Our professional rent management service eliminates these headaches completely. We handle everything from automated collection to legal compliance, ensuring your rental income flows reliably whilst you focus on growing your property portfolio. With Sheffield\'s rental market tightening and the Renters Reform Bill introducing stricter landlord obligations, professional rent management isn\'t luxury it\'s essential protection for your investment.',
             'image' => '/images/services/rent-collection.jpg',
+            'subtext' => 'Ensure your rental income is always on time, reduce arrears, and keep your finances completely stress-free with our automated rent management system.',
             'details' => [
                 'Automated reminders',
                 'Payment tracking',
                 'Reporting',
             ]
         ],
-        9 => [
+    9 => [
             'id' => 9,
             'title' => 'Property Maintenance and Repair',
             'description' => 'Property maintenance issues escalate quickly without professional attention. Delayed repairs lead to tenant complaints, costly emergency call-outs, and potential legal compliance breaches. A simple leak can cause structural damage costing thousands, whilst electrical faults create serious safety risks. Sheffield landlords face particular challenges with older Victorian properties requiring frequent attention and HMO licensing demanding strict compliance standards. Our comprehensive property maintenance service eliminates these risks through proactive care and rapid response systems. We maintain your property\'s condition, ensure legal compliance, and keep tenants satisfied through professional, reliable service that protects your investment long-term.',
             'image' => '/images/services/maintenance.jpg',
+            'subtext' => 'Keep your property safe, compliant, and in top condition with our vetted network of professional tradespeople.',
             'details' => [
                 'Routine maintenance',
                 'Emergency repairs',
@@ -125,24 +132,26 @@ class ServicesController extends Controller {
                 'Due diligence',
             ]
         ],
-        11 => [
+    11 => [
             'id' => 11,
             'title' => 'Tenant Find Services',
             'description' => 'Vacant properties in Sheffield cost landlords £150+ daily in lost rental income. Poor tenant selection leads to rent arrears, property damage, and expensive eviction processes that can take months to resolve. Our professional tenant find service eliminates these costly risks. We connect your property with pre-qualified, fully referenced tenants through comprehensive marketing and strict vetting processes. With Sheffield\'s evolving HMO licensing requirements and increasing tenant demand, securing compliant, reliable occupants protects both your immediate income and long-term investment value. Whether you own a student house in Broomhill, a professional HMO in Crookes, or family rental in Ecclesall, we understand Sheffield\'s diverse rental markets and attract the right tenant profile for your property type.',
             'image' => '/images/services/tenant-find.jpg',
+            'subtext' => 'We handle advertising, viewings, and rigorous tenant referencing to fill your property quickly with quality, compliant tenants who protect your rental income.',
             'details' => [
                 'Marketing',
                 'Viewings',
                 'Referencing',
             ]
         ],
-        12 => [
+    12 => [
             'id' => 12,
             'title' => 'Full-Service Property',
             'description' => 'Managing HMO and Buy-to-Let properties in South Yorkshire requires specialist knowledge, constant attention, and significant time investment. Our professional landlord services eliminate operational burdens while maximizing investment returns through systematic property management processes tailored to the local market. '
                 . 'Complex regulatory compliance and HMO licensing requirements with local authorities. Tenant acquisition, vetting, and ongoing relationship management in competitive university markets. Financial administration and rent collection optimization for diverse tenant demographics. Legal procedures and dispute resolution within Yorkshire\'s property law framework. '
                 . 'Our comprehensive property management solutions provide complete operational coverage, enabling property owners to focus on portfolio growth and strategic investment decisions within this thriving market.',
             'image' => '/images/services/full-service.jpg',
+            'subtext' => 'Stop losing sleep over problem tenants, compliance headaches, and empty properties',
             'details' => [
                 'End-to-end management',
                 'All-inclusive service',

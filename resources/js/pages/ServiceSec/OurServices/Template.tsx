@@ -29,7 +29,12 @@ export default function Template({ service }: TemplateProps) {
             <main role="main">  
                 <section className="py-16 px-4">
                     <div className="max-w-7xl mx-auto">
-                        <h1 className="text-3xl md:text-5xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8">Our Services</h1>
+                        <h1 className="text-5xl md:text-7xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8 font-robot-serif">Our Services</h1>
+                        {service.subtext && (
+                            <div className={`text-lg text-center text-[#0E5248] px-4 mt-2 mb-8 font-medium${service.subtext === 'Stop losing sleep over problem tenants, compliance headaches, and empty properties' ? ' font-space-grotesk' : ''}`}>
+                                {service.subtext}
+                            </div>
+                        )}
                         <div className="relative h-96 rounded-2xl overflow-hidden mb-16">
                            
                             <img 
@@ -43,12 +48,27 @@ export default function Template({ service }: TemplateProps) {
                             />
                            
                         </div>
-                        <h1 className="text-2xl md:text-5xl font-bold text-[#0E5248] text-center px-4">
-                                    {service.title}
+                        <h1 className="text-2xl md:text-5xl font-bold text-[#0E5248] text-center px-4 font-robot-serif">
+                            {service.title}
                         </h1>
-                        <p className="text-xl text-center px-4 mt-10">
-                                    {service.description}
-                        </p>
+                        {(() => {
+                            const desc = service.description || '';
+                            const mid = Math.floor(desc.length / 2);
+                            // Find the nearest space after the midpoint for a clean split
+                            let splitIdx = desc.indexOf(' ', mid);
+                            if (splitIdx === -1) splitIdx = mid;
+                            const first = desc.slice(0, splitIdx).trim();
+                            const second = desc.slice(splitIdx).trim();
+                            return [first, second].map((para: string, idx: number) => (
+                                <p
+                                    key={idx}
+                                    className="text-xl text-center px-4 mt-10 font-space-grotesk text-green-700"
+                                    style={idx > 0 ? { marginTop: '1.5rem' } : {}}
+                                >
+                                    {para}
+                                </p>
+                            ));
+                        })()}
                     </div>
                 </section>
                 <div className="mt-12 mb-12">
