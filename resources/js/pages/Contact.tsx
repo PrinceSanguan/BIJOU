@@ -14,7 +14,7 @@ export default function Contact() {
           <ContactSection />
         </div>
       </main>
-      <Footer className="mt-auto" />
+      <Footer />
     </div>
   );
 }

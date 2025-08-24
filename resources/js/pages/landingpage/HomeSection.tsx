@@ -98,10 +98,16 @@ export function HomeSection() {
 
         {/* Buttons - stacked on mobile, side by side on larger screens */}
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-none mx-auto w-full">
-          <button className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden">
+          <button
+            className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden"
+            onClick={() => window.location.href = '/contact'}
+          >
             I'm a Landlord
           </button>
-          <button className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden">
+          <button
+            className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden"
+            onClick={() => window.location.href = '/contact'}
+          >
             I'm Looking for Properties
           </button>
         </div>

@@ -154,6 +154,7 @@ export function ServicesSection() {
                 </button>
                 <button
                   className="px-4 py-2 sm:px-6 sm:py-2 md:px-8 md:py-3 bg-[#EFBF04] text-white rounded-lg font-sans text-xs sm:text-base md:text-lg font-bold shadow-md transition-colors duration-200 hover:bg-[#0E5248] hover:text-white focus:outline-none"
+                  onClick={() => window.location.href = '/services'}
                 >
                   View Services
                 </button>

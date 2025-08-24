@@ -8,12 +8,12 @@ export default function Header() {
     <header className="w-full bg-transparent absolute top-0 left-0 z-50">
       <nav className="flex items-center justify-between py-6 px-6 w-full">
         {/* Logo */}
-        <div className="flex items-center space-x-3 group/logo cursor-pointer">
+        <a href="/" className="flex items-center space-x-3 group/logo cursor-pointer" aria-label="Go to home page">
           <span className="w-9 h-9 rounded-full bg-white flex items-center justify-center overflow-hidden">
             <img src="/images/Circular logo.png" alt="Bijou Group Logo" className="w-full h-full object-cover rounded-full" />
           </span>
           <span className="logo-gold-shine text-white font-medium text-lg transition-colors">Bijou Group</span>
-        </div>
+        </a>
         
         {/* Hamburger Menu Button */}
         <button 

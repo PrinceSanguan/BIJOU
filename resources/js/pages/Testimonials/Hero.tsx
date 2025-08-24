@@ -28,6 +28,16 @@ const Hero: React.FC<HeroProps> = ({
     onViewTestimonials,
     onReadMore,
 }) => {
+    // Handler for Learn More button to navigate to /about
+    const handleReadMore = () => {
+        window.location.href = '/about';
+        if (onReadMore) onReadMore();
+    };
+    // Handler for View Services button
+    const handleViewServices = () => {
+        window.location.href = '/services';
+        if (onViewTestimonials) onViewTestimonials();
+    };
     return (
         <section className={styles.heroSection} aria-label="Testimonials Hero">
             <div className={styles.heroGrid}>
@@ -37,11 +47,11 @@ const Hero: React.FC<HeroProps> = ({
                 <div className={styles.heroDescCol}>
                     <p className={styles.heroSubtitle}>{subtitle}</p>
                     <div className={styles.heroButtonRow}>
-                        <button className={styles.heroButtonPrimary} onClick={onViewTestimonials} type="button">
-                            View Testimonials
+                        <button className={styles.heroButtonPrimary} onClick={handleViewServices} type="button">
+                            View Services
                         </button>
-                        <button className={styles.heroButtonSecondary} onClick={onReadMore} type="button">
-                            Read More
+                        <button className={styles.heroButtonSecondary} onClick={handleReadMore} type="button">
+                            Learn More
                         </button>
                     </div>
                 </div>

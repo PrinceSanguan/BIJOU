@@ -50,7 +50,7 @@ function Hero() {
   const goNext = () => setCurrent(c => (c === services.length - 1 ? 0 : c + 1));
 
   return (
-          <section className="relative w-full py-10 sm:py-14 md:py-20 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center">
+          <section className="relative w-full pt-10 sm:pt-14 md:pt-20 pb-0 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center">
             {/* Geometric accent elements */}
             <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
             <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
@@ -151,11 +151,7 @@ function Hero() {
                       >
                         &#8592;
                       </button>
-                      <button
-                        className="px-4 py-2 sm:px-6 sm:py-2 md:px-8 md:py-3 bg-[#EFBF04] text-white rounded-lg font-sans text-xs sm:text-base md:text-lg font-bold shadow-md transition-colors duration-200 hover:bg-[#0E5248] hover:text-white focus:outline-none"
-                      >
-                        View Services
-                      </button>
+                      {/* View Services button removed as requested */}
                       <button
                         type="button"
                         onClick={goNext}
