@@ -2,7 +2,7 @@
 
 .readMoreSection {
   width: 100%;
-  background: #fff;
+  background: #fff; /* Section background is also #fff, so this ensures consistency */
   padding: 2.5rem 1rem;
 }
 
@@ -29,7 +29,8 @@
   width: 100%;
   border-radius: 1rem;
   object-fit: cover;
-  box-shadow: 0 4px 32px rgba(14,82,72,0.10);
+  box-shadow: none;
+  background: transparent;
 }
 
 .readMoreContent {

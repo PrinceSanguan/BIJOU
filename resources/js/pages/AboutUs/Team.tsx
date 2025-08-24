@@ -15,24 +15,26 @@ const members: TeamMember[] = [
         name: 'Richard Tovey',
         role: 'First Home Landlord',
         subtitle: 'Richard Tovey',
-        image: '/images/AboutUs/human1.jpg',
+        image: '',
         socials: {},
     },
     {
         name: 'John Doe',
         role: 'First Home Landlord',
         subtitle: 'John Doe',
-        image: '/images/AboutUs/human2.jpg',
+        image: '',
         socials: {},
     },
     {
         name: 'John Doe',
         role: 'First Home Landlord',
         subtitle: 'John Doe',
-        image: '/images/AboutUs/human1.jpg',
+        image: '',
         socials: {},
     },
 ];
+
+const DEFAULT_TEAM_IMAGE = "https://placehold.co/320x320/0E5248/fff?text=Team+Member";
 
 const TeamCard: React.FC<TeamMember> = ({ name, role, image, subtitle, socials }) => (
     <div className={styles.teamCard}>
@@ -60,7 +62,7 @@ const Team: React.FC = () => (
         </div>
         <div className={styles.teamGrid}>
             {members.map((member, idx) => (
-                <TeamCard key={idx} {...member} />
+                    <TeamCard key={idx} {...{ ...member, image: member.image || DEFAULT_TEAM_IMAGE }} />
             ))}
         </div>
     </section>

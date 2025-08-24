@@ -35,7 +35,11 @@ function ReadMoreCard({ title, text, image, imageAlt, buttonLabel = 'Read More',
     );
 }
 
-const heroImage = '/images/AboutUs/hero.jpg';
+
+// Service-specific images (matching backend)
+const tenantFindImage = '/images/servicesimg/Rectangle 18480.webp';
+const rentManagementImage = '/images/servicesimg/Rectangle 18480 (1).webp';
+const maintenanceImage = '/images/servicesimg/Rectangle 18480 (2).webp';
 
 export default function ReadMore() {
     // Handler to navigate to the correct service page by service id
@@ -48,14 +52,14 @@ export default function ReadMore() {
                 <ReadMoreCard
                     title="Tenant Find Services"
                     text="We advertise across major platforms, conduct viewings, and carry out thorough referencing checks to find reliable tenants quickly and reduce costly void periods."
-                    image={heroImage}
+                    image={tenantFindImage}
                     imageAlt="Tenant Find Services"
                     onButtonClick={() => goToService(11)}
                 />
                 <ReadMoreCard
                     title="Rent Management and Collection"
                     text="We ensure rent is paid on time, handle arrears promptly, and provide transparent monthly statements to keep your finances in check. Our guaranteed rent Sheffield service offers complete peace of mind."
-                    image={heroImage}
+                    image={rentManagementImage}
                     imageAlt="Rent Management and Collection"
                     reverse
                     onButtonClick={() => goToService(8)}
@@ -63,7 +67,7 @@ export default function ReadMore() {
                 <ReadMoreCard
                     title="Property Maintenance and Repairs"
                     text="Our network of vetted tradespeople ensures prompt and professional maintenance for everything from emergency repairs to routine upkeep across Sheffield properties."
-                    image={heroImage}
+                    image={maintenanceImage}
                     imageAlt="Property Maintenance and Repairs"
                     onButtonClick={() => goToService(9)}
                 />

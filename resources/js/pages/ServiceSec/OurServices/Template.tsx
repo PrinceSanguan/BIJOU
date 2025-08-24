@@ -35,7 +35,7 @@ export default function Template({ service }: TemplateProps) {
                                 {service.subtext}
                             </div>
                         )}
-                        <div className="relative h-96 rounded-2xl overflow-hidden mb-16">
+                        <div className="relative mb-16">
                            
                             <img 
                                 src={service.image} 

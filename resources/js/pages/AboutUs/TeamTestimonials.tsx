@@ -30,23 +30,27 @@ interface PersonCardProps {
   imageUrl: string;
   socials: { href: string; label: string; icon: React.ReactNode }[];
 }
-const PersonCard: React.FC<PersonCardProps> = ({ name, role, bio, imageUrl, socials }) => (
-  <div className={styles.mainCard}>
-    <div className={styles.image} style={{ backgroundImage: `url(${imageUrl})` }} />
-    <div className={styles.info}>
-      <h3 className={styles.name}>{name}</h3>
-      <div className={styles.role}>{role}</div>
-      <div className={styles.socialRow}>
-        {socials.map((s, i) => (
-          <SocialButton key={i} href={s.href} label={s.label} className={styles.socialIcon}>
-            {s.icon}
-          </SocialButton>
-        ))}
+const DEFAULT_PERSON_IMAGE = "https://placehold.co/320x320/0E5248/fff?text=Team+Member";
+const PersonCard: React.FC<PersonCardProps> = ({ name, role, bio, imageUrl, socials }) => {
+  const img = imageUrl || DEFAULT_PERSON_IMAGE;
+  return (
+    <div className={styles.mainCard}>
+      <div className={styles.image} style={{ backgroundImage: `url(${img})` }} />
+      <div className={styles.info}>
+        <h3 className={styles.name}>{name}</h3>
+        <div className={styles.role}>{role}</div>
+        <div className={styles.socialRow}>
+          {socials.map((s, i) => (
+            <SocialButton key={i} href={s.href} label={s.label} className={styles.socialIcon}>
+              {s.icon}
+            </SocialButton>
+          ))}
+        </div>
+        <p className={styles.bio}>{bio}</p>
       </div>
-      <p className={styles.bio}>{bio}</p>
     </div>
-  </div>
-);
+  );
+};
 
 // Support Team Section
 const SupportTeam: React.FC = () => (
@@ -83,7 +87,7 @@ const TeamTestimonials: React.FC = () => {
         name="Karen Hodgson"
         role="Founder & Managing Director"
         bio="Karen leads Bijou Relocation with over 20 years in the housing sector, developing deep understanding of residential management and commercial property operations. Her 15+ years of family business experience provided invaluable insights into building sustainable, relationship-focused enterprises, while 8+ years of independent business leadership prove her ability to deliver consistent results."
-        imageUrl="/images/11532497.png"
+        imageUrl=""
         socials={[
           { href: '#', label: 'Instagram', icon: <Instagram size={16} color="#fff" /> },
           { href: '#', label: 'Facebook', icon: <Facebook size={16} color="#fff" /> },

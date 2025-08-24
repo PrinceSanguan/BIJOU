@@ -41,7 +41,7 @@ const MissionAndVision: FC = () => (
         </Section>
         <Section
             title="Our Vision"
-            image="/images/AboutUs/Mission.jpg"
+            image="/images/AboutUs/IMG-20250701-WA0001.webp"
             alt="Our Vision"
             reverse
         >
