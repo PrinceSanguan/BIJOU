@@ -15,10 +15,10 @@ export default function Services() {
     <div>
     <main>
         <HeaderBlack />
-        <div className="mb-28">
+        <div className="mb-1">
           <Hero />
         </div>
-        <div className="mt-12 mb-12">
+        <div className="mt-1 mb-1">
         <Featured />
         </div>
         <ReadMore />

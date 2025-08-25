@@ -56,14 +56,14 @@ const PersonCard: React.FC<PersonCardProps> = ({ name, role, bio, imageUrl, soci
 const SupportTeam: React.FC = () => (
   <div className={styles.supportSection}>
     <div className={styles.supportHeader}>
-  <span style={{ display: 'flex', alignItems: 'flex-end', marginRight: '2.5rem', position: 'relative', top: '-0.075rem' }}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="103" height="2" viewBox="0 0 104 2" fill="none">
+  <span style={{ display: 'flex', alignItems: 'flex-end', marginRight: '1rem', position: 'relative', top: '-0.075rem' }}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="2" viewBox="0 0 104 2" fill="none">
           <path d="M1 0C0.447715 0 0 0.447715 0 1C0 1.55228 0.447715 2 1 2V1V0ZM1 1V2H104V1V0H1V1Z" fill="#0E5248" stroke="#0E5248" strokeWidth="2" />
         </svg>
       </span>
       <span className={styles.supportTitle}>OUR SUPPORT TEAM</span>
-  <span style={{ display: 'flex', alignItems: 'flex-end', marginLeft: '2.5rem', position: 'relative', top: '-0.075rem' }}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="103" height="2" viewBox="0 0 104 2" fill="none">
+  <span style={{ display: 'flex', alignItems: 'flex-end', marginLeft: '1rem', position: 'relative', top: '-0.075rem' }}>
+        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="2" viewBox="0 0 104 2" fill="none">
           <path d="M1 0C0.447715 0 0 0.447715 0 1C0 1.55228 0.447715 2 1 2V1V0ZM1 1V2H104V1V0H1V1Z" fill="#0E5248" stroke="#0E5248" strokeWidth="2" />
         </svg>
       </span>

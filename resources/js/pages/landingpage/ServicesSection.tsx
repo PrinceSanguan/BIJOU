@@ -45,9 +45,65 @@ export function ServicesSection() {
     }
   ];
   const [current, setCurrent] = useState(0);
+  const [prev, setPrev] = useState(0);
+  const [direction, setDirection] = useState<'left' | 'right'>('right');
+  // For swipe/drag
+  const [dragStartX, setDragStartX] = useState<number | null>(null);
+  const [dragging, setDragging] = useState(false);
 
-  const goPrev = () => setCurrent(c => (c === 0 ? services.length - 1 : c - 1));
-  const goNext = () => setCurrent(c => (c === services.length - 1 ? 0 : c + 1));
+  const goPrev = () => {
+    setPrev(current);
+    setDirection('left');
+    setCurrent(c => (c === 0 ? services.length - 1 : c - 1));
+  };
+  const goNext = () => {
+    setPrev(current);
+    setDirection('right');
+    setCurrent(c => (c === services.length - 1 ? 0 : c + 1));
+  };
+
+  // Touch/Pointer/Mouse event handlers for swipe/drag
+  const handleDragStart = (e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
+    setDragging(true);
+    if ('touches' in e) {
+      setDragStartX(e.touches[0].clientX);
+    } else {
+      setDragStartX(e.clientX);
+    }
+  };
+
+  const handleDragMove = (e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
+    if (!dragging || dragStartX === null) return;
+    let clientX;
+    if ('touches' in e) {
+      clientX = e.touches[0].clientX;
+    } else {
+      clientX = e.clientX;
+    }
+    // Optionally, you can add visual feedback here
+  };
+
+  const handleDragEnd = (e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
+    if (!dragging || dragStartX === null) return;
+    let clientX;
+    if ('changedTouches' in e) {
+      clientX = e.changedTouches[0].clientX;
+    } else if ('clientX' in e) {
+      clientX = e.clientX;
+    } else {
+      clientX = 0;
+    }
+    const diff = clientX - dragStartX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        goPrev();
+      } else {
+        goNext();
+      }
+    }
+    setDragging(false);
+    setDragStartX(null);
+  };
 
   return (
   <section className="relative w-full py-10 sm:py-14 md:py-20 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center">
@@ -76,7 +132,15 @@ export function ServicesSection() {
         <div className="flex flex-col items-center justify-center mt-0 md:-mt-16">
           <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-5xl mx-auto flex flex-col items-center">
             <div
-              className="relative flex items-center justify-center mb-2 sm:mb-4 w-full h-auto lg:w-[1301px] lg:h-[631px]"
+              className="relative flex items-center justify-center mb-2 sm:mb-4 w-full h-auto lg:w-[1301px] lg:h-[631px] select-none"
+              onTouchStart={handleDragStart}
+              onTouchMove={handleDragMove}
+              onTouchEnd={handleDragEnd}
+              onMouseDown={handleDragStart}
+              onMouseMove={dragging ? handleDragMove : undefined}
+              onMouseUp={handleDragEnd}
+              onMouseLeave={dragging ? handleDragEnd : undefined}
+              style={{touchAction: 'pan-y'}}
             >
               <div
                 className="hidden md:block lg:block absolute top-1/2 -translate-y-1/2 overflow-hidden left-0 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[503px] lg:h-[303px] z-0 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60"
@@ -90,6 +154,7 @@ export function ServicesSection() {
                   onError={(e) => { 
                     e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
                   }}
+                  draggable={false}
                 />
               </div>
               <div
@@ -104,6 +169,7 @@ export function ServicesSection() {
                   onError={(e) => { 
                     e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
                   }}
+                  draggable={false}
                 />
               </div>
               <div
@@ -115,15 +181,55 @@ export function ServicesSection() {
                   "lg:w-[797px] lg:h-[480px]"
                 ].join(' ')}
                 onClick={() => window.location.href = `/services/${current + 1}`}
+                style={{
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
               >
-                <img
-                  src={services[current].img}
-                  alt={services[current].title}
-                  className="w-full h-full object-cover scale-130 transition-transform duration-500 group-hover:scale-140"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image';
+                <div
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    transition: 'transform 0.5s cubic-bezier(0.4,0,0.2,1)',
+                    transform: `translateX(${direction === 'right' ? '-100%' : '100%'})`,
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    pointerEvents: 'none',
+                    opacity: 0,
                   }}
-                />
+                  key={prev}
+                >
+                  <img
+                    src={services[prev].img}
+                    alt={services[prev].title}
+                    className="w-full h-full object-cover scale-130"
+                    draggable={false}
+                  />
+                </div>
+                <div
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    transition: 'transform 0.5s cubic-bezier(0.4,0,0.2,1)',
+                    transform: `translateX(0%)`,
+                    position: 'relative',
+                    zIndex: 2,
+                  }}
+                  key={current}
+                >
+                  <img
+                    src={services[current].img}
+                    alt={services[current].title}
+                    className="w-full h-full object-cover scale-130 transition-transform duration-500 group-hover:scale-140"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image';
+                    }}
+                    draggable={false}
+                  />
+                </div>
               </div>
               <div
                 className="hidden sm:block absolute top-1/2 -translate-y-1/2 overflow-hidden right-2 md:right-8 lg:right-24 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[671px] lg:h-[404px] z-10 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60"
@@ -137,6 +243,7 @@ export function ServicesSection() {
                   onError={(e) => { 
                     e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
                   }}
+                  draggable={false}
                 />
               </div>
               <div
@@ -151,6 +258,7 @@ export function ServicesSection() {
                   onError={(e) => { 
                     e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
                   }}
+                  draggable={false}
                 />
               </div>
             </div>

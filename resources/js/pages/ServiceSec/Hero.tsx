@@ -44,13 +44,71 @@ function Hero() {
       img: '/images/servicesimg/Rectangle 18480-8.webp'
     }
   ];
-  const [current, setCurrent] = useState(0);
 
-  const goPrev = () => setCurrent(c => (c === 0 ? services.length - 1 : c - 1));
-  const goNext = () => setCurrent(c => (c === services.length - 1 ? 0 : c + 1));
+  const [current, setCurrent] = useState(0);
+  // For swipe/drag
+  const [dragStartX, setDragStartX] = useState<number | null>(null);
+  const [dragging, setDragging] = useState(false);
+  // For slide animation
+  const [prev, setPrev] = useState(0);
+  const [direction, setDirection] = useState<'left' | 'right'>('right');
+
+  const goPrev = () => {
+    setPrev(current);
+    setDirection('left');
+    setCurrent(c => (c === 0 ? services.length - 1 : c - 1));
+  };
+  const goNext = () => {
+    setPrev(current);
+    setDirection('right');
+    setCurrent(c => (c === services.length - 1 ? 0 : c + 1));
+  };
+
+  // Touch/Pointer/Mouse event handlers for swipe/drag
+  const handleDragStart = (e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
+    setDragging(true);
+    if ('touches' in e) {
+      setDragStartX(e.touches[0].clientX);
+    } else {
+      setDragStartX(e.clientX);
+    }
+  };
+
+  const handleDragMove = (e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
+    if (!dragging || dragStartX === null) return;
+    let clientX;
+    if ('touches' in e) {
+      clientX = e.touches[0].clientX;
+    } else {
+      clientX = e.clientX;
+    }
+    // Optionally, you can add visual feedback here
+  };
+
+  const handleDragEnd = (e: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>) => {
+    if (!dragging || dragStartX === null) return;
+    let clientX;
+    if ('changedTouches' in e) {
+      clientX = e.changedTouches[0].clientX;
+    } else if ('clientX' in e) {
+      clientX = e.clientX;
+    } else {
+      clientX = 0;
+    }
+    const diff = clientX - dragStartX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        goPrev();
+      } else {
+        goNext();
+      }
+    }
+    setDragging(false);
+    setDragStartX(null);
+  };
 
   return (
-          <section className="relative w-full pt-10 sm:pt-14 md:pt-20 pb-0 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center">
+          <section className="relative w-full pt-10 sm:pt-14 md:pt-20 pb-0 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center mt-8">
             {/* Geometric accent elements */}
             <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
             <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
@@ -60,7 +118,7 @@ function Hero() {
               {/* Section header */}
               <div className="text-center mb-8 sm:mb-12 md:mb-16 px-1 sm:px-2">
                 <div className="flex flex-row items-center justify-center mt-0 -mt-2">
-                  <h2 className="font-medium leading-tight relative inline-block px-2 sm:px-6 md:px-8 py-2 sm:py-3 gold-title font-serif text-2xl sm:text-4xl md:text-5xl lg:text-[96px]" style={{fontFamily: 'Roboto Serif, serif'}}>
+                  <h2 className="font-medium leading-tight relative inline-block px-2 sm:px-6 md:px-8 py-2 sm:py-3 gold-title font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[96px]" style={{fontFamily: 'Roboto Serif, serif'}}>
                     <span className="gold-gradient-title-static">Our Services</span>
                   </h2>
                 </div>
@@ -75,7 +133,15 @@ function Hero() {
               <div className="flex flex-col items-center justify-center mt-0 md:-mt-16">
                 <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-5xl mx-auto flex flex-col items-center">
                   <div
-                    className="relative flex items-center justify-center mb-2 sm:mb-4 w-full h-auto lg:w-[1301px] lg:h-[631px]"
+                    className="relative flex items-center justify-center mb-2 sm:mb-4 w-full h-auto lg:w-[1301px] lg:h-[631px] select-none"
+                    onTouchStart={handleDragStart}
+                    onTouchMove={handleDragMove}
+                    onTouchEnd={handleDragEnd}
+                    onMouseDown={handleDragStart}
+                    onMouseMove={dragging ? handleDragMove : undefined}
+                    onMouseUp={handleDragEnd}
+                    onMouseLeave={dragging ? handleDragEnd : undefined}
+                    style={{touchAction: 'pan-y'}}
                   >
                     {/* Third (outer left) card - hidden on mobile and small tablets, shown on md+ */}
                     <div
@@ -90,6 +156,7 @@ function Hero() {
                         onError={(e) => { 
                           e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
                         }}
+                        draggable={false}
                       />
                     </div>
                     {/* Previous image - hidden on mobile, smaller on tablet */}
@@ -105,6 +172,7 @@ function Hero() {
                         onError={(e) => { 
                           e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
                         }}
+                        draggable={false}
                       />
                     </div>
                     {/* Current image - always visible, responsive */}
@@ -117,15 +185,55 @@ function Hero() {
                         "lg:w-[797px] lg:h-[480px]"
                       ].join(' ')}
                       onClick={() => window.location.href = `/services/${current + 1}`}
+                      style={{
+                        position: 'relative',
+                        overflow: 'hidden',
+                      }}
                     >
-                      <img
-                        src={services[current].img}
-                        alt={services[current].title}
-                        className="w-full h-full object-cover scale-130 transition-transform duration-500 group-hover:scale-140"
-                        onError={(e) => {
-                          e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image';
+                      <div
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          display: 'flex',
+                          transition: 'transform 0.5s cubic-bezier(0.4,0,0.2,1)',
+                          transform: `translateX(${direction === 'right' ? '-100%' : '100%'})`,
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          pointerEvents: 'none',
+                          opacity: 0,
                         }}
-                      />
+                        key={prev}
+                      >
+                        <img
+                          src={services[prev].img}
+                          alt={services[prev].title}
+                          className="w-full h-full object-cover scale-130"
+                          draggable={false}
+                        />
+                      </div>
+                      <div
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          display: 'flex',
+                          transition: 'transform 0.5s cubic-bezier(0.4,0,0.2,1)',
+                          transform: `translateX(0%)`,
+                          position: 'relative',
+                          zIndex: 2,
+                        }}
+                        key={current}
+                      >
+                        <img
+                          src={services[current].img}
+                          alt={services[current].title}
+                          className="w-full h-full object-cover scale-130 transition-transform duration-500 group-hover:scale-140"
+                          onError={(e) => {
+                            e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image';
+                          }}
+                          draggable={false}
+                        />
+                      </div>
                     </div>
                     {/* Next image - hidden on mobile, smaller on tablet */}
                     <div
@@ -140,6 +248,7 @@ function Hero() {
                         onError={(e) => { 
                           e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
                         }}
+                        draggable={false}
                       />
                     </div>
                     {/* Third (outer right) card - hidden on mobile and small tablets, shown on md+ */}
@@ -155,6 +264,7 @@ function Hero() {
                         onError={(e) => { 
                           e.currentTarget.src = 'https://placehold.co/256x128/FFD700/fff?text=Service+Image'; 
                         }}
+                        draggable={false}
                       />
                     </div>
                   </div>
@@ -203,17 +313,17 @@ function Hero() {
               }
               @media (max-width: 1023px) {
                 .gold-gradient-title-static {
-                  font-size: 2rem !important;
+                  font-size: 6rem !important;
                 }
               }
               @media (max-width: 900px) {
                 .gold-gradient-title-static {
-                  font-size: 1.5rem !important;
+                  font-size: 3.5rem !important;
                 }
               }
               @media (max-width: 767px) {
                 .gold-gradient-title-static {
-                  font-size: 1.1rem !important;
+                  font-size: 2.7rem !important;
                 }
               }
             `}</style>
