@@ -12,9 +12,9 @@ interface TeamMember {
 
 const members: TeamMember[] = [
     {
-        name: 'Richard Tovey',
+        name: 'John Doe',
         role: 'First Home Landlord',
-        subtitle: 'Richard Tovey',
+        subtitle: 'John Doe',
         image: '',
         socials: {},
     },
