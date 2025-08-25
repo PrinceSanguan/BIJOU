@@ -278,12 +278,12 @@ export function ServicesSection() {
                   type="button"
                   onClick={goPrev}
                   aria-label="Previous service"
-                  className="rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] w-8 h-8 flex items-center justify-center text-base sm:text-lg transition-colors duration-200 hover:bg-[#4f4e44] hover:text-white focus:outline-none"
+                  className="rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] w-8 h-8 flex items-center justify-center text-base sm:text-lg transition-colors duration-200 hover:bg-[#4f4e44] hover:text-white focus:outline-none cursor-pointer"
                 >
                   &#8592;
                 </button>
                 <button
-                  className="px-4 py-2 sm:px-6 sm:py-2 md:px-8 md:py-3 bg-[#EFBF04] text-white rounded-lg font-sans text-xs sm:text-base md:text-lg font-bold shadow-md transition-colors duration-200 hover:bg-[#0E5248] hover:text-white focus:outline-none"
+                  className="px-4 py-2 sm:px-6 sm:py-2 md:px-8 md:py-3 bg-[#EFBF04] text-white rounded-lg font-sans text-xs sm:text-base md:text-lg font-bold shadow-md transition-colors duration-200 hover:bg-[#0E5248] hover:text-white focus:outline-none cursor-pointer"
                   onClick={() => window.location.href = '/services'}
                 >
                   View Services
@@ -292,7 +292,7 @@ export function ServicesSection() {
                   type="button"
                   onClick={goNext}
                   aria-label="Next service"
-                  className="rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] w-8 h-8 flex items-center justify-center text-base sm:text-lg transition-colors duration-200 hover:bg-[#4f4e44] hover:text-white focus:outline-none"
+                  className="rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] w-8 h-8 flex items-center justify-center text-base sm:text-lg transition-colors duration-200 hover:bg-[#4f4e44] hover:text-white focus:outline-none cursor-pointer"
                 >
                   &#8594;
                 </button>

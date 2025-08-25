@@ -3,7 +3,7 @@
 export function Footer() {
   return (
     <footer className="w-full bg-[#0E5248] text-white py-8 px-4 font-space">
-      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+      <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row md:justify-between md:items-start gap-8 cursor-default">
         {/* Left: Logo and Contact */}
         <div className="flex flex-col md:w-1/3 gap-2">
           <div className="flex items-center gap-3 mb-2">
@@ -57,8 +57,8 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-full flex justify-center mt-8">
-        <div className="text-xs text-white font-space text-centpublic/images/Circular logo.pnger">
+      <div className="w-full flex justify-center mt-8 cursor-default">
+        <div className="text-xs text-white font-space text-center">
           © <a href="https://choros.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#EFBF04]">Choros.io</a> 2025 | All rights reserved.
         </div>
       </div>

@@ -13,7 +13,7 @@ export default function Services() {
   return (
     <>
     <div>
-    <main>
+    <main className='cursor-default'>
         <HeaderBlack />
         <div className="mb-1">
           <Hero />

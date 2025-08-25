@@ -284,7 +284,7 @@ function Hero() {
                         type="button"
                         onClick={goPrev}
                         aria-label="Previous service"
-                        className="rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] w-8 h-8 flex items-center justify-center text-base sm:text-lg transition-colors duration-200 hover:bg-[#4f4e44] hover:text-white focus:outline-none"
+                        className="rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] w-8 h-8 flex items-center justify-center text-base sm:text-lg transition-colors duration-200 hover:bg-[#4f4e44] hover:text-white focus:outline-none cursor-pointer"
                       >
                         &#8592;
                       </button>
@@ -293,7 +293,7 @@ function Hero() {
                         type="button"
                         onClick={goNext}
                         aria-label="Next service"
-                        className="rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] w-8 h-8 flex items-center justify-center text-base sm:text-lg transition-colors duration-200 hover:bg-[#4f4e44] hover:text-white focus:outline-none"
+                        className="rounded-full border border-[#4f4e44] bg-transparent text-[#4f4e44] w-8 h-8 flex items-center justify-center text-base sm:text-lg transition-colors duration-200 hover:bg-[#4f4e44] hover:text-white focus:outline-none cursor-pointer"
                       >
                         &#8594;
                       </button>

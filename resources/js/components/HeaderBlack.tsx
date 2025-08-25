@@ -25,11 +25,11 @@ export default function Header({ className = '' }: HeaderProps) {
           className="flex items-center gap-3 group/hamburger menuicon-gold-shine"
           aria-label="Toggle menu"
         >
-          <span className="menuicon-gold-shine-text text-black font-medium tracking-widest text-sm transition-colors">MENU</span>
+          <span className="menuicon-gold-shine-text text-black font-medium tracking-widest text-sm transition-colors cursor-pointer">MENU</span>
           <div className="flex flex-col gap-1">
-            <span className="menuicon-gold-shine-bar w-6 h-0.5 bg-black transition-all duration-300"></span>
-            <span className="menuicon-gold-shine-bar w-6 h-0.5 bg-black transition-all duration-300"></span>
-            <span className="menuicon-gold-shine-bar w-6 h-0.5 bg-black transition-all duration-300"></span>
+            <span className="menuicon-gold-shine-bar w-6 h-0.5 bg-black transition-all duration-300 cursor-pointer"></span>
+            <span className="menuicon-gold-shine-bar w-6 h-0.5 bg-black transition-all duration-300 cursor-pointer"></span>
+            <span className="menuicon-gold-shine-bar w-6 h-0.5 bg-black transition-all duration-300 cursor-pointer"></span>
           </div>
         </button>
       {/* Gold shine effect for logo and menu icon */}
@@ -85,7 +85,7 @@ export default function Header({ className = '' }: HeaderProps) {
             {/* Close button */}
             <button 
               onClick={() => setIsMenuOpen(false)}
-              className="absolute top-6 right-6 text-2xl text-gray-600 hover:text-gray-800"
+              className="absolute top-6 right-6 text-2xl text-gray-600 hover:text-gray-800 cursor-pointer" 
             >
               ×
             </button>

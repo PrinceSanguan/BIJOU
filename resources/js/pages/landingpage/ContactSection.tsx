@@ -171,7 +171,7 @@ export function ContactSection() {
                   />
                   <button
                     type="submit"
-                    className="absolute bottom-12 right-4 bg-[#12443A] text-white px-6 sm:px-8 py-2 rounded-lg shadow-md hover:bg-[#0E5248] transition font-semibold text-sm sm:text-base"
+                    className="absolute bottom-12 right-4 bg-[#12443A] text-white px-6 sm:px-8 py-2 rounded-lg shadow-md hover:bg-[#EFBF04] transition font-semibold text-sm sm:text-base cursor-pointer"
                     onClick={handleSubmit}
                   >
                     Submit

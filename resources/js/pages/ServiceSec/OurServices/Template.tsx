@@ -26,7 +26,7 @@ export default function Template({ service }: TemplateProps) {
     return (
         <>
             <HeaderBlack />
-            <main role="main">  
+            <main role="main" className="cursor-default">  
                 <section className="py-16 px-4">
                     <div className="max-w-7xl mx-auto">
                         <h1 className="text-5xl md:text-7xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8 font-robot-serif">Our Services</h1>

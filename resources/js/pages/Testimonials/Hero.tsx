@@ -47,10 +47,10 @@ const Hero: React.FC<HeroProps> = ({
                 <div className={styles.heroDescCol}>
                     <p className={styles.heroSubtitle}>{subtitle}</p>
                     <div className={styles.heroButtonRow}>
-                        <button className={styles.heroButtonPrimary} onClick={handleViewServices} type="button">
+                        <button className={`${styles.heroButtonPrimary} ${styles.heroButtonPrimary}:hover:bg-[#EFBF04] ${styles.heroButtonPrimary}:hover:text-[#0E5248]`} onClick={handleViewServices} type="button">
                             View Services
                         </button>
-                        <button className={styles.heroButtonSecondary} onClick={handleReadMore} type="button">
+                        <button className={`${styles.heroButtonSecondary} ${styles.heroButtonSecondary}:hover:bg-[#EFBF04] ${styles.heroButtonSecondary}:hover:text-[#0E5248]`} onClick={handleReadMore} type="button">
                             Learn More
                         </button>
                     </div>

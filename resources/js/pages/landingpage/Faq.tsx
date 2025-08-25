@@ -38,7 +38,7 @@ export function Faq() {
           return (
             <div key={faq.question}>
               <button
-                className={`w-full text-left px-4 sm:px-6 py-4 sm:py-5 focus:outline-none flex items-center justify-between group transition-colors duration-150 ${isOpen ? 'text-[#0E5248] font-semibold bg-[#FFD700]/5' : 'text-[#12443A] font-medium'} rounded-lg focus-visible:ring-2 focus-visible:ring-[#FFD700]`}
+                className={`w-full text-left px-4 sm:px-6 py-4 sm:py-5 focus:outline-none flex items-center justify-between group transition-colors duration-150 ${isOpen ? 'text-[#0E5248] font-semibold bg-[#FFD700]/5' : 'text-[#12443A] font-medium'} rounded-lg focus-visible:ring-2 focus-visible:ring-[#FFD700] cursor-pointer`}
                 onClick={() => setOpenIndex(isOpen ? -1 : idx)}
                 aria-expanded={isOpen}
                 aria-controls={`faq-answer-${idx}`}

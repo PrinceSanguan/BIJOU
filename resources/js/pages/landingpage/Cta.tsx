@@ -10,14 +10,14 @@ export function Cta() {
         </h2>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-2 w-full max-w-full">
           <button
-            className="bg-white text-[#12443A] border border-gray-200 rounded-lg px-4 sm:px-6 py-2 shadow-2xl hover:shadow-[0_8px_32px_rgba(16,68,58,0.25)] font-medium text-sm sm:text-[15px] transition-all duration-200 w-full sm:w-auto hover:bg-[#EFBF04] hover:border-[#EFBF04] hover:text-[#12443A]"
+            className="bg-white text-[#12443A] border border-gray-200 rounded-lg px-4 sm:px-6 py-2 shadow-2xl hover:shadow-[0_8px_32px_rgba(16,68,58,0.25)] font-medium text-sm sm:text-[15px] transition-all duration-200 w-full sm:w-auto hover:bg-[#EFBF04] hover:border-[#EFBF04] hover:text-[#12443A] cursor-pointer"
             style={{ boxShadow: '0 6px 24px 0 rgba(16,68,58,0.18)' }}
             onClick={() => { window.location.href = '/contact'; }}
           >
             Want to Increase Your Returns?
           </button>
           <button
-            className="bg-white text-[#12443A] border border-gray-200 rounded-lg px-4 sm:px-6 py-2 shadow-2xl hover:shadow-[0_8px_32px_rgba(16,68,58,0.25)] font-medium text-sm sm:text-[15px] transition-all duration-200 w-full sm:w-auto hover:bg-[#EFBF04] hover:border-[#EFBF04] hover:text-[#12443A]"
+            className="bg-white text-[#12443A] border border-gray-200 rounded-lg px-4 sm:px-6 py-2 shadow-2xl hover:shadow-[0_8px_32px_rgba(16,68,58,0.25)] font-medium text-sm sm:text-[15px] transition-all duration-200 w-full sm:w-auto hover:bg-[#EFBF04] hover:border-[#EFBF04] hover:text-[#12443A] cursor-pointer"
             style={{ boxShadow: '0 6px 24px 0 rgba(16,68,58,0.18)' }}
             onClick={() => { window.location.href = '/contact'; }}
           >

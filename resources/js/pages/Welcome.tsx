@@ -29,9 +29,11 @@ export default function Welcome() {
                 <Header />
             </header>
             {/* Hero section takes full viewport */}
-            <HomeSection />
+            <div className="cursor-default">
+                <HomeSection />
+            </div>
             {/* Other sections with full width layout */}
-            <main className="w-full" role="main">
+            <main className="w-full cursor-default" role="main">
                 <AboutSection />
                 <ServicesSection />
                 <Faq />

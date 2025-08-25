@@ -14,7 +14,7 @@ export default function Testimonials() {
   return (
     <>
       <HeaderBlack />
-      <main className="container mx-auto py-12" role="main">
+      <main className="container mx-auto py-12 cursor-default" role="main">
       <Hero />
       <TestimonialsSection />
       <TrustedCompaniesSection />

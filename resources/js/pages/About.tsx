@@ -18,7 +18,7 @@ export default function About() {
         <header>
           <HeaderBlack />
         </header>
-        <main>
+        <main className='cursor-default'>
           <Hero />
           <MissionandVision />
           <TeamTestimonials />

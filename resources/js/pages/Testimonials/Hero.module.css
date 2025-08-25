@@ -76,7 +76,8 @@
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 .heroButtonPrimary:hover {
-  background: #0E5248;
+  background: #EFBF04;
+  color: #0E5248;
 }
 
 .heroButtonSecondary {
@@ -93,7 +94,7 @@
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 .heroButtonSecondary:hover {
-  background: #f5f5f5;
+  background: #EFBF04;
   color: #0E5248;
 }
 
