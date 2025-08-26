@@ -6,6 +6,10 @@ import HeaderBlack from '@/components/HeaderBlack';
 import { ContactSection } from '@/pages/landingpage/ContactSection';
 import { SEOHead } from '../components/SEOHead';
 import { LocalBusinessSchema } from '../components/LocalBusinessSchema';
+import { OrganizationSchema } from '../components/OrganizationSchema';
+import { WebSiteSchema } from '../components/WebSiteSchema';
+import { BreadcrumbListSchema } from '../components/BreadcrumbListSchema';
+import { FAQSchema } from '../components/FAQSchema';
 
 export default function Contact() {
   return (
@@ -14,7 +18,15 @@ export default function Contact() {
         title="Contact Us | Bijou Group Sheffield HMO Management"
         description="Contact Bijou Group for HMO property management in Sheffield. Get in touch for landlord support, property services, and expert advice."
         canonical="https://bijougroup.co.uk/contact"
+        robots="index, follow"
+        hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/contact' }]}
       />
+      <OrganizationSchema />
+      <WebSiteSchema />
+      <BreadcrumbListSchema items={[
+        { name: 'Home', url: 'https://bijougroup.co.uk/' },
+        { name: 'Contact', url: 'https://bijougroup.co.uk/contact' }
+      ]} />
       <LocalBusinessSchema
         name="Bijou Group"
         url="https://bijougroup.co.uk/contact"
@@ -27,6 +39,22 @@ export default function Contact() {
         }}
         phone="+447495747930"
         logo="/logo.svg"
+      />
+      <FAQSchema
+        faqs={[
+          {
+            question: 'How do I contact Bijou Group?',
+            answer: 'You can call us at +447495747930 or use the contact form on our website.'
+          },
+          {
+            question: 'What are your business hours?',
+            answer: 'We are available Monday to Friday, 9am to 5pm.'
+          },
+          {
+            question: 'Where is your office located?',
+            answer: '70 Clarkehouse Road, Sheffield, S10 2LJ, UK.'
+          }
+        ]}
       />
       <div className="min-h-screen flex flex-col cursor-default">
         <HeaderBlack className="sticky top-0 z-50" />

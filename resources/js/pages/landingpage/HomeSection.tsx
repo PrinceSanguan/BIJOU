@@ -9,6 +9,8 @@ export function HomeSection() {
   const [shineOnce, setShineOnce] = useState(false);
   const [shineHold, setShineHold] = useState(false);
   const sectionRef = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoVisible, setVideoVisible] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -27,6 +29,25 @@ export function HomeSection() {
         }
       },
       { threshold: 0.3 }
+    );
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  // Lazy load video when section is in viewport
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+    let triggered = false;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !triggered) {
+          setVideoVisible(true);
+          triggered = true;
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
     );
     observer.observe(section);
     return () => observer.disconnect();
@@ -57,16 +78,18 @@ export function HomeSection() {
         className="relative w-full min-h-screen flex items-center justify-center overflow-hidden touch-pan-y"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
-      {/* Video background */}
+      {/* Video background (lazy loaded) */}
       <video
+        ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover z-0"
-        src="/videos/vid2.mp4"
-        autoPlay
+        src={videoVisible ? "/videos/vid2.mp4" : undefined}
+        autoPlay={videoVisible}
         loop
         muted
         playsInline
         poster="/images/11532497.png"
         preload="none"
+        style={{ opacity: videoVisible ? 1 : 0, transition: 'opacity 0.6s' }}
       />
       {/* Edge vignette overlay (top, bottom, left, right) and dark overlay */}
       <div className="absolute inset-0 z-10 pointer-events-none">

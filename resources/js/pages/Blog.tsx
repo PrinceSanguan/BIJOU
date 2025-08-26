@@ -10,6 +10,10 @@ import { TrustedCompaniesSection } from '@/pages/landingpage/TrustedCompaniesSec
 import { TestimonialsSection } from '@/pages/landingpage/TestimonialsSection';
 import { SEOHead } from '../components/SEOHead';
 import { LocalBusinessSchema } from '../components/LocalBusinessSchema';
+import { OrganizationSchema } from '../components/OrganizationSchema';
+import { WebSiteSchema } from '../components/WebSiteSchema';
+import { BreadcrumbListSchema } from '../components/BreadcrumbListSchema';
+import { FAQSchema } from '../components/FAQSchema';
 
 export default function Blog() {
   return (
@@ -18,7 +22,15 @@ export default function Blog() {
         title="Blog | Bijou Group Sheffield HMO Management"
         description="Read the latest articles, tips, and news for Sheffield landlords from Bijou Group. HMO management, compliance, investment, and more."
         canonical="https://bijougroup.co.uk/blog"
+        robots="index, follow"
+        hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/blog' }]}
       />
+      <OrganizationSchema />
+      <WebSiteSchema />
+      <BreadcrumbListSchema items={[
+        { name: 'Home', url: 'https://bijougroup.co.uk/' },
+        { name: 'Blog', url: 'https://bijougroup.co.uk/blog' }
+      ]} />
       <LocalBusinessSchema
         name="Bijou Group"
         url="https://bijougroup.co.uk/blog"
@@ -32,8 +44,27 @@ export default function Blog() {
         phone="+447495747930"
         logo="/logo.svg"
       />
+      <FAQSchema
+        faqs={[
+          {
+            question: 'What topics does the Bijou Group blog cover?',
+            answer: 'Our blog covers HMO management, compliance, investment tips, and property news for Sheffield landlords.'
+          },
+          {
+            question: 'How often is the blog updated?',
+            answer: 'We regularly post new articles and updates relevant to property owners and investors.'
+          },
+          {
+            question: 'Can I suggest a blog topic?',
+            answer: 'Yes, contact us with your suggestions for future blog content.'
+          }
+        ]}
+      />
       <HeaderBlack />
       <main role="main">  
+        <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif">
+          Sheffield Landlord Blog & HMO News
+        </h1>
         <div className="container mx-auto py-12">
           <Hero />
           <Articles />

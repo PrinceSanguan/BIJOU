@@ -11,6 +11,10 @@ import Record from './Testimonials/Record';
 import { Cta } from '@/pages/landingpage/Cta';
 import { SEOHead } from '../components/SEOHead';
 import { LocalBusinessSchema } from '../components/LocalBusinessSchema';
+import { OrganizationSchema } from '../components/OrganizationSchema';
+import { WebSiteSchema } from '../components/WebSiteSchema';
+import { BreadcrumbListSchema } from '../components/BreadcrumbListSchema';
+import { FAQSchema } from '../components/FAQSchema';
 
 export default function Testimonials() {
   return (
@@ -19,7 +23,15 @@ export default function Testimonials() {
         title="Testimonials | Bijou Group Sheffield HMO Management"
         description="See what Sheffield landlords say about Bijou Group's HMO management. Real testimonials, proven results, and stress-free property management."
         canonical="https://bijougroup.co.uk/testimonials"
+        robots="index, follow"
+        hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/testimonials' }]}
       />
+      <OrganizationSchema />
+      <WebSiteSchema />
+      <BreadcrumbListSchema items={[
+        { name: 'Home', url: 'https://bijougroup.co.uk/' },
+        { name: 'Testimonials', url: 'https://bijougroup.co.uk/testimonials' }
+      ]} />
       <LocalBusinessSchema
         name="Bijou Group"
         url="https://bijougroup.co.uk/testimonials"
@@ -33,8 +45,27 @@ export default function Testimonials() {
         phone="+447495747930"
         logo="/logo.svg"
       />
+      <FAQSchema
+        faqs={[
+          {
+            question: 'What do landlords say about Bijou Group?',
+            answer: 'Our testimonials page features real feedback from Sheffield landlords who trust us with their HMO properties.'
+          },
+          {
+            question: 'How can I submit a testimonial?',
+            answer: 'Contact us to share your experience as a Bijou Group client.'
+          },
+          {
+            question: 'Where can I read more reviews?',
+            answer: 'See our Testimonials page or check our Google reviews for more feedback.'
+          }
+        ]}
+      />
       <HeaderBlack />
       <main className="container mx-auto py-12 cursor-default" role="main">
+        <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif">
+          {/* Removed non-design heading per Figma design system */}
+        </h1>
         <Hero />
         <TestimonialsSection />
         <TrustedCompaniesSection />
