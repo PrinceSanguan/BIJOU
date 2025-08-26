@@ -1,4 +1,7 @@
+
 import React, { useState } from 'react';
+import { SEOHead } from '../../components/SEOHead';
+import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -38,26 +41,45 @@ export function ContactSection() {
   };
 
   return (
-    <section
-      className="relative py-8 sm:py-12 md:py-16 px-2 sm:px-4 min-h-[60vh] bg-white flex items-center justify-center overflow-hidden"
-    >
-      <div className="relative z-10 w-full max-w-[1700px] mx-auto flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0">
-        <div className="w-full bg-white rounded-2xl border border-gray-100 flex flex-col md:flex-row items-stretch min-h-[600px] md:min-h-[800px] p-2 sm:p-4 md:p-6 shadow-xl">
-          {/* Map side - always first */}
-          <div className="order-1 md:order-none relative w-full md:w-1/2 h-[220px] sm:h-[320px] md:h-auto flex items-end">
-            <div className="w-full h-full overflow-hidden flex items-stretch">
-              <iframe
-                title="Google Map Sheffield"
-                width="100%"
-                height="100%"
-                className="border-0 min-h-[220px] sm:min-h-[320px] w-full h-full block box-border"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23714.96407326213!2d-1.5070706!3d53.3780556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879826d2b7b1b0b%3A0x6e8b2e7b2e7b2e7b!2sSheffield!5e0!3m2!1sen!2suk!4v1690000000000!5m2!1sen!2suk"
-              ></iframe>
-            </div>
-            {/* Contact info card */}
+    <>
+      <SEOHead
+        title="Contact Us | Bijou Group Sheffield HMO Management"
+        description="Contact Bijou Group for expert HMO management in Sheffield. Landlords, investors, and tenants welcome. Get in touch today!"
+        canonical="https://bijougroup.co.uk/contact"
+      />
+      <LocalBusinessSchema
+        name="Bijou Group"
+        url="https://bijougroup.co.uk/contact"
+        phone="+447495747930"
+        logo="/logo.svg"
+        address={{
+          street: "70 Clarkehouse Road",
+          city: "Sheffield",
+          region: "South Yorkshire",
+          postalCode: "S10 2LJ",
+          country: "UK"
+        }}
+      />
+      <section
+        className="relative py-8 sm:py-12 md:py-16 px-2 sm:px-4 min-h-[60vh] bg-white flex items-center justify-center overflow-hidden"
+      >
+        <div className="relative z-10 w-full max-w-[1700px] mx-auto flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0">
+          <div className="w-full bg-white rounded-2xl border border-gray-100 flex flex-col md:flex-row items-stretch min-h-[600px] md:min-h-[800px] p-2 sm:p-4 md:p-6 shadow-xl">
+            {/* Map side - always first */}
+            <div className="order-1 md:order-none relative w-full md:w-1/2 h-[220px] sm:h-[320px] md:h-auto flex items-end">
+              <div className="w-full h-full overflow-hidden flex items-stretch">
+                <iframe
+                  title="Google Map Sheffield"
+                  width="100%"
+                  height="100%"
+                  className="border-0 min-h-[220px] sm:min-h-[320px] w-full h-full block box-border"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23714.96407326213!2d-1.5070706!3d53.3780556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879826d2b7b1b0b%3A0x6e8b2e7b2e7b2e7b!2sSheffield!5e0!3m2!1sen!2suk!4v1690000000000!5m2!1sen!2suk"
+                ></iframe>
+              </div>
+              {/* Contact info card */}
             <div className="absolute left-2 sm:left-4 bottom-2 sm:bottom-4 bg-[#0E5248] bg-opacity-95 text-white rounded-xl shadow-lg px-4 sm:px-6 py-2 sm:py-3 flex flex-col gap-2 min-w-[180px] sm:min-w-[220px] max-w-[320px] text-xs sm:text-sm">
               <div className="flex items-center gap-2">
                 <span aria-label="Location">
@@ -137,7 +159,7 @@ export function ContactSection() {
                     className="w-full px-3 sm:px-4 pb-4 pt-2 bg-transparent text-black rounded-md focus:outline-none flex justify-between items-center text-sm sm:text-base mb-4 sm:mb-8 shadow-inner"
                     onClick={() => setDropdownOpen(v => !v)}
                   >
-                    <span>{formData.interests.length > 0 ? formData.interests.map(i => <span key={i} className="text-[#12443A] font-semibold mr-1">{i}</span>) : 'Select interests'}</span>
+                    <span>{formData.interests.length > 0 ? formData.interests.map((i, idx) => <span key={i + '-' + idx} className="text-[#12443A] font-semibold mr-1">{i}</span>) : 'Select interests'}</span>
                     <svg className={`ml-2 w-4 h-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                   </button>
                   {dropdownOpen && (
@@ -183,5 +205,6 @@ export function ContactSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }

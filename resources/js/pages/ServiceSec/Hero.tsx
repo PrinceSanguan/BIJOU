@@ -1,5 +1,7 @@
 
 import React, { useState } from 'react';
+import { SEOHead } from '../../components/SEOHead';
+import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 
 function Hero() {
   const services = [
@@ -108,7 +110,25 @@ function Hero() {
   };
 
   return (
-          <section className="relative w-full pt-10 sm:pt-14 md:pt-20 pb-0 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center mt-8">
+    <section className="relative w-full pt-10 sm:pt-14 md:pt-20 pb-0 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center mt-8">
+      <SEOHead
+        title="HMO Services Hero | Bijou Group Sheffield HMO Management"
+        description="Discover our HMO management hero section for Sheffield landlords. Rent collection, compliance, tenant sourcing, and more."
+        canonical="https://bijougroup.co.uk/services/hero"
+      />
+      <LocalBusinessSchema
+        name="Bijou Group"
+        url="https://bijougroup.co.uk/services/hero"
+        address={{
+          street: "70 Clarkehouse Road",
+          city: "Sheffield",
+          region: "South Yorkshire",
+          postalCode: "S10 2LJ",
+          country: "UK"
+        }}
+        phone="+447495747930"
+        logo="/logo.svg"
+      />
             {/* Geometric accent elements */}
             <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
             <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>

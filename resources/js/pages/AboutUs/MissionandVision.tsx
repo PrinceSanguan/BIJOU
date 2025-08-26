@@ -1,6 +1,9 @@
 
+
 import React from 'react';
 import styles from './MissionAndVision.module.css';
+import { SEOHead } from '../../components/SEOHead';
+import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 import type { FC } from 'react';
 
 interface SectionProps {
@@ -25,34 +28,55 @@ const Section: FC<SectionProps> = ({ title, image, alt, children, reverse }) => 
     </section>
 );
 
+
 const MissionAndVision: FC = () => (
-    <main className={styles.main}>
-        <Section
-            title="Our Mission"
-            image="/images/AboutUs/Mission.jpg"
-            alt="Our Mission"
-        >
-            <p>
-                Our mission is to revolutionise HMO property management through uncompromising compliance, expert legal guidance, and profit-maximisation strategies. We believe landlords deserve hands-off HMO solutions that generate consistent returns while maintaining the highest management standards.
-            </p>
-            <p>
-                Our landlord support South Yorkshire extends beyond routine maintenance to include market analysis, tenant screening excellence, and forward-thinking property improvements that enhance long-term value.
-            </p>
-        </Section>
-        <Section
-            title="Our Vision"
-            image="/images/AboutUs/IMG-20250701-WA0001.webp"
-            alt="Our Vision"
-            reverse
-        >
-            <p>
-                We're building a trusted rental market where both landlords and tenants thrive through transparent practices and sustainable growth. Our primary focus on Sheffield and South Yorkshire allows us to develop deep local expertise while building lasting community relationships.
-            </p>
-            <p>
-                As trusted HMO property experts, we understand the unique characteristics of the local rental market. This includes specialized knowledge of student accommodation demands and young professional housing preferences, enabling us to position properties for maximum success.
-            </p>
-        </Section>
-    </main>
+    <>
+        <SEOHead
+            title="Mission and Vision | Bijou Group Sheffield"
+            description="Mission and vision meta description with CTA and location."
+            canonical="https://yourdomain.com/about/mission-vision"
+        />
+        <LocalBusinessSchema
+            name="Bijou Group"
+            address={{
+                street: "70 Clarkehouse Road",
+                city: "Sheffield",
+                region: "South Yorkshire",
+                postalCode: "S10 2LJ",
+                country: "England"
+            }}
+            phone="+447495747930"
+            url="https://yourdomain.com"
+            logo="/images/Circular logo.png"
+        />
+        <main className={styles.main}>
+            <Section
+                title="Our Mission"
+                image="/images/AboutUs/Mission.jpg"
+                alt="Our Mission"
+            >
+                <p>
+                    Our mission is to revolutionise HMO property management through uncompromising compliance, expert legal guidance, and profit-maximisation strategies. We believe landlords deserve hands-off HMO solutions that generate consistent returns while maintaining the highest management standards.
+                </p>
+                <p>
+                    Our landlord support South Yorkshire extends beyond routine maintenance to include market analysis, tenant screening excellence, and forward-thinking property improvements that enhance long-term value.
+                </p>
+            </Section>
+            <Section
+                title="Our Vision"
+                image="/images/AboutUs/IMG-20250701-WA0001.webp"
+                alt="Our Vision"
+                reverse
+            >
+                <p>
+                    We're building a trusted rental market where both landlords and tenants thrive through transparent practices and sustainable growth. Our primary focus on Sheffield and South Yorkshire allows us to develop deep local expertise while building lasting community relationships.
+                </p>
+                <p>
+                    As trusted HMO property experts, we understand the unique characteristics of the local rental market. This includes specialized knowledge of student accommodation demands and young professional housing preferences, enabling us to position properties for maximum success.
+                </p>
+            </Section>
+        </main>
+    </>
 );
 
 export default MissionAndVision;

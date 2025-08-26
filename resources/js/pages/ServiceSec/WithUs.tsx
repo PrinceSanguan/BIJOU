@@ -1,5 +1,8 @@
+
 import React from 'react';
 import styles from './WithUs.module.css';
+import { SEOHead } from '../../components/SEOHead';
+import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 
 interface WithUsCardProps {
   title: string;
@@ -29,18 +32,39 @@ const cards: WithUsCardProps[] = [
   },
 ];
 
+
 const WithUs: React.FC = () => (
-  <section className={styles.withUsSection} aria-label="Why Sheffield Landlords Stick With Us">
-    <h2 className={styles.heading}>Why Sheffield Landlords Stick With Us</h2>
-    <div className={styles.cardGrid}>
-      {cards.map((card, idx) => (
-        <article className={styles.card} key={idx}>
-          <h3 className={styles.cardTitle}>{card.title}</h3>
-          <p className={styles.cardDesc}>{card.description}</p>
-        </article>
-      ))}
-    </div>
-  </section>
+  <>
+    <SEOHead
+      title="Why Sheffield Landlords Stick With Us | Bijou Group"
+      description="Discover why landlords choose Bijou Group for HMO management in Sheffield. Local expertise, fast tenant placement, and honest advice."
+      canonical="https://bijougroup.co.uk/services/with-us"
+    />
+    <LocalBusinessSchema
+      name="Bijou Group"
+      url="https://bijougroup.co.uk/services/with-us"
+      address={{
+        street: "70 Clarkehouse Road",
+        city: "Sheffield",
+        region: "South Yorkshire",
+        postalCode: "S10 2LJ",
+        country: "UK"
+      }}
+      phone="+447495747930"
+      logo="/logo.svg"
+    />
+    <section className={styles.withUsSection} aria-label="Why Sheffield Landlords Stick With Us">
+      <h2 className={styles.heading}>Why Sheffield Landlords Stick With Us</h2>
+      <div className={styles.cardGrid}>
+        {cards.map((card, idx) => (
+          <article className={styles.card} key={idx}>
+            <h3 className={styles.cardTitle}>{card.title}</h3>
+            <p className={styles.cardDesc}>{card.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  </>
 );
 
 export default WithUs;

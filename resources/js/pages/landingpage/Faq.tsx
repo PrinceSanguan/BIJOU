@@ -1,4 +1,8 @@
+
 import React, { useState } from 'react';
+import { SEOHead } from '../../components/SEOHead';
+import { FAQSchema } from '../../components/FAQSchema';
+import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 
 const faqs = [
   {
@@ -24,7 +28,27 @@ export function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="w-full max-w-5xl mx-auto mt-24 mb-16 px-2 sm:px-4">
+    <>
+      <SEOHead
+        title="FAQ | Bijou Group Sheffield HMO Management"
+        description="Frequently asked questions about HMO management, guaranteed rent, and our services in Sheffield."
+        canonical="https://bijougroup.co.uk/faq"
+      />
+      <FAQSchema faqs={faqs} />
+      <LocalBusinessSchema
+        name="Bijou Group"
+        url="https://bijougroup.co.uk/faq"
+        address={{
+          street: "70 Clarkehouse Road",
+          city: "Sheffield",
+          region: "South Yorkshire",
+          postalCode: "S10 2LJ",
+          country: "UK"
+        }}
+        phone="+447495747930"
+        logo="/logo.svg"
+      />
+      <section className="w-full max-w-5xl mx-auto mt-24 mb-16 px-2 sm:px-4">
       <div className="flex items-center justify-center mb-8">
         <span className="flex-1 h-0.5 bg-[#FFD700] max-w-[120px] mr-2 sm:mr-6" />
         <h2 className="text-center text-[#0E5248] text-base sm:text-lg md:text-xl lg:text-2xl font-normal tracking-[0.2em] font-['Roboto_Serif',serif] uppercase">
@@ -70,6 +94,7 @@ export function Faq() {
         })}
       </div>
     </section>
+    </>
   );
 }
 

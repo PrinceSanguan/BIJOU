@@ -1,8 +1,29 @@
-import React from 'react';
+
+import { SEOHead } from '../../components/SEOHead';
+import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 
 export function TrustedCompaniesSection() {
   return (
-    <section className="relative py-10 sm:py-16 px-3 sm:px-6 bg-white overflow-x-hidden">
+    <>
+      <SEOHead
+        title="Trusted Companies | Bijou Group Sheffield HMO Management"
+        description="Bijou Group is trusted by leading property and compliance organizations in Sheffield. See our partners and accreditations."
+        canonical="https://bijougroup.co.uk/trusted-companies"
+      />
+      <LocalBusinessSchema
+        name="Bijou Group"
+        url="https://bijougroup.co.uk/trusted-companies"
+        address={{
+          street: "70 Clarkehouse Road",
+          city: "Sheffield",
+          region: "South Yorkshire",
+          postalCode: "S10 2LJ",
+          country: "UK"
+        }}
+        phone="+447495747930"
+        logo="/logo.svg"
+      />
+      <section className="relative py-10 sm:py-16 px-3 sm:px-6 bg-white overflow-x-hidden">
       {/* Geometric accent elements - fewer on mobile */}
       <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
       <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
@@ -45,5 +66,6 @@ export function TrustedCompaniesSection() {
         `}
       </style>
     </section>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Footer } from '@/components/Footer';
 import HeaderBlack from '@/components/HeaderBlack';
@@ -6,6 +7,8 @@ import { Service } from '@/types';
 import Featured from '../Featured';
 import WithUs from '../WithUs';
 import { Cta } from '@/pages/landingpage/Cta';
+import { SEOHead } from '../../../components/SEOHead';
+import { LocalBusinessSchema } from '../../../components/LocalBusinessSchema';
 
 interface TemplateProps {
     service: Service;
@@ -25,6 +28,24 @@ export default function Template({ service }: TemplateProps) {
 
     return (
         <>
+            <SEOHead
+                title={`${service.title} | Bijou Group Sheffield HMO Management`}
+                description={service.description || 'Learn more about our HMO management services for Sheffield landlords.'}
+                canonical={`https://bijougroup.co.uk/services/${service.id || encodeURIComponent(service.title.toLowerCase().replace(/\s+/g, '-'))}`}
+            />
+            <LocalBusinessSchema
+                name="Bijou Group"
+                url={`https://bijougroup.co.uk/services/${service.id || encodeURIComponent(service.title.toLowerCase().replace(/\s+/g, '-'))}`}
+                address={{
+                    street: "70 Clarkehouse Road",
+                    city: "Sheffield",
+                    region: "South Yorkshire",
+                    postalCode: "S10 2LJ",
+                    country: "UK"
+                }}
+                phone="+447495747930"
+                logo="/logo.svg"
+            />
             <HeaderBlack />
             <main role="main" className="cursor-default">  
                 <section className="py-16 px-4">

@@ -2,6 +2,8 @@
 import React from 'react';
 import styles from './TeamTestimonials.module.css';
 import { Instagram, Facebook, Linkedin } from 'lucide-react';
+import { SEOHead } from '../../components/SEOHead';
+import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 
 // Reusable Social Icon Button
 interface SocialButtonProps {
@@ -21,6 +23,7 @@ const SocialButton: React.FC<SocialButtonProps> = ({ href, label, children, clas
     {children}
   </a>
 );
+
 
 // Main Card (Person)
 interface PersonCardProps {
@@ -56,13 +59,13 @@ const PersonCard: React.FC<PersonCardProps> = ({ name, role, bio, imageUrl, soci
 const SupportTeam: React.FC = () => (
   <div className={styles.supportSection}>
     <div className={styles.supportHeader}>
-  <span style={{ display: 'flex', alignItems: 'flex-end', marginRight: '1rem', position: 'relative', top: '-0.075rem' }}>
+      <span style={{ display: 'flex', alignItems: 'flex-end', marginRight: '1rem', position: 'relative', top: '-0.075rem' }}>
         <svg xmlns="http://www.w3.org/2000/svg" width="70" height="2" viewBox="0 0 104 2" fill="none">
           <path d="M1 0C0.447715 0 0 0.447715 0 1C0 1.55228 0.447715 2 1 2V1V0ZM1 1V2H104V1V0H1V1Z" fill="#0E5248" stroke="#0E5248" strokeWidth="2" />
         </svg>
       </span>
       <span className={styles.supportTitle}>OUR SUPPORT TEAM</span>
-  <span style={{ display: 'flex', alignItems: 'flex-end', marginLeft: '1rem', position: 'relative', top: '-0.075rem' }}>
+      <span style={{ display: 'flex', alignItems: 'flex-end', marginLeft: '1rem', position: 'relative', top: '-0.075rem' }}>
         <svg xmlns="http://www.w3.org/2000/svg" width="70" height="2" viewBox="0 0 104 2" fill="none">
           <path d="M1 0C0.447715 0 0 0.447715 0 1C0 1.55228 0.447715 2 1 2V1V0ZM1 1V2H104V1V0H1V1Z" fill="#0E5248" stroke="#0E5248" strokeWidth="2" />
         </svg>
@@ -76,26 +79,47 @@ const SupportTeam: React.FC = () => (
   </div>
 );
 
+
 const TeamTestimonials: React.FC = () => {
   return (
-    <section className={styles.section}>
-      <h2 className={styles.title}>People Behind Bijou Relocation</h2>
-      <p className={styles.subtitle}>
-        Our dedicated team brings together local expertise, professional qualifications, and genuine passion for property management excellence.
-      </p>
-      <PersonCard
-        name="Karen Hodgson"
-        role="Founder & Managing Director"
-        bio="Karen leads Bijou Relocation with over 20 years in the housing sector, developing deep understanding of residential management and commercial property operations. Her 15+ years of family business experience provided invaluable insights into building sustainable, relationship-focused enterprises, while 8+ years of independent business leadership prove her ability to deliver consistent results."
-        imageUrl=""
-        socials={[
-          { href: '#', label: 'Instagram', icon: <Instagram size={16} color="#fff" /> },
-          { href: '#', label: 'Facebook', icon: <Facebook size={16} color="#fff" /> },
-          { href: '#', label: 'LinkedIn', icon: <Linkedin size={16} color="#fff" /> },
-        ]}
+    <>
+      <SEOHead
+        title="Team Testimonials | Bijou Group Sheffield"
+        description="Team testimonials meta description with CTA and location."
+        canonical="https://yourdomain.com/about/team-testimonials"
       />
-      <SupportTeam />
-    </section>
+      <LocalBusinessSchema
+        name="Bijou Group"
+        address={{
+          street: "70 Clarkehouse Road",
+          city: "Sheffield",
+          region: "South Yorkshire",
+          postalCode: "S10 2LJ",
+          country: "England"
+        }}
+        phone="+447495747930"
+        url="https://yourdomain.com"
+        logo="/images/Circular logo.png"
+      />
+      <section className={styles.section}>
+        <h2 className={styles.title}>People Behind Bijou Relocation</h2>
+        <p className={styles.subtitle}>
+          Our dedicated team brings together local expertise, professional qualifications, and genuine passion for property management excellence.
+        </p>
+        <PersonCard
+          name="Karen Hodgson"
+          role="Founder & Managing Director"
+          bio="Karen leads Bijou Relocation with over 20 years in the housing sector, developing deep understanding of residential management and commercial property operations. Her 15+ years of family business experience provided invaluable insights into building sustainable, relationship-focused enterprises, while 8+ years of independent business leadership prove her ability to deliver consistent results."
+          imageUrl=""
+          socials={[
+            { href: '#', label: 'Instagram', icon: <Instagram size={16} color="#fff" /> },
+            { href: '#', label: 'Facebook', icon: <Facebook size={16} color="#fff" /> },
+            { href: '#', label: 'LinkedIn', icon: <Linkedin size={16} color="#fff" /> },
+          ]}
+        />
+        <SupportTeam />
+      </section>
+    </>
   );
 };
 

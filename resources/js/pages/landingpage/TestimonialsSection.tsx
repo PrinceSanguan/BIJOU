@@ -1,4 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
+import { SEOHead } from '../../components/SEOHead';
+import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 
 export function TestimonialsSection() {
   const testimonials = [
@@ -33,7 +36,26 @@ export function TestimonialsSection() {
   }, [testimonials.length]);
 
   return (
-  <section className="relative pt-12 sm:pt-20 px-3 sm:px-6 bg-white overflow-x-hidden">
+    <>
+      <SEOHead
+        title="Testimonials | Bijou Group Sheffield HMO Management"
+        description="See what our clients say about Bijou Group's HMO management services in Sheffield. Real reviews from landlords and investors."
+        canonical="https://bijougroup.co.uk/testimonials"
+      />
+      <LocalBusinessSchema
+        name="Bijou Group"
+        url="https://bijougroup.co.uk/testimonials"
+        address={{
+          street: "70 Clarkehouse Road",
+          city: "Sheffield",
+          region: "South Yorkshire",
+          postalCode: "S10 2LJ",
+          country: "UK"
+        }}
+        phone="+447495747930"
+        logo="/logo.svg"
+      />
+      <section className="relative pt-12 sm:pt-20 px-3 sm:px-6 bg-white overflow-x-hidden">
       {/* Geometric accent elements - fewer on mobile */}
       <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
       <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
@@ -160,5 +182,6 @@ export function TestimonialsSection() {
         `}
       </style>
     </section>
+    </>
   );
 }

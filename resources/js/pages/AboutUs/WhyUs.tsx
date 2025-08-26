@@ -1,5 +1,8 @@
 
+import React from 'react';
 import styles from './WhyUs.module.css';
+import { SEOHead } from '../../components/SEOHead';
+import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 
 const CheckIcon: React.FC = () => (
 	<span className={styles.check}>
@@ -10,32 +13,52 @@ const CheckIcon: React.FC = () => (
 );
 
 const WhyUs: React.FC = () => (
-	<section className={styles.section}>
-		<h2 className={styles.title}>Why Choose Bijou Group?</h2>
-		<div className={styles.content}>
-			<div className={styles.paragraph}>
-				We started Bijou Relocation because we saw how much time and energy property professionals and landlords were wasting on compliance issues, tenant coordination, and reactive maintenance tasks.<br />
-				We knew Sheffield was ready for a property management company that combined local expertise with professional systems.
+	<>
+		<SEOHead
+			title="Why Choose Us | Bijou Group Sheffield"
+			description="Why us meta description with CTA and location."
+			canonical="https://yourdomain.com/about/why-us"
+		/>
+		<LocalBusinessSchema
+			name="Bijou Group"
+			address={{
+				street: "70 Clarkehouse Road",
+				city: "Sheffield",
+				region: "South Yorkshire",
+				postalCode: "S10 2LJ",
+				country: "England"
+			}}
+			phone="+447495747930"
+			url="https://yourdomain.com"
+			logo="/images/Circular logo.png"
+		/>
+		<section className={styles.section}>
+			<h2 className={styles.title}>Why Choose Bijou Group?</h2>
+			<div className={styles.content}>
+				<div className={styles.paragraph}>
+					We started Bijou Relocation because we saw how much time and energy property professionals and landlords were wasting on compliance issues, tenant coordination, and reactive maintenance tasks.<br />
+					We knew Sheffield was ready for a property management company that combined local expertise with professional systems.
+				</div>
+				<div className={styles.paragraph2}>
+					By bringing exceptional service standards to HMO management, we created a solution that works:
+				</div>
+				<ul className={styles.list}>
+					<li className={styles.listItem}>
+						<CheckIcon />
+						<span className={styles.listText}>
+							Stress-free, profitable support for Sheffield landlords
+						</span>
+					</li>
+					<li className={styles.listItem}>
+						<CheckIcon />
+						<span className={styles.listText}>
+							Professional property management that actually works
+						</span>
+					</li>
+				</ul>
 			</div>
-			<div className={styles.paragraph2}>
-				By bringing exceptional service standards to HMO management, we created a solution that works:
-			</div>
-			<ul className={styles.list}>
-				<li className={styles.listItem}>
-					<CheckIcon />
-					<span className={styles.listText}>
-						Stress-free, profitable support for Sheffield landlords
-					</span>
-				</li>
-				<li className={styles.listItem}>
-					<CheckIcon />
-					<span className={styles.listText}>
-						Professional property management that actually works
-					</span>
-				</li>
-			</ul>
-		</div>
-	</section>
+		</section>
+	</>
 );
 
 export default WhyUs;

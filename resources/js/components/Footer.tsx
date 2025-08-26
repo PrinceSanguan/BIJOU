@@ -31,11 +31,11 @@ export function Footer() {
           <div>
             <div className="font-bold mb-2 text-white">Quick Links</div>
             <ul className="space-y-1 text-sm">
-              <li><a href="#" className="hover:underline">Home</a></li>
-              <li><a href="#" className="hover:underline">About</a></li>
-              <li><a href="#" className="hover:underline">Services</a></li>
-              <li><a href="#" className="hover:underline">Contacts</a></li>
-              <li><a href="#" className="hover:underline">Testimonials</a></li>
+              <li><a href="/" className="hover:underline">Home</a></li>
+              <li><a href="/about" className="hover:underline">About</a></li>
+              <li><a href="/services" className="hover:underline">Services</a></li>
+                <li><a href="/contact" className="hover:underline">Contacts</a></li>
+              <li><a href="/testimonials" className="hover:underline">Testimonials</a></li>
             </ul>
           </div>
           <div>

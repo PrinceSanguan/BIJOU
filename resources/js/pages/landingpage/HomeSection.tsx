@@ -1,5 +1,8 @@
 
+
 import React, { useEffect, useRef, useState } from 'react';
+import { SEOHead } from '../../components/SEOHead';
+import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 
 export function HomeSection() {
 
@@ -30,11 +33,30 @@ export function HomeSection() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden touch-pan-y"
-      style={{ WebkitOverflowScrolling: 'touch' }}
-    >
+    <>
+      <SEOHead
+        title="HMO Management Sheffield | Bijou Group"
+        description="Sheffield's trusted HMO management specialists. Stress-free property solutions for landlords and investors."
+        canonical="https://bijougroup.co.uk/"
+      />
+      <LocalBusinessSchema
+        name="Bijou Group"
+        url="https://bijougroup.co.uk/"
+        address={{
+          street: "70 Clarkehouse Road",
+          city: "Sheffield",
+          region: "South Yorkshire",
+          postalCode: "S10 2LJ",
+          country: "UK"
+        }}
+        phone="+447495747930"
+        logo="/logo.svg"
+      />
+      <section
+        ref={sectionRef}
+        className="relative w-full min-h-screen flex items-center justify-center overflow-hidden touch-pan-y"
+        style={{ WebkitOverflowScrolling: 'touch' }}
+      >
       {/* Video background */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
@@ -331,5 +353,6 @@ export function HomeSection() {
         `}
       </style>
     </section>
+    </>
   );
 }

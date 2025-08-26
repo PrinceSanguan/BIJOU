@@ -1,7 +1,29 @@
+
 import React from 'react';
+import { SEOHead } from '../../components/SEOHead';
+import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 
 export function AboutSection() {
   return (
+    <>
+      <SEOHead
+        title="About Us | Bijou Group Sheffield HMO Management"
+        description="Learn about Bijou Group's legacy in Sheffield HMO management, our expertise, and how we help landlords maximize returns."
+        canonical="https://bijougroup.co.uk/about"
+      />
+      <LocalBusinessSchema
+        name="Bijou Group"
+        url="https://bijougroup.co.uk/about"
+        address={{
+          street: "70 Clarkehouse Road",
+          city: "Sheffield",
+          region: "South Yorkshire",
+          postalCode: "S10 2LJ",
+          country: "UK"
+        }}
+        phone="+447495747930"
+        logo="/logo.svg"
+      />
     <section
       className="relative flex items-center justify-center min-h-[320px] py-10 sm:py-20 px-2 sm:px-6 bg-[#0E5248] overflow-x-hidden"
     >
@@ -74,5 +96,6 @@ export function AboutSection() {
         `}
       </style>
     </section>
+    </>
   );
 }
