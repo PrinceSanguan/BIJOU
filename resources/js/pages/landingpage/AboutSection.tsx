@@ -1,9 +1,133 @@
-
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { SEOHead } from '../../components/SEOHead';
 import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
+import { animate } from 'animejs';
 
 export function AboutSection() {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const leftLineRef = useRef(null);
+  const rightLineRef = useRef(null);
+  const line1Ref = useRef(null);
+  const line2Ref = useRef(null);
+  const line3Ref = useRef(null);
+  const line4Ref = useRef(null);
+  const line5Ref = useRef(null);
+  const line6Ref = useRef(null);
+  const listRef = useRef(null);
+  const finalParaRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const animationTriggered: Record<string, boolean> = {
+      title: false,
+      leftLine: false,
+      rightLine: false,
+      line1: false,
+      line2: false,
+      line3: false,
+      line4: false,
+      line5: false,
+      line6: false,
+      list: false,
+      final: false
+    };
+
+    const handleScroll = () => {
+      if (!section) return;
+
+      const rect = (section as HTMLElement).getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      const scrollProgress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight)));
+
+
+      if (scrollProgress > 0.1 && !animationTriggered.title && titleRef.current) {
+        animationTriggered.title = true;
+        animate(titleRef.current, {
+          translateY: ['100%', '0%'],
+          opacity: [0, 1],
+          duration: 800,
+          easing: 'easeOutCubic'
+        });
+      }
+
+      // Left line appears at 15% scroll progress
+      if (scrollProgress > 0.15 && !animationTriggered.leftLine && leftLineRef.current) {
+        animationTriggered.leftLine = true;
+        animate(leftLineRef.current, {
+          scaleX: [0, 1],
+          opacity: [0, 1],
+          duration: 600,
+          easing: 'easeOutCubic'
+        });
+      }
+
+      // Right line appears at 17% scroll progress
+      if (scrollProgress > 0.17 && !animationTriggered.rightLine && rightLineRef.current) {
+        animationTriggered.rightLine = true;
+        animate(rightLineRef.current, {
+          scaleX: [0, 1],
+          opacity: [0, 1],
+          duration: 600,
+          easing: 'easeOutCubic'
+        });
+      }
+
+      const lines = [
+        { ref: line1Ref, progress: 0.2 },
+        { ref: line2Ref, progress: 0.2 },
+        { ref: line3Ref, progress: 0.2 },
+        { ref: line4Ref, progress: 0.2 },
+        { ref: line5Ref, progress: 0.2 },
+        { ref: line6Ref, progress: 0.2 }
+      ];
+
+      lines.forEach((line, index) => {
+        const triggerKey = `line${index + 1}`;
+        if (scrollProgress > line.progress && !animationTriggered[triggerKey] && line.ref.current) {
+          animationTriggered[triggerKey] = true;
+          animate(line.ref.current, {
+            translateY: ['30px', '0px'],
+            opacity: [0, 1],
+            duration: 600,
+            easing: 'easeOutCubic'
+          });
+        }
+      });
+
+
+      if (scrollProgress > 0.2 && !animationTriggered.list && listRef.current) {
+        animationTriggered.list = true;
+        animate(listRef.current, {
+          translateY: ['30px', '0px'],
+          opacity: [0, 1],
+          duration: 500,
+          easing: 'easeOutCubic'
+        });
+      }
+
+
+      if (scrollProgress > 0.2 && !animationTriggered.final && finalParaRef.current) {
+        animationTriggered.final = true;
+        animate(finalParaRef.current, {
+          translateY: ['30px', '0px'],
+          opacity: [0, 1],
+          duration: 500,
+          easing: 'easeOutCubic'
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       <SEOHead
@@ -25,6 +149,7 @@ export function AboutSection() {
         logo="/logo.svg"
       />
     <section
+      ref={sectionRef}
       className="relative flex items-center justify-center min-h-[320px] py-10 sm:py-20 px-2 sm:px-6 bg-[#0E5248] overflow-x-hidden"
     >
       {/* Geometric accent elements - fewer on mobile */}
@@ -37,15 +162,15 @@ export function AboutSection() {
       >
         {/* Section header with decorative line */}
         <div className="flex flex-col sm:flex-row items-center justify-center px-2 gap-4 sm:gap-[29px] w-full max-w-2xl mx-auto">
-          <div className="hidden sm:block mr-4">
+          <div ref={leftLineRef} className="hidden sm:block mr-4 opacity-0" style={{transformOrigin: 'left center'}}>
             <svg width="103" height="2" viewBox="0 0 103 2" fill="none" xmlns="http://www.w3.org/2000/svg">
               <line x1="0" y1="1" x2="103" y2="1" stroke="#FFD700" strokeWidth="2" />
             </svg>
           </div>
-          <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal tracking-[0.2em] sm:tracking-[0.3em] text-white uppercase font-['Roboto_Serif',serif]">
+          <h2 ref={titleRef} className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal tracking-[0.2em] sm:tracking-[0.3em] text-white uppercase font-['Roboto_Serif',serif]">
             ABOUT US
           </h2>
-          <div className="hidden sm:block ml-4">
+          <div ref={rightLineRef} className="hidden sm:block ml-4 opacity-0" style={{transformOrigin: 'right center'}}>
             <svg width="103" height="2" viewBox="0 0 103 2" fill="none" xmlns="http://www.w3.org/2000/svg">
               <line x1="0" y1="1" x2="103" y2="1" stroke="#FFD700" strokeWidth="2" />
             </svg>
@@ -54,13 +179,17 @@ export function AboutSection() {
         {/* Main content with responsive gap from title */}
         <div className="w-full flex items-center justify-center mt-10 sm:mt-12">
           <div className="flex flex-col items-center w-full">
-            <p className="text-xs xs:text-sm sm:text-base md:text-lg text-white font-medium px-1 sm:px-0 font-space leading-[2.25]">
-              At <span className="gold-gradient-text font-medium">Bijou Group</span>, HMO management is more than a service - it's our legacy. With years of experience managing HMO’s across Sheffield, we know the local market inside out. From student areas in S2 and S10 to professional house shares near Sheffield hospitals, our local knowledge ensures your property performs at its best.
-            </p>
-            <p className="text-xs xs:text-sm sm:text-base md:text-lg text-white font-medium px-1 sm:px-0 font-space leading-[2.25] mt-6">
-              Whether you're navigating complex HMO licensing Sheffield requirements, dealing with problem tenants, or seeking to maximize your rental returns, we're here to provide expert guidance with a personal touch that sets us apart from other letting agents.
-            </p>
-            <ul className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12 text-white text-sm sm:text-base font-space w-full max-w-2xl mx-auto">
+            <div className="text-xs xs:text-sm sm:text-base md:text-lg text-white font-medium px-1 sm:px-0 font-space leading-[2.25] space-y-4">
+              <p ref={line1Ref} className="opacity-0">At <span className="gold-gradient-text font-medium">Bijou Group</span>, HMO management is more than a service - it's our legacy.</p>
+              <p ref={line2Ref} className="opacity-0">With years of experience managing HMO's across Sheffield, we know the local market inside out.</p>
+              <p ref={line3Ref} className="opacity-0">From student areas in S2 and S10 to professional house shares near Sheffield hospitals, our local knowledge ensures your property performs at its best.</p>
+            </div>
+            <div className="text-xs xs:text-sm sm:text-base md:text-lg text-white font-medium px-1 sm:px-0 font-space leading-[2.25] mt-6 space-y-4">
+              <p ref={line4Ref} className="opacity-0">Whether you're navigating complex HMO licensing Sheffield requirements,</p>
+              <p ref={line5Ref} className="opacity-0">dealing with problem tenants, or seeking to maximize your rental returns,</p>
+              <p ref={line6Ref} className="opacity-0">we're here to provide expert guidance with a personal touch that sets us apart from other letting agents.</p>
+            </div>
+            <ul ref={listRef} className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12 text-white text-sm sm:text-base font-space w-full max-w-2xl mx-auto opacity-0">
               <li className="flex items-center gap-2 sm:gap-3">
                 <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#EFBF04] text-white text-base font-bold">✓</span>
                 <span>No voids</span>
@@ -74,7 +203,7 @@ export function AboutSection() {
                 <span>Transparent Fees</span>
               </li>
             </ul>
-            <p className="text-white text-xs xs:text-sm sm:text-base mt-6 font-space text-center leading-8">
+            <p ref={finalParaRef} className="text-white text-xs xs:text-sm sm:text-base mt-6 font-space text-center leading-8 opacity-0">
               <span className="text-[#EFBF04]">We handle everything so you can focus on building your property portfolio.</span>
             </p>
           </div>

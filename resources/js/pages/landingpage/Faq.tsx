@@ -1,8 +1,9 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SEOHead } from '../../components/SEOHead';
 import { FAQSchema } from '../../components/FAQSchema';
 import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
+import { animate } from 'animejs';
 
 const faqs = [
   {
@@ -26,6 +27,75 @@ const faqs = [
 
 export function Faq() {
   const [openIndex, setOpenIndex] = useState(0);
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const faqContainerRef = useRef(null);
+  const faqItemRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const animationTriggered: Record<string, boolean> = {
+      title: false,
+      container: false,
+      items: false
+    };
+
+    const handleScroll = () => {
+      if (!section) return;
+
+      const rect = (section as HTMLElement).getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      const scrollProgress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight)));
+
+      // Title appears at 15% scroll progress
+      if (scrollProgress > 0.15 && !animationTriggered.title && titleRef.current) {
+        animationTriggered.title = true;
+        animate(titleRef.current, {
+          translateY: ['30px', '0px'],
+          opacity: [0, 1],
+          duration: 800,
+          easing: 'easeOutCubic'
+        });
+      }
+
+      // FAQ container appears at 25% scroll progress
+      if (scrollProgress > 0.25 && !animationTriggered.container && faqContainerRef.current) {
+        animationTriggered.container = true;
+        animate(faqContainerRef.current, {
+          translateY: ['40px', '0px'],
+          opacity: [0, 1],
+          duration: 600,
+          easing: 'easeOutCubic'
+        });
+      }
+
+      // FAQ items appear one by one at 35% scroll progress
+      if (scrollProgress > 0.35 && !animationTriggered.items) {
+        animationTriggered.items = true;
+        faqItemRefs.current.forEach((item, index) => {
+          if (item) {
+            setTimeout(() => {
+              animate(item, {
+                translateY: ['20px', '0px'],
+                opacity: [0, 1],
+                duration: 500,
+                easing: 'easeOutCubic'
+              });
+            }, index * 150);
+          }
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -48,19 +118,23 @@ export function Faq() {
         phone="+447495747930"
         logo="/logo.svg"
       />
-      <section className="w-full max-w-5xl mx-auto mt-24 mb-16 px-2 sm:px-4">
-      <div className="flex items-center justify-center mb-8">
+      <section ref={sectionRef} className="w-full max-w-5xl mx-auto mt-24 mb-16 px-2 sm:px-4">
+      <div ref={titleRef} className="flex items-center justify-center mb-8 opacity-0">
         <span className="flex-1 h-0.5 bg-[#FFD700] max-w-[120px] mr-2 sm:mr-6" />
         <h2 className="text-center text-[#0E5248] text-base sm:text-lg md:text-xl lg:text-2xl font-normal tracking-[0.2em] font-['Roboto_Serif',serif] uppercase">
           Frequently Asked Questions
         </h2>
         <span className="flex-1 h-0.5 bg-[#FFD700] max-w-[120px] ml-2 sm:ml-6" />
       </div>
-      <div className="bg-white rounded-xl shadow-sm divide-y divide-gray-200">
+      <div ref={faqContainerRef} className="bg-white rounded-xl shadow-sm divide-y divide-gray-200 opacity-0">
         {faqs.map((faq, idx) => {
           const isOpen = openIndex === idx;
           return (
-            <div key={faq.question}>
+            <div 
+              key={faq.question}
+              ref={el => { faqItemRefs.current[idx] = el; }}
+              className="opacity-0"
+            >
               <button
                 className={`w-full text-left px-4 sm:px-6 py-4 sm:py-5 focus:outline-none flex items-center justify-between group transition-colors duration-150 ${isOpen ? 'text-[#0E5248] font-semibold bg-[#FFD700]/5' : 'text-[#12443A] font-medium'} rounded-lg focus-visible:ring-2 focus-visible:ring-[#FFD700] cursor-pointer`}
                 onClick={() => setOpenIndex(isOpen ? -1 : idx)}

@@ -1,10 +1,22 @@
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SEOHead } from '../../components/SEOHead';
 import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
+import { animate } from 'animejs';
 
 export function ServicesSection() {
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const carouselRef = useRef(null);
+  const centerImageRef = useRef(null);
+  const leftImageRef = useRef(null);
+  const rightImageRef = useRef(null);
+  const farLeftImageRef = useRef(null);
+  const farRightImageRef = useRef(null);
+  const carouselContentRef = useRef(null);
+  
   const services = [
     {
       title: 'Rent Arrears Management',
@@ -53,6 +65,141 @@ export function ServicesSection() {
   // For swipe/drag
   const [dragStartX, setDragStartX] = useState<number | null>(null);
   const [dragging, setDragging] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const animationTriggered: Record<string, boolean> = {
+      title: false,
+      subtitle: false,
+      carousel: false,
+      centerImage: false,
+      sideImages: false,
+      outerImages: false,
+      carouselContent: false
+    };
+
+    const handleScroll = () => {
+      if (!section) return;
+
+      const rect = (section as HTMLElement).getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      const scrollProgress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight)));
+
+      // Title appears at 10% scroll progress
+      if (scrollProgress > 0.1 && !animationTriggered.title && titleRef.current) {
+        animationTriggered.title = true;
+        animate(titleRef.current, {
+          translateY: ['50px', '0px'],
+          opacity: [0, 1],
+          duration: 800,
+          easing: 'easeOutCubic'
+        });
+      }
+
+      // Subtitle appears at 30% scroll progress
+      if (scrollProgress > 0.3 && !animationTriggered.subtitle && subtitleRef.current) {
+        animationTriggered.subtitle = true;
+        animate(subtitleRef.current, {
+          translateY: ['30px', '0px'],
+          opacity: [0, 1],
+          duration: 600,
+          easing: 'easeOutCubic'
+        });
+      }
+
+      // Carousel appears at 50% scroll progress
+      if (scrollProgress > 0.5 && !animationTriggered.carousel && carouselRef.current) {
+        animationTriggered.carousel = true;
+        animate(carouselRef.current, {
+          translateY: ['30px', '0px'],
+          opacity: [0, 1],
+          duration: 700,
+          easing: 'easeOutCubic'
+        });
+
+        // Center image appears first
+        setTimeout(() => {
+          if (!animationTriggered.centerImage && centerImageRef.current) {
+            animationTriggered.centerImage = true;
+            animate(centerImageRef.current, {
+              scale: [0.8, 1],
+              opacity: [0, 1],
+              duration: 600,
+              easing: 'easeOutCubic'
+            });
+          }
+        }, 100);
+
+        // Side images appear next
+        setTimeout(() => {
+          if (!animationTriggered.sideImages) {
+            animationTriggered.sideImages = true;
+            if (leftImageRef.current) {
+              animate(leftImageRef.current, {
+                translateX: ['-50px', '0px'],
+                opacity: [0, 1],
+                duration: 500,
+                easing: 'easeOutCubic'
+              });
+            }
+            if (rightImageRef.current) {
+              animate(rightImageRef.current, {
+                translateX: ['50px', '0px'],
+                opacity: [0, 1],
+                duration: 500,
+                easing: 'easeOutCubic'
+              });
+            }
+          }
+        }, 120);
+
+        // Outer images appear last
+        setTimeout(() => {
+          if (!animationTriggered.outerImages) {
+            animationTriggered.outerImages = true;
+            if (farLeftImageRef.current) {
+              animate(farLeftImageRef.current, {
+                translateX: ['-30px', '0px'],
+                opacity: [0, 1],
+                duration: 400,
+                easing: 'easeOutCubic'
+              });
+            }
+            if (farRightImageRef.current) {
+              animate(farRightImageRef.current, {
+                translateX: ['30px', '0px'],
+                opacity: [0, 1],
+                duration: 400,
+                easing: 'easeOutCubic'
+              });
+            }
+          }
+        }, 400);
+
+        // Carousel content (title, description, buttons) appears last
+        setTimeout(() => {
+          if (!animationTriggered.carouselContent && carouselContentRef.current) {
+            animationTriggered.carouselContent = true;
+            animate(carouselContentRef.current, {
+              translateY: ['20px', '0px'],
+              opacity: [0, 1],
+              duration: 500,
+              easing: 'easeOutCubic'
+            });
+          }
+        }, 550);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const goPrev = () => {
     setPrev(current);
@@ -128,7 +275,7 @@ export function ServicesSection() {
         phone="+447495747930"
         logo="/logo.svg"
       />
-      <section className="relative w-full py-10 sm:py-14 md:py-20 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center">
+      <section ref={sectionRef} className="relative w-full py-10 sm:py-14 md:py-20 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center">
       {/* Geometric accent elements */}
       <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
       <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
@@ -136,14 +283,14 @@ export function ServicesSection() {
 
   <div className="relative z-10 w-full max-w-full md:max-w-3xl lg:max-w-5xl mx-auto">
         {/* Section header */}
-  <div className="text-center mb-8 sm:mb-12 md:mb-16 px-1 sm:px-2">
+  <div ref={titleRef} className="text-center mb-8 sm:mb-12 md:mb-16 px-1 sm:px-2 opacity-0">
           <p className="text-[#17635C] mb-0 uppercase opacity-90 font-serif tracking-widest text-lg sm:text-xl md:text-2xl font-normal" style={{fontFamily: 'Roboto Serif, serif'}}>SERVICES</p>
-          <div className="flex flex-row items-center justify-center mt-0 -mt-2">
+          <div className="flex flex-row items-center justify-center -mt-2">
             <h2 className="font-medium leading-tight relative inline-block px-2 sm:px-6 md:px-8 py-2 sm:py-3 gold-title font-serif text-2xl sm:text-4xl md:text-5xl lg:text-[96px]" style={{fontFamily: 'Roboto Serif, serif'}}>
               <span className="gold-gradient-title-static">What We Do</span>
             </h2>
           </div>
-          <div className="flex justify-center w-full mt-1">
+          <div ref={subtitleRef} className="flex justify-center w-full mt-1 opacity-0">
             <p className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl text-[#0E5248] text-center font-sans text-sm sm:text-base md:text-lg lg:text-2xl font-normal leading-snug sm:leading-7 md:leading-8 lg:leading-9 m-0 px-1 md:px-0">
               We offer a full suite of property management and investment services tailored for <span className="text-[#FFD700] font-semibold">landlords</span>, <span className="text-[#FFD700] font-semibold">tenants</span>, and <span className="text-[#FFD700] font-semibold">investors</span>.
             </p>
@@ -151,7 +298,7 @@ export function ServicesSection() {
         </div>
 
         {/* Carousel */}
-        <div className="flex flex-col items-center justify-center mt-0 md:-mt-16">
+        <div ref={carouselRef} className="flex flex-col items-center justify-center mt-0 md:-mt-16 opacity-0">
           <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-5xl mx-auto flex flex-col items-center">
             <div
               className="relative flex items-center justify-center mb-2 sm:mb-4 w-full h-auto lg:w-[1301px] lg:h-[631px] select-none"
@@ -165,7 +312,8 @@ export function ServicesSection() {
               style={{touchAction: 'pan-y'}}
             >
               <div
-                className="hidden md:block lg:block absolute top-1/2 -translate-y-1/2 overflow-hidden left-0 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[503px] lg:h-[303px] z-0 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60"
+                ref={farLeftImageRef}
+                className="hidden md:block lg:block absolute top-1/2 -translate-y-1/2 overflow-hidden left-0 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[503px] lg:h-[303px] z-0 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60 opacity-0"
                 aria-hidden="true"
                 onClick={() => window.location.href = `/services/${((current - 2 + services.length) % services.length) + 1}`}
               >
@@ -180,7 +328,8 @@ export function ServicesSection() {
                 />
               </div>
               <div
-                className="hidden sm:block absolute top-1/2 -translate-y-1/2 overflow-hidden left-2 md:left-8 lg:left-24 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[671px] lg:h-[404px] z-10 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60"
+                ref={leftImageRef}
+                className="hidden sm:block absolute top-1/2 -translate-y-1/2 overflow-hidden left-2 md:left-8 lg:left-24 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[671px] lg:h-[404px] z-10 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60 opacity-0"
                 aria-hidden="true"
                 onClick={() => window.location.href = `/services/${(current === 0 ? services.length - 1 : current - 1) + 1}`}
               >
@@ -195,8 +344,9 @@ export function ServicesSection() {
                 />
               </div>
               <div
+                ref={centerImageRef}
                 className={[
-                  "relative z-20 flex items-center justify-center overflow-hidden rounded-[30px] group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60",
+                  "relative z-20 flex items-center justify-center overflow-hidden rounded-[30px] group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60 opacity-0",
                   "w-full aspect-[4/3]",
                   "sm:w-[220px] sm:aspect-[4/3]",
                   "md:w-[480px] md:aspect-[2/1]",
@@ -254,7 +404,8 @@ export function ServicesSection() {
                 </div>
               </div>
               <div
-                className="hidden sm:block absolute top-1/2 -translate-y-1/2 overflow-hidden right-2 md:right-8 lg:right-24 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[671px] lg:h-[404px] z-10 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60"
+                ref={rightImageRef}
+                className="hidden sm:block absolute top-1/2 -translate-y-1/2 overflow-hidden right-2 md:right-8 lg:right-24 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[671px] lg:h-[404px] z-10 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60 opacity-0"
                 aria-hidden="true"
                 onClick={() => window.location.href = `/services/${(current === services.length - 1 ? 0 : current + 1) + 1}`}
               >
@@ -269,7 +420,8 @@ export function ServicesSection() {
                 />
               </div>
               <div
-                className="hidden md:block lg:block absolute top-1/2 -translate-y-1/2 overflow-hidden right-0 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[503px] lg:h-[303px] z-0 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60"
+                ref={farRightImageRef}
+                className="hidden md:block lg:block absolute top-1/2 -translate-y-1/2 overflow-hidden right-0 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[503px] lg:h-[303px] z-0 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60 opacity-0"
                 aria-hidden="true"
                 onClick={() => window.location.href = `/services/${((current + 2) % services.length) + 1}`}
               >
@@ -284,7 +436,7 @@ export function ServicesSection() {
                 />
               </div>
             </div>
-            <div className="flex flex-col items-center w-full mt-2 sm:mt-0 px-1 md:px-0">
+            <div ref={carouselContentRef} className="flex flex-col items-center w-full mt-2 sm:mt-0 px-1 md:px-0 opacity-0">
               <h3
                 className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-3xl text-[#EFBF04] text-center font-sans font-bold text-base sm:text-xl md:text-2xl lg:text-4xl leading-snug mb-2 mt-0"
               >

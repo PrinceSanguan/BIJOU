@@ -1,8 +1,7 @@
-
-
 import React, { useEffect, useRef, useState } from 'react';
 import { SEOHead } from '../../components/SEOHead';
 import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
+import { animate, text, stagger } from 'animejs';
 
 export function HomeSection() {
 
@@ -11,6 +10,12 @@ export function HomeSection() {
   const sectionRef = useRef(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoVisible, setVideoVisible] = useState(false);
+  const infinityRef = useRef(null);
+  const hmoRef = useRef(null);
+  const stressFreeRef = useRef(null);
+  const descRef = useRef(null);
+  const landlordBtnRef = useRef(null);
+  const propertiesBtnRef = useRef(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -52,6 +57,31 @@ export function HomeSection() {
     observer.observe(section);
     return () => observer.disconnect();
   }, []);
+
+
+  useEffect(() => {
+    const animatePop = (ref, delay = 0, duration = 750) => {
+      if (ref.current) {
+        animate(
+          ref.current,
+          {
+            translateY: ['100%', '0%'],
+            opacity: [0, 1],
+            duration,
+            easing: 'easeOutCubic',
+            delay
+          }
+        );
+      }
+    };
+    animatePop(infinityRef, 0, 1500);
+    animatePop(hmoRef, 150);
+    animatePop(stressFreeRef, 300);
+    animatePop(descRef, 450);
+    animatePop(landlordBtnRef, 600);
+    animatePop(propertiesBtnRef, 750);
+  }, []);
+
 
   return (
     <>
@@ -124,19 +154,19 @@ export function HomeSection() {
       <div className="relative z-30 text-center px-2 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="mb-6 sm:mb-8">
           <p className="text-white text-xs sm:text-sm font-medium tracking-[0.2em] sm:tracking-[0.3em] mb-4 sm:mb-6 opacity-90 drop-shadow-md">
-            <span className="text-white">WE ARE INFINITY.</span>
+            <span className="text-white" ref={infinityRef} style={{ display: 'inline-block' }}>WE ARE INFINITY.</span>
           </p>
           <div className="flex justify-center items-center w-full">
             <h1 className="text-white text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-tight mb-3 sm:mb-4 px-2 drop-shadow-lg font-serif">
               <span className="block w-full max-w-full mx-auto text-center text-white/80 font-serif font-medium leading-none">
-                <span className="block text-white">HMO Management Sheffield</span>
-                <span className="block text-[#EFBF04] font-serif font-medium leading-none">
+                <span className="block text-white" ref={hmoRef} style={{ display: 'inline-block' }}>HMO Management Sheffield</span>
+                <span className="block text-[#EFBF04] font-serif font-medium leading-none" ref={stressFreeRef} style={{ display: 'inline-block' }}>
                   Stress-Free Property <span className="text-white">Solutions</span>
                 </span>
               </span>
             </h1>
           </div>
-          <p className="text-white text-xs sm:text-sm md:text-base font-light opacity-90 mb-6 sm:mb-8 max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto px-2 drop-shadow-md font-space text-center leading-[1.5]">
+          <p className="text-white text-xs sm:text-sm md:text-base font-light opacity-90 mb-6 sm:mb-8 max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto px-2 drop-shadow-md font-space text-center leading-[1.5]" ref={descRef} style={{ display: 'inline-block' }}>
             We're Sheffield's trusted HMO management specialists, offering professional property services that eliminate your stress while maximizing your returns. Professional HMO letting agents serving Sheffield landlords & investors.
           </p>
         </div>
@@ -144,12 +174,14 @@ export function HomeSection() {
         {/* Buttons - stacked on mobile, side by side on larger screens */}
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-none mx-auto w-full">
           <button
+            ref={landlordBtnRef}
             className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden cursor-pointer"
             onClick={() => window.location.href = '/contact'}
           >
             I'm a Landlord
           </button>
           <button
+            ref={propertiesBtnRef}
             className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden cursor-pointer"
             onClick={() => window.location.href = '/contact'}
           >
