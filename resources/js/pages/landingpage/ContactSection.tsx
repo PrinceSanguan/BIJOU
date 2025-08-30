@@ -1,9 +1,10 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SEOHead } from '../../components/SEOHead';
 import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
+import { animate } from 'animejs';
 
-export function ContactSection() {
+export function ContactSection({ enableScrollAnimation = false }: { enableScrollAnimation?: boolean }) {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -14,6 +15,71 @@ export function ContactSection() {
     message: ''
   });
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const sectionRef = useRef(null);
+  const containerRef = useRef(null);
+  const mapRef = useRef(null);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    if (!enableScrollAnimation) return;
+    
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const animationTriggered: Record<string, boolean> = {
+      container: false,
+      map: false,
+      form: false
+    };
+
+    const handleScroll = () => {
+      if (!section) return;
+
+      const rect = (section as HTMLElement).getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      const scrollProgress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight)));
+
+      // Container appears at 15% scroll progress
+      if (scrollProgress > 0.15 && !animationTriggered.container && containerRef.current) {
+        animationTriggered.container = true;
+        animate(containerRef.current, {
+          translateY: ['50px', '0px'],
+          opacity: [0, 1],
+          duration: 800,
+          easing: 'easeOutCubic'
+        });
+      }
+
+      // Map appears at 25% scroll progress
+      if (scrollProgress > 0.25 && !animationTriggered.map && mapRef.current) {
+        animationTriggered.map = true;
+        animate(mapRef.current, {
+          translateX: ['-50px', '0px'],
+          opacity: [0, 1],
+          duration: 700,
+          easing: 'easeOutCubic'
+        });
+      }
+
+      // Form appears at 35% scroll progress
+      if (scrollProgress > 0.35 && !animationTriggered.form && formRef.current) {
+        animationTriggered.form = true;
+        animate(formRef.current, {
+          translateX: ['50px', '0px'],
+          opacity: [0, 1],
+          duration: 700,
+          easing: 'easeOutCubic'
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [enableScrollAnimation]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -61,12 +127,13 @@ export function ContactSection() {
         }}
       />
       <section
+        ref={sectionRef}
         className="relative py-8 sm:py-12 md:py-16 px-2 sm:px-4 min-h-[60vh] bg-white flex items-center justify-center overflow-hidden"
       >
-        <div className="relative z-10 w-full max-w-[1700px] mx-auto flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0">
+        <div ref={containerRef} className={`relative z-10 w-full max-w-[1700px] mx-auto flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0 ${enableScrollAnimation ? 'opacity-0' : ''}`}>
           <div className="w-full bg-white rounded-2xl border border-gray-100 flex flex-col md:flex-row items-stretch min-h-[600px] md:min-h-[800px] p-2 sm:p-4 md:p-6 shadow-xl">
             {/* Map side - always first */}
-            <div className="order-1 md:order-none relative w-full md:w-1/2 h-[220px] sm:h-[320px] md:h-auto flex items-end">
+            <div ref={mapRef} className={`order-1 md:order-none relative w-full md:w-1/2 h-[220px] sm:h-[320px] md:h-auto flex items-end ${enableScrollAnimation ? 'opacity-0' : ''}`}>
               <div className="w-full h-full overflow-hidden flex items-stretch">
                 <iframe
                   title="Google Map Sheffield"
@@ -96,7 +163,7 @@ export function ContactSection() {
             </div>
           </div>
           {/* Form side - always second */}
-          <div className="order-2 md:order-none w-full md:w-1/2 flex flex-col h-full p-0">
+          <div ref={formRef} className={`order-2 md:order-none w-full md:w-1/2 flex flex-col h-full p-0 ${enableScrollAnimation ? 'opacity-0' : ''}`}>
             <form className="flex flex-col flex-1 h-full w-full px-2 sm:px-4 md:px-8 pt-4 sm:pt-6 pb-0 gap-0 bg-white bg-opacity-90 rounded-none shadow-none border-0 min-h-full">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#12443A] leading-tight mb-2 font-serif">Ready to simplify your property journey?</h2>
               <p className="text-sm sm:text-base text-[#12443A] mb-4 sm:mb-6 leading-snug">Reach out to us today. Whether you're a landlord, investor, or tenant - we're here to help.</p>

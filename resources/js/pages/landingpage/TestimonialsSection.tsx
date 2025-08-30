@@ -1,24 +1,25 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SEOHead } from '../../components/SEOHead';
 import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
+import { animate } from 'animejs';
 
-export function TestimonialsSection() {
+export function TestimonialsSection({ enableScrollAnimation = false }: { enableScrollAnimation?: boolean }) {
   const testimonials = [
     {
-      text: '“Karen and her team made everything seamless—from tenant placement to full management. A truly hands-off experience.”',
+      text: '"Karen and her team made everything seamless—from tenant placement to full management. A truly hands-off experience."',
       author: 'James R.',
       role: 'Landlord in Sheffield',
       img: 'https://randomuser.me/api/portraits/men/32.jpg',
     },
     {
-      text: '“Professional, reliable, and legally sharp. I wouldn’t trust my HMO portfolio with anyone else.”',
+      text: '"Professional, reliable, and legally sharp. I wouldn\'t trust my HMO portfolio with anyone else."',
       author: 'Michelle D.',
       role: 'Investor',
       img: 'https://randomuser.me/api/portraits/women/44.jpg',
     },
     {
-      text: '“The Bijou Group helped me source, stage, and let my first rental within weeks. Absolutely worth it.”',
+      text: '"The Bijou Group helped me source, stage, and let my first rental within weeks. Absolutely worth it."',
       author: 'Mark E.',
       role: 'First-time Landlord',
       img: 'https://randomuser.me/api/portraits/men/65.jpg',
@@ -26,6 +27,9 @@ export function TestimonialsSection() {
   ];
 
   const [active, setActive] = useState(0);
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const contentRef = useRef(null);
 
   // Auto-advance testimonial every 3 seconds
   useEffect(() => {
@@ -34,6 +38,55 @@ export function TestimonialsSection() {
     }, 3000);
     return () => clearInterval(interval);
   }, [testimonials.length]);
+
+  useEffect(() => {
+    if (!enableScrollAnimation) return;
+    
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const animationTriggered: Record<string, boolean> = {
+      title: false,
+      content: false
+    };
+
+    const handleScroll = () => {
+      if (!section) return;
+
+      const rect = (section as HTMLElement).getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      const scrollProgress = Math.max(0, Math.min(1, (windowHeight - sectionTop) / (windowHeight + sectionHeight)));
+
+      // Title appears at 20% scroll progress
+      if (scrollProgress > 0.2 && !animationTriggered.title && titleRef.current) {
+        animationTriggered.title = true;
+        animate(titleRef.current, {
+          translateY: ['40px', '0px'],
+          opacity: [0, 1],
+          duration: 800,
+          easing: 'easeOutCubic'
+        });
+      }
+
+      // Content appears at 30% scroll progress
+      if (scrollProgress > 0.3 && !animationTriggered.content && contentRef.current) {
+        animationTriggered.content = true;
+        animate(contentRef.current, {
+          translateY: ['30px', '0px'],
+          opacity: [0, 1],
+          duration: 700,
+          easing: 'easeOutCubic'
+        });
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [enableScrollAnimation]);
 
   return (
     <>
@@ -55,7 +108,7 @@ export function TestimonialsSection() {
         phone="+447495747930"
         logo="/logo.svg"
       />
-      <section className="relative pt-12 sm:pt-20 px-3 sm:px-6 bg-white overflow-x-hidden">
+      <section ref={sectionRef} className="relative pt-12 sm:pt-20 px-3 sm:px-6 bg-white overflow-x-hidden">
       {/* Geometric accent elements - fewer on mobile */}
       <div className="hidden sm:block absolute top-1/4 left-1/4 w-2 h-2 bg-[#FFD700] rounded-full opacity-60 animate-pulse z-10"></div>
       <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FFD700] rounded-full opacity-40 z-10"></div>
@@ -63,7 +116,7 @@ export function TestimonialsSection() {
 
   <div className="max-w-4xl mx-auto text-center relative z-20 w-full">
         {/* Section header */}
-    <div className="mb-8 sm:mb-12 w-full flex items-center justify-center gap-2 sm:gap-4">
+    <div ref={titleRef} className={`mb-8 sm:mb-12 w-full flex items-center justify-center gap-2 sm:gap-4 ${enableScrollAnimation ? 'opacity-0' : ''}`}>
       <span className="hidden sm:inline-block border-b-2 border-[#FFD700] align-middle relative top-[-4px] w-24 sm:w-32 lg:w-[103px]" />
       <span
   className="uppercase text-base sm:text-lg md:text-xl lg:text-[24px] tracking-[0.15em] font-normal text-[#17635C] text-center font-serif max-w-full mx-2 lg:w-[386px] lg:h-[34.8px] flex-shrink-0"
@@ -74,7 +127,7 @@ export function TestimonialsSection() {
       <span className="hidden sm:inline-block border-b-2 border-[#FFD700] align-middle relative top-[-4px] w-24 sm:w-32 lg:w-[103px]" />
     </div>
         {/* Testimonial content */}
-        <div className="mb-8 sm:mb-12">
+        <div ref={contentRef} className={`mb-8 sm:mb-12 ${enableScrollAnimation ? 'opacity-0' : ''}`}>
           <p className="text-base sm:text-lg md:text-2xl lg:text-3xl leading-relaxed font-light mb-6 sm:mb-10 px-2 text-[#0E5248] break-words max-w-full overflow-x-auto">
             {testimonials[active].text.split(/(Bijou Group|seamless|Professional|reliable|legally sharp|portfolio|source|stage|let|rental|worth|experience)/gi).map((word, i) =>
               ["Bijou Group", "seamless", "Professional", "reliable", "legally sharp", "portfolio", "source", "stage", "let", "rental", "worth", "experience"].includes(word.trim()) ?
