@@ -83,7 +83,7 @@ export default function Welcome() {
                 <Cta enableScrollAnimation={true} />
                 {/* <BlogSection /> HIDDEN FOR NOW */}
             </main>
-            <Footer />
+            <Footer enableScrollAnimation={true} />
         </>
     );
 }
