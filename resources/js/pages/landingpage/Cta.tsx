@@ -1,11 +1,10 @@
-
 import React, { useEffect, useRef } from 'react';
 import { SEOHead } from '../../components/SEOHead';
 import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 import { animate } from 'animejs';
 
 
-export function Cta({ enableScrollAnimation = false }: { enableScrollAnimation?: boolean }) {
+export function Cta({ enableScrollAnimation = true }: { enableScrollAnimation?: boolean }) {
   const sectionRef = useRef(null);
   const leftContentRef = useRef(null);
   const rightContentRef = useRef(null);
@@ -37,7 +36,13 @@ export function Cta({ enableScrollAnimation = false }: { enableScrollAnimation?:
           translateX: ['-50px', '0px'],
           opacity: [0, 1],
           duration: 700,
-          easing: 'easeOutCubic'
+          easing: 'easeOutCubic',
+          complete: () => {
+            if (leftContentRef.current) {
+              (leftContentRef.current as HTMLElement).style.opacity = '1';
+              (leftContentRef.current as HTMLElement).style.transform = 'translateX(0)';
+            }
+          }
         });
       }
 
@@ -48,7 +53,13 @@ export function Cta({ enableScrollAnimation = false }: { enableScrollAnimation?:
           translateX: ['50px', '0px'],
           opacity: [0, 1],
           duration: 700,
-          easing: 'easeOutCubic'
+          easing: 'easeOutCubic',
+          complete: () => {
+            if (rightContentRef.current) {
+              (rightContentRef.current as HTMLElement).style.opacity = '1';
+              (rightContentRef.current as HTMLElement).style.transform = 'translateX(0)';
+            }
+          }
         });
       }
     };

@@ -1,6 +1,4 @@
-
-
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Footer } from '@/components/Footer';
 import HeaderBlack from '@/components/HeaderBlack';
 import { ContactSection } from '@/pages/landingpage/ContactSection';
@@ -10,8 +8,55 @@ import { OrganizationSchema } from '../components/OrganizationSchema';
 import { WebSiteSchema } from '../components/WebSiteSchema';
 import { BreadcrumbListSchema } from '../components/BreadcrumbListSchema';
 import { FAQSchema } from '../components/FAQSchema';
+import { animate } from 'animejs';
 
 export default function Contact() {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let hasAnimatedTitle = false;
+    let hasAnimatedSection = false;
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      if (titleRef.current && !hasAnimatedTitle) {
+        const rect = titleRef.current.getBoundingClientRect();
+        if ((windowHeight - rect.top) / windowHeight > 0.2) {
+          hasAnimatedTitle = true;
+          animate(titleRef.current, {
+            opacity: [0, 1],
+            translateY: [40, 0],
+            duration: 700,
+            easing: 'easeOutCubic',
+            complete: () => {
+              titleRef.current!.style.opacity = '1';
+              titleRef.current!.style.transform = 'translateY(0)';
+            }
+          });
+        }
+      }
+      if (sectionRef.current && !hasAnimatedSection) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        if ((windowHeight - rect.top) / windowHeight > 0.25) {
+          hasAnimatedSection = true;
+          animate(sectionRef.current, {
+            opacity: [0, 1],
+            translateY: [40, 0],
+            duration: 800,
+            easing: 'easeOutCubic',
+            complete: () => {
+              sectionRef.current!.style.opacity = '1';
+              sectionRef.current!.style.transform = 'translateY(0)';
+            }
+          });
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    setTimeout(handleScroll, 100);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       <SEOHead
@@ -60,11 +105,13 @@ export default function Contact() {
         <HeaderBlack className="sticky top-0 z-50" />
         <main className="flex-grow flex items-center justify-center w-full py-12 px-4 overflow-x-hidden">
           <div className="w-full max-w-[1562px] px-4">
-            <h1 className="text-7xl font-bold text-[#EFBF04] text-center mb-12 font-serif">Contact Us</h1>
-            <ContactSection />
+            <h1 ref={titleRef} className="text-7xl font-bold text-[#EFBF04] text-center mb-12 font-serif opacity-0">Contact Us</h1>
+            <div ref={sectionRef} className="opacity-0">
+              <ContactSection />
+            </div>
           </div>
         </main>
-        <Footer />
+        <Footer enableScrollAnimation={true} />
       </div>
     </>
   );

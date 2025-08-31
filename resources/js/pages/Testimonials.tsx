@@ -67,13 +67,13 @@ export default function Testimonials() {
           {/* Removed non-design heading per Figma design system */}
         </h1>
         <Hero />
-        <TestimonialsSection />
+        <TestimonialsSection enableScrollAnimation={true} />
         <TrustedCompaniesSection />
         <MissionandVision />
         <Record />
         <Cta />
       </main>
-      <Footer />
+      <Footer enableScrollAnimation={true} />
     </>
   );
 }
