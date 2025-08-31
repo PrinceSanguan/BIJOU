@@ -1,5 +1,5 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { animate } from 'animejs';
 import { SEOHead } from '../../components/SEOHead';
 import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 
@@ -55,6 +55,16 @@ function Hero() {
   const [prev, setPrev] = useState(0);
   const [direction, setDirection] = useState<'left' | 'right'>('right');
 
+  // Animation refs
+  const textSectionRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const mainImageRef = useRef<HTMLDivElement>(null);
+  const sideImagesRef = useRef<HTMLDivElement[]>([]);
+  const outerImagesRef = useRef<HTMLDivElement[]>([]);
+  const serviceTitleRef = useRef<HTMLHeadingElement>(null);
+  const serviceDescRef = useRef<HTMLParagraphElement>(null);
+  const navButtonsRef = useRef<HTMLDivElement>(null);
+
   const goPrev = () => {
     setPrev(current);
     setDirection('left');
@@ -109,6 +119,184 @@ function Hero() {
     setDragStartX(null);
   };
 
+  useEffect(() => {
+    let hasAnimatedText = false;
+    let hasAnimatedMain = false;
+    let hasAnimatedSides = false;
+    let hasAnimatedOuter = false;
+    let hasAnimatedServiceTitle = false;
+    let hasAnimatedServiceDesc = false;
+    let hasAnimatedNavButtons = false;
+
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+
+      // Animate text section first
+      if (textSectionRef.current && !hasAnimatedText) {
+        const rect = textSectionRef.current.getBoundingClientRect();
+        if ((windowHeight - rect.top) / windowHeight > 0.2) {
+          hasAnimatedText = true;
+          animate(textSectionRef.current, {
+            opacity: [0, 1],
+            translateY: [40, 0],
+            duration: 800,
+            easing: 'easeOutCubic',
+            complete: () => {
+              if (textSectionRef.current) {
+                textSectionRef.current.style.opacity = '1';
+                textSectionRef.current.style.transform = 'translateY(0)';
+              }
+            }
+          });
+        }
+      }
+
+      // Animate main image (middle) second
+      if (mainImageRef.current && !hasAnimatedMain) {
+        const rect = mainImageRef.current.getBoundingClientRect();
+        if ((windowHeight - rect.top) / windowHeight > 0.25) {
+          hasAnimatedMain = true;
+          animate(mainImageRef.current, {
+            opacity: [0, 1],
+            scale: [0.8, 1],
+            duration: 700,
+            easing: 'easeOutCubic',
+            complete: () => {
+              if (mainImageRef.current) {
+                mainImageRef.current.style.opacity = '1';
+                mainImageRef.current.style.transform = 'scale(1)';
+              }
+            }
+          });
+        }
+      }
+
+      // Animate side images (left and right) third
+      if (!hasAnimatedSides && sideImagesRef.current.length > 0) {
+        const firstSide = sideImagesRef.current[0];
+        if (firstSide) {
+          const rect = firstSide.getBoundingClientRect();
+          if ((windowHeight - rect.top) / windowHeight > 0.3) {
+            hasAnimatedSides = true;
+            sideImagesRef.current.forEach((sideRef, idx) => {
+              if (sideRef) {
+                animate(sideRef, {
+                  opacity: [0, 1],
+                  translateX: idx === 0 ? [-30, 0] : [30, 0], // Left from left, right from right
+                  duration: 600,
+                  delay: idx * 100,
+                  easing: 'easeOutCubic',
+                  complete: () => {
+                    if (sideRef) {
+                      sideRef.style.opacity = '1';
+                      sideRef.style.transform = 'translateX(0)';
+                    }
+                  }
+                });
+              }
+            });
+          }
+        }
+      }
+
+      // Animate outer images (far left and far right) last
+      if (!hasAnimatedOuter && outerImagesRef.current.length > 0) {
+        const firstOuter = outerImagesRef.current[0];
+        if (firstOuter) {
+          const rect = firstOuter.getBoundingClientRect();
+          if ((windowHeight - rect.top) / windowHeight > 0.35) {
+            hasAnimatedOuter = true;
+            outerImagesRef.current.forEach((outerRef, idx) => {
+              if (outerRef) {
+                animate(outerRef, {
+                  opacity: [0, 1],
+                  translateX: idx === 0 ? [-40, 0] : [40, 0], // Far left from left, far right from right
+                  duration: 500,
+                  delay: idx * 150,
+                  easing: 'easeOutCubic',
+                  complete: () => {
+                    if (outerRef) {
+                      outerRef.style.opacity = '1';
+                      outerRef.style.transform = 'translateX(0)';
+                    }
+                  }
+                });
+              }
+            });
+          }
+        }
+      }
+
+      // Animate service title
+      if (serviceTitleRef.current && !hasAnimatedServiceTitle) {
+        const rect = serviceTitleRef.current.getBoundingClientRect();
+        if ((windowHeight - rect.top) / windowHeight > 0.4) {
+          hasAnimatedServiceTitle = true;
+          animate(serviceTitleRef.current, {
+            opacity: [0, 1],
+            translateY: [30, 0],
+            duration: 700,
+            easing: 'easeOutCubic',
+            complete: () => {
+              if (serviceTitleRef.current) {
+                serviceTitleRef.current.style.opacity = '1';
+                serviceTitleRef.current.style.transform = 'translateY(0)';
+              }
+            }
+          });
+        }
+      }
+
+      // Animate service description
+      if (serviceDescRef.current && !hasAnimatedServiceDesc) {
+        const rect = serviceDescRef.current.getBoundingClientRect();
+        if ((windowHeight - rect.top) / windowHeight > 0.45) {
+          hasAnimatedServiceDesc = true;
+          animate(serviceDescRef.current, {
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 600,
+            easing: 'easeOutCubic',
+            complete: () => {
+              if (serviceDescRef.current) {
+                serviceDescRef.current.style.opacity = '1';
+                serviceDescRef.current.style.transform = 'translateY(0)';
+              }
+            }
+          });
+        }
+      }
+
+      // Animate navigation buttons
+      if (navButtonsRef.current && !hasAnimatedNavButtons) {
+        const rect = navButtonsRef.current.getBoundingClientRect();
+        if ((windowHeight - rect.top) / windowHeight > 0.5) {
+          hasAnimatedNavButtons = true;
+          // Animate buttons with a bounce effect
+          animate(navButtonsRef.current.children, {
+            opacity: [0, 1],
+            scale: [0.5, 1],
+            duration: 500,
+            delay: (el, i) => i * 100,
+            easing: 'easeOutBack',
+            complete: () => {
+              if (navButtonsRef.current) {
+                Array.from(navButtonsRef.current.children).forEach((child) => {
+                  (child as HTMLElement).style.opacity = '1';
+                  (child as HTMLElement).style.transform = 'scale(1)';
+                });
+              }
+            }
+          });
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    setTimeout(handleScroll, 100); // Initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section className="relative w-full pt-10 sm:pt-14 md:pt-20 pb-0 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center mt-8">
       <SEOHead
@@ -136,8 +324,8 @@ function Hero() {
 
             <div className="relative z-10 w-full max-w-full md:max-w-3xl lg:max-w-5xl mx-auto">
               {/* Section header */}
-              <div className="text-center mb-8 sm:mb-12 md:mb-16 px-1 sm:px-2">
-                <div className="flex flex-row items-center justify-center mt-0 -mt-2">
+              <div ref={textSectionRef} className="text-center mb-8 sm:mb-12 md:mb-16 px-1 sm:px-2 opacity-0">
+                <div className="flex flex-row items-center justify-center -mt-2">
                   <h2 className="font-medium leading-tight relative inline-block px-2 sm:px-6 md:px-8 py-2 sm:py-3 gold-title font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[96px]" style={{fontFamily: 'Roboto Serif, serif'}}>
                     <span className="gold-gradient-title-static">Our Services</span>
                   </h2>
@@ -150,7 +338,7 @@ function Hero() {
               </div>
 
               {/* Carousel */}
-              <div className="flex flex-col items-center justify-center mt-0 md:-mt-16">
+              <div ref={carouselRef} className="flex flex-col items-center justify-center mt-0 md:-mt-16">
                 <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-5xl mx-auto flex flex-col items-center">
                   <div
                     className="relative flex items-center justify-center mb-2 sm:mb-4 w-full h-auto lg:w-[1301px] lg:h-[631px] select-none"
@@ -165,7 +353,10 @@ function Hero() {
                   >
                     {/* Third (outer left) card - hidden on mobile and small tablets, shown on md+ */}
                     <div
-                      className="hidden md:block lg:block absolute top-1/2 -translate-y-1/2 overflow-hidden left-0 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[503px] lg:h-[303px] z-0 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60"
+                      ref={(el) => {
+                        if (el) outerImagesRef.current[0] = el;
+                      }}
+                      className="hidden md:block lg:block absolute top-1/2 -translate-y-1/2 overflow-hidden left-0 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[503px] lg:h-[303px] z-0 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60 opacity-0"
                       aria-hidden="true"
                       onClick={() => window.location.href = `/services/${((current - 2 + services.length) % services.length) + 1}`}
                     >
@@ -181,7 +372,10 @@ function Hero() {
                     </div>
                     {/* Previous image - hidden on mobile, smaller on tablet */}
                     <div
-                      className="hidden sm:block absolute top-1/2 -translate-y-1/2 overflow-hidden left-2 md:left-8 lg:left-24 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[671px] lg:h-[404px] z-10 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60"
+                      ref={(el) => {
+                        if (el) sideImagesRef.current[0] = el;
+                      }}
+                      className="hidden sm:block absolute top-1/2 -translate-y-1/2 overflow-hidden left-2 md:left-8 lg:left-24 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[671px] lg:h-[404px] z-10 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60 opacity-0"
                       aria-hidden="true"
                       onClick={() => window.location.href = `/services/${(current === 0 ? services.length - 1 : current - 1) + 1}`}
                     >
@@ -197,8 +391,9 @@ function Hero() {
                     </div>
                     {/* Current image - always visible, responsive */}
                     <div
+                      ref={mainImageRef}
                       className={[
-                        "relative z-20 flex items-center justify-center overflow-hidden rounded-[30px] group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60",
+                        "relative z-20 flex items-center justify-center overflow-hidden rounded-[30px] group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60 opacity-0",
                         "w-full aspect-[4/3]",
                         "sm:w-[220px] sm:aspect-[4/3]",
                         "md:w-[480px] md:aspect-[2/1]",
@@ -257,7 +452,10 @@ function Hero() {
                     </div>
                     {/* Next image - hidden on mobile, smaller on tablet */}
                     <div
-                      className="hidden sm:block absolute top-1/2 -translate-y-1/2 overflow-hidden right-2 md:right-8 lg:right-24 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[671px] lg:h-[404px] z-10 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60"
+                      ref={(el) => {
+                        if (el) sideImagesRef.current[1] = el;
+                      }}
+                      className="hidden sm:block absolute top-1/2 -translate-y-1/2 overflow-hidden right-2 md:right-8 lg:right-24 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[671px] lg:h-[404px] z-10 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60 opacity-0"
                       aria-hidden="true"
                       onClick={() => window.location.href = `/services/${(current === services.length - 1 ? 0 : current + 1) + 1}`}
                     >
@@ -273,7 +471,10 @@ function Hero() {
                     </div>
                     {/* Third (outer right) card - hidden on mobile and small tablets, shown on md+ */}
                     <div
-                      className="hidden md:block lg:block absolute top-1/2 -translate-y-1/2 overflow-hidden right-0 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[503px] lg:h-[303px] z-0 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60"
+                      ref={(el) => {
+                        if (el) outerImagesRef.current[1] = el;
+                      }}
+                      className="hidden md:block lg:block absolute top-1/2 -translate-y-1/2 overflow-hidden right-0 rounded-[30px] w-[120px] h-[72px] md:w-[260px] md:h-[220px] lg:w-[503px] lg:h-[303px] z-0 group cursor-pointer hover:ring-4 hover:ring-[#EFBF04]/60 opacity-0"
                       aria-hidden="true"
                       onClick={() => window.location.href = `/services/${((current + 2) % services.length) + 1}`}
                     >
@@ -291,15 +492,17 @@ function Hero() {
                   <div className="flex flex-col items-center w-full mt-2 sm:mt-0 px-1 md:px-0">
                     <h3
                       className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-3xl text-[#EFBF04] text-center font-sans font-bold text-base sm:text-xl md:text-2xl lg:text-4xl leading-snug mb-2 mt-0"
+                      ref={serviceTitleRef}
                     >
                       {services[current].title}
                     </h3>
                     <p
                       className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl text-[#0E5248] text-center font-sans text-xs sm:text-base md:text-lg lg:text-2xl font-normal leading-snug sm:leading-7 md:leading-8 lg:leading-9 mb-4 mt-0"
+                      ref={serviceDescRef}
                     >
                       {services[current].desc}
                     </p>
-                    <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 mt-4">
+                    <div className="flex flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 mt-4" ref={navButtonsRef}>
                       <button
                         type="button"
                         onClick={goPrev}

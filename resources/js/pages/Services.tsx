@@ -72,12 +72,12 @@ export default function Services() {
             <Featured />
           </div>
           <ReadMore />
-          <ContactSection />
-          <TestimonialsSection />
-          <TrustedCompaniesSection />
+          <ContactSection enableScrollAnimation={true} />
+          <TestimonialsSection enableScrollAnimation={true} />
+          <TrustedCompaniesSection enableScrollAnimation={true} />
         </main>
         <footer className="mt-auto">
-          <Footer />
+          <Footer enableScrollAnimation={true} />
         </footer>
       </div>
     </>
