@@ -68,18 +68,17 @@ export default function About() {
           <HeaderBlack />
         </header>
         <main className='cursor-default'>
-          {/* Removed non-design heading per Figma design system */}
           <Hero />
           <MissionandVision />
           <TeamTestimonials />
           <Team />
           <WhyUs />
-          <ContactSection />
-          <TestimonialsSection />
-          <TrustedCompaniesSection />
+          <ContactSection enableScrollAnimation={true} />
+          <TestimonialsSection enableScrollAnimation={true} />
+          <TrustedCompaniesSection enableScrollAnimation={true} />
         </main>
         <footer>
-          <Footer />
+          <Footer enableScrollAnimation={true} />
         </footer>
       </div>
     </>

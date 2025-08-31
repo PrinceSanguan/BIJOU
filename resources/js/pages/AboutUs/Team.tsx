@@ -1,5 +1,5 @@
-
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { animate } from 'animejs';
 import { Instagram, Linkedin } from 'lucide-react';
 import styles from './Team.module.css';
 import { SEOHead } from '../../components/SEOHead';
@@ -58,38 +58,123 @@ const TeamCard: React.FC<TeamMember> = ({ name, role, image, subtitle, socials }
 );
 
 
-const Team: React.FC = () => (
-    <>
-        <SEOHead
-            title="Meet Our Team | Bijou Group Sheffield"
-            description="Team page meta description with CTA and location."
-            canonical="https://yourdomain.com/about/team"
-        />
-        <LocalBusinessSchema
-            name="Bijou Group"
-            address={{
-                street: "70 Clarkehouse Road",
-                city: "Sheffield",
-                region: "South Yorkshire",
-                postalCode: "S10 2LJ",
-                country: "England"
-            }}
-            phone="+447495747930"
-            url="https://yourdomain.com"
-            logo="/images/Circular logo.png"
-        />
-        <section className={styles.teamSection}>
-            <div className={styles.teamTitle}>Meet Our Team</div>
-            <div className={styles.teamSubtitle}>
-                Lorem ipsum dolor sit amet. Est dolorem itaque quo distinctio corporis ad fugiat repudiandae sit quia necessitatibus<br />aut eveniet dignissimos sit iste
-            </div>
-            <div className={styles.teamGrid}>
-                {members.map((member, idx) => (
-                        <TeamCard key={idx} {...{ ...member, image: member.image || DEFAULT_TEAM_IMAGE }} />
-                ))}
-            </div>
-        </section>
-    </>
-);
+const Team: React.FC = () => {
+    const subtitleRef = useRef<HTMLDivElement>(null);
+    const gridRef = useRef<HTMLDivElement>(null);
+    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+    useEffect(() => {
+        let hasAnimatedSubtitle = false;
+        let hasAnimatedGrid = false;
+
+        const handleScroll = () => {
+            if (!subtitleRef.current || !gridRef.current) return;
+
+            const subtitleRect = subtitleRef.current.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            // Calculate subtitle visibility
+            const subtitleProgress = (windowHeight - subtitleRect.top) / (windowHeight + subtitleRect.height);
+
+            // Animate subtitle first
+            if (subtitleProgress > 0.2 && !hasAnimatedSubtitle) {
+                hasAnimatedSubtitle = true;
+                animate(subtitleRef.current, {
+                    opacity: [0, 1],
+                    translateY: [30, 0],
+                    duration: 800,
+                    easing: 'easeOutCubic',
+                    complete: () => {
+                        if (subtitleRef.current) {
+                            subtitleRef.current.style.opacity = '1';
+                            subtitleRef.current.style.transform = 'translateY(0)';
+                        }
+                        // Start team cards animation after subtitle
+                        animateTeamCards();
+                    }
+                });
+            }
+        };
+
+        const animateTeamCards = () => {
+            if (hasAnimatedGrid || !gridRef.current) return;
+            hasAnimatedGrid = true;
+
+            // Calculate center index
+            const centerIndex = Math.floor(members.length / 2);
+            
+            // Create animation sequence starting from middle
+            cardRefs.current.forEach((cardRef, idx) => {
+                if (!cardRef) return;
+                
+                // Calculate delay based on distance from center
+                const distanceFromCenter = Math.abs(idx - centerIndex);
+                const delay = distanceFromCenter * 200; // 200ms delay for each position from center
+
+                animate(cardRef, {
+                    opacity: [0, 1],
+                    scale: [0.8, 1],
+                    duration: 600,
+                    delay,
+                    easing: 'easeOutCubic',
+                    complete: () => {
+                        if (cardRef) {
+                            cardRef.style.opacity = '1';
+                            cardRef.style.transform = 'scale(1)';
+                        }
+                    }
+                });
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        setTimeout(handleScroll, 100);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    return (
+        <>
+            <SEOHead
+                title="Meet Our Team | Bijou Group Sheffield"
+                description="Team page meta description with CTA and location."
+                canonical="https://yourdomain.com/about/team"
+            />
+            <LocalBusinessSchema
+                name="Bijou Group"
+                address={{
+                    street: "70 Clarkehouse Road",
+                    city: "Sheffield",
+                    region: "South Yorkshire",
+                    postalCode: "S10 2LJ",
+                    country: "England"
+                }}
+                phone="+447495747930"
+                url="https://yourdomain.com"
+                logo="/images/Circular logo.png"
+            />
+            <section className={styles.teamSection}>
+                <div className={styles.teamTitle}>Meet Our Team</div>
+                <div ref={subtitleRef} className={`${styles.teamSubtitle} opacity-0`}>
+                    Lorem ipsum dolor sit amet. Est dolorem itaque quo distinctio corporis ad fugiat repudiandae sit quia necessitatibus<br />aut eveniet dignissimos sit iste
+                </div>
+                <div ref={gridRef} className={styles.teamGrid}>
+                    {members.map((member, idx) => (
+                        <div 
+                            key={idx} 
+                            ref={(el: HTMLDivElement | null) => {
+                                cardRefs.current[idx] = el;
+                            }}
+                            className="opacity-0"
+                        >
+                            <TeamCard {...{ ...member, image: member.image || DEFAULT_TEAM_IMAGE }} />
+                        </div>
+                    ))}
+                </div>
+            </section>
+        </>
+    );
+}
+
 
 export default Team;
