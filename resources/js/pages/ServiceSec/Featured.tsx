@@ -31,7 +31,7 @@ type ServiceCardProps = {
 
 function ServiceCard({ title, onClick, ref }: ServiceCardProps) {
     return (
-        <li ref={ref} className="opacity-0">
+        <li ref={ref} className="opacity-0" style={{transform: 'scale(0.8) translateY(20px)'}}>
             <button
                 type="button"
                 className={styles.serviceCard}
@@ -53,15 +53,15 @@ function Featured() {
 
     useEffect(() => {
         let hasAnimatedHeader = false;
-        let hasAnimatedCards = false;
+        const animatedCards = new Set<number>();
 
         const handleScroll = () => {
             const windowHeight = window.innerHeight;
 
-            // Animate header when 20% visible
+            // Animate header when it comes into view
             if (headerRef.current && !hasAnimatedHeader) {
                 const rect = headerRef.current.getBoundingClientRect();
-                if ((windowHeight - rect.top) / windowHeight > 0.2) {
+                if (rect.top < windowHeight * 0.8) {
                     hasAnimatedHeader = true;
                     animate(headerRef.current, {
                         opacity: [0, 1],
@@ -78,33 +78,31 @@ function Featured() {
                 }
             }
 
-            // Animate service cards when 30% visible
-            if (!hasAnimatedCards && cardRefs.current.length > 0) {
-                const firstCard = cardRefs.current[0];
-                if (firstCard) {
-                    const rect = firstCard.getBoundingClientRect();
-                    if ((windowHeight - rect.top) / windowHeight > 0.3) {
-                        hasAnimatedCards = true;
-                        cardRefs.current.forEach((cardRef, idx) => {
-                            if (cardRef) {
-                                animate(cardRef, {
-                                    opacity: [0, 1],
-                                    scale: [0.8, 1],
-                                    duration: 500,
-                                    delay: idx * 100, // 100ms delay between each card
-                                    easing: 'easeOutCubic',
-                                    complete: () => {
-                                        if (cardRef) {
-                                            cardRef.style.opacity = '1';
-                                            cardRef.style.transform = 'scale(1)';
-                                        }
-                                    }
-                                });
+            // Animate each service card individually when it comes into view
+            cardRefs.current.forEach((cardRef, idx) => {
+                if (cardRef && !animatedCards.has(idx)) {
+                    const rect = cardRef.getBoundingClientRect();
+                    
+                    // Trigger when card is visible in viewport
+                    if (rect.top < windowHeight * 0.85) {
+                        animatedCards.add(idx);
+                        
+                        animate(cardRef, {
+                            opacity: [0, 1],
+                            scale: [0.8, 1],
+                            translateY: [20, 0],
+                            duration: 600,
+                            easing: 'easeOutCubic',
+                            complete: () => {
+                                if (cardRef) {
+                                    cardRef.style.opacity = '1';
+                                    cardRef.style.transform = 'scale(1) translateY(0)';
+                                }
                             }
                         });
                     }
                 }
-            }
+            });
         };
 
         window.addEventListener('scroll', handleScroll);
