@@ -95,9 +95,9 @@ function ReadMore() {
     return (
         <>
             <SEOHead
-                title="Read More About Our Services | Bijou Group Sheffield HMO Management"
-                description="Learn more about our HMO management services for Sheffield landlords. Tenant find, rent collection, maintenance, and more."
-                canonical="https://bijougroup.co.uk/services/read-more"
+                title="Property Management Services Sheffield | Bijou Group"
+                description="Sheffield property management made simple. Rent collection, arrears, maintenance & tenant find services for landlords & investors. Get a free consult."
+                canonical="https://bijourelocation.co.uk/sheffield-property-management-services"
             />
             <LocalBusinessSchema
                 name="Bijou Group"

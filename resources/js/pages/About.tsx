@@ -22,11 +22,11 @@ export default function About() {
   return (
     <>
       <SEOHead
-        title="About Us | Bijou Group Sheffield HMO Management"
-        description="Learn about Bijou Group, Sheffield's trusted HMO property management experts. Meet our team, discover our mission, and see why landlords choose us."
-        canonical="https://bijougroup.co.uk/about"
+        title="About Bijou Relocation | HMO Property Management Sheffield Experts"
+        description="Learn about Bijou Relocation – Sheffield’s trusted HMO property management experts. 20+ years’ experience, guaranteed rent & hassle-free landlord solutions."
+        canonical="https://bijourelocation.co.uk/about-us"
         robots="index, follow"
-        hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/about' }]}
+        hreflangs={[{ hreflang: 'en-gb', href: 'https://bijourelocation.co.uk/about-us' }]}
       />
       <OrganizationSchema />
       <WebSiteSchema />

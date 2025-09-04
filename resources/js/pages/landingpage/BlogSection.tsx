@@ -7,9 +7,9 @@ export function BlogSection() {
   return (
     <>
       <SEOHead
-        title="Blog | Bijou Group Sheffield HMO News & Updates"
-        description="Read the latest news, updates, and insights from Bijou Group, Sheffield's HMO management experts."
-        canonical="https://bijougroup.co.uk/blog"
+        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+        canonical="https://bijourelocation.co.uk/blog"
       />
       <LocalBusinessSchema
         name="Bijou Group"

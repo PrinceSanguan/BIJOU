@@ -22,13 +22,13 @@ const ReadMoreRight: React.FC<ReadMoreRightProps> = ({
     return (
         <>
             <SEOHead
-                title={title + ' | Bijou Group Sheffield HMO Management'}
-                description={text}
-                canonical={typeof window !== 'undefined' ? window.location.href : 'https://bijougroup.co.uk/services/read-more-right'}
+                title="Property Management Services Sheffield | Bijou Group"
+                description="Sheffield property management made simple. Rent collection, arrears, maintenance & tenant find services for landlords & investors. Get a free consult."
+                canonical="https://bijourelocation.co.uk/sheffield-property-management-services"
             />
             <LocalBusinessSchema
                 name="Bijou Group"
-                url={typeof window !== 'undefined' ? window.location.href : 'https://bijougroup.co.uk/services/read-more-right'}
+                url="https://bijourelocation.co.uk/sheffield-property-management-services"
                 address={{
                     street: "70 Clarkehouse Road",
                     city: "Sheffield",

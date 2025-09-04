@@ -20,21 +20,21 @@ export default function Testimonials() {
   return (
     <>
       <SEOHead
-        title="Testimonials | Bijou Group Sheffield HMO Management"
-        description="See what Sheffield landlords say about Bijou Group's HMO management. Real testimonials, proven results, and stress-free property management."
-        canonical="https://bijougroup.co.uk/testimonials"
+        title="Property Management Testimonials Sheffield | Bijou Group"
+        description="Real reviews from Sheffield landlords. Discover how Bijou Group delivers stress-free property management, guaranteed rent, and compliance."
+        canonical="https://bijougroup.co.uk/sheffield-property-management-testimonials"
         robots="index, follow"
-        hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/testimonials' }]}
+        hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/sheffield-property-management-testimonials' }]}
       />
       <OrganizationSchema />
       <WebSiteSchema />
       <BreadcrumbListSchema items={[
         { name: 'Home', url: 'https://bijougroup.co.uk/' },
-        { name: 'Testimonials', url: 'https://bijougroup.co.uk/testimonials' }
+        { name: 'Testimonials', url: 'https://bijougroup.co.uk/sheffield-property-management-testimonials' }
       ]} />
       <LocalBusinessSchema
         name="Bijou Group"
-        url="https://bijougroup.co.uk/testimonials"
+        url="https://bijougroup.co.uk/sheffield-property-management-testimonials"
         address={{
           street: "70 Clarkehouse Road",
           city: "Sheffield",

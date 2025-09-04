@@ -111,11 +111,37 @@ const WhyUs: React.FC = () => {
 
 	return (
 		<>
-			<SEOHead
-				title="Why Choose Us | Bijou Group Sheffield"
-				description="Why us meta description with CTA and location."
-				canonical="https://yourdomain.com/about/why-us"
-			/>
+						<SEOHead
+								title="About Bijou Relocation | HMO Property Management Sheffield Experts"
+								description="Learn about Bijou Relocation – Sheffield’s trusted HMO property management experts. 20+ years’ experience, guaranteed rent & hassle-free landlord solutions."
+								canonical="https://bijourelocation.co.uk/about-us"
+						/>
+						{/* Organization Schema for SEO */}
+						<script type="application/ld+json">{`
+						{
+							"@context": "https://schema.org",
+							"@type": "Organization",
+							"name": "Bijou Relocation",
+							"url": "https://bijourelocation.co.uk/about-us",
+							"logo": "https://bijourelocation.co.uk/logo.png",
+							"description": "Bijou Relocation are Sheffield’s trusted HMO property management specialists. We provide guaranteed rent, compliance, and stress-free landlord solutions.",
+							"founder": {
+								"@type": "Person",
+								"name": "Karen Hodgson"
+							},
+							"foundingDate": "2015",
+							"address": {
+								"@type": "PostalAddress",
+								"addressLocality": "Sheffield",
+								"addressRegion": "South Yorkshire",
+								"addressCountry": "UK"
+							},
+							"sameAs": [
+								"https://www.facebook.com/bijourelocation",
+								"https://www.linkedin.com/company/bijourelocation"
+							]
+						}
+						`}</script>
 			<LocalBusinessSchema
 				name="Bijou Group"
 				address={{

@@ -258,9 +258,9 @@ export function ServicesSection() {
   return (
     <>
       <SEOHead
-        title="Our Services | Bijou Group Sheffield HMO Management"
-        description="Explore our full range of HMO management services for Sheffield landlords: rent collection, compliance, staging, and more."
-        canonical="https://bijougroup.co.uk/services"
+        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+        canonical="https://bijourelocation.co.uk/services"
       />
       <LocalBusinessSchema
         name="Bijou Group"

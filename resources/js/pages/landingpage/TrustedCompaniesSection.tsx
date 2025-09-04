@@ -66,9 +66,9 @@ export function TrustedCompaniesSection({ enableScrollAnimation = false }: { ena
   return (
     <>
       <SEOHead
-        title="Trusted Companies | Bijou Group Sheffield HMO Management"
-        description="Bijou Group is trusted by leading property and compliance organizations in Sheffield. See our partners and accreditations."
-        canonical="https://bijougroup.co.uk/trusted-companies"
+        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+        canonical="https://bijourelocation.co.uk/trusted-companies"
       />
       <LocalBusinessSchema
         name="Bijou Group"

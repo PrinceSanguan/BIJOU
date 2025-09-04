@@ -20,21 +20,21 @@ export default function Services() {
   return (
     <>
       <SEOHead
-        title="Services | Bijou Group Sheffield HMO Management"
-        description="Explore Bijou Group's HMO management services for Sheffield landlords: rent collection, compliance, tenant sourcing, and more."
-        canonical="https://bijougroup.co.uk/services"
+        title="Property Management Services Sheffield | Bijou Group"
+        description="Sheffield property management made simple. Rent collection, arrears, maintenance & tenant find services for landlords & investors. Get a free consult."
+        canonical="https://bijougroup.co.uk/sheffield-property-management-services"
         robots="index, follow"
-        hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/services' }]}
+        hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/sheffield-property-management-services' }]}
       />
       <OrganizationSchema />
       <WebSiteSchema />
       <BreadcrumbListSchema items={[
         { name: 'Home', url: 'https://bijougroup.co.uk/' },
-        { name: 'Services', url: 'https://bijougroup.co.uk/services' }
+        { name: 'Services', url: 'https://bijougroup.co.uk/sheffield-property-management-services' }
       ]} />
       <LocalBusinessSchema
         name="Bijou Group"
-        url="https://bijougroup.co.uk/services"
+        url="https://bijougroup.co.uk/sheffield-property-management-services"
         address={{
           street: "70 Clarkehouse Road",
           city: "Sheffield",

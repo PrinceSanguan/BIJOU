@@ -300,9 +300,9 @@ function Hero() {
   return (
     <section className="relative w-full pt-10 sm:pt-14 md:pt-20 pb-0 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center mt-8">
       <SEOHead
-        title="HMO Services Hero | Bijou Group Sheffield HMO Management"
-        description="Discover our HMO management hero section for Sheffield landlords. Rent collection, compliance, tenant sourcing, and more."
-        canonical="https://bijougroup.co.uk/services/hero"
+        title="Property Management Services Sheffield | Bijou Group"
+        description="Sheffield property management made simple. Rent collection, arrears, maintenance & tenant find services for landlords & investors. Get a free consult."
+        canonical="https://bijourelocation.co.uk/sheffield-property-management-services"
       />
       <LocalBusinessSchema
         name="Bijou Group"
@@ -326,9 +326,9 @@ function Hero() {
               {/* Section header */}
               <div ref={textSectionRef} className="text-center mb-8 sm:mb-12 md:mb-16 px-1 sm:px-2 opacity-0">
                 <div className="flex flex-row items-center justify-center -mt-2">
-                  <h2 className="font-medium leading-tight relative inline-block px-2 sm:px-6 md:px-8 py-2 sm:py-3 gold-title font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[96px]" style={{fontFamily: 'Roboto Serif, serif'}}>
-                    <span className="gold-gradient-title-static">Our Services</span>
-                  </h2>
+                  <h1 className="font-medium leading-tight relative inline-block px-2 sm:px-6 md:px-8 py-2 sm:py-3 gold-title font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[96px]" style={{fontFamily: 'Roboto Serif, serif'}}>
+                    <span className="gold-gradient-title-static">Sheffield Property Management & Landlord Services</span>
+                  </h1>
                 </div>
                 <div className="flex justify-center w-full mt-1">
                   <p className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl text-[#0E5248] text-center font-sans text-sm sm:text-base md:text-lg lg:text-2xl font-normal leading-snug sm:leading-7 md:leading-8 lg:leading-9 m-0 px-1 md:px-0">

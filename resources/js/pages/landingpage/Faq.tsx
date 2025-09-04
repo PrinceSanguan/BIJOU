@@ -100,9 +100,9 @@ export function Faq() {
   return (
     <>
       <SEOHead
-        title="FAQ | Bijou Group Sheffield HMO Management"
-        description="Frequently asked questions about HMO management, guaranteed rent, and our services in Sheffield."
-        canonical="https://bijougroup.co.uk/faq"
+        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+        canonical="https://bijourelocation.co.uk/faq"
       />
       <FAQSchema faqs={faqs} />
       <LocalBusinessSchema

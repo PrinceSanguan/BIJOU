@@ -131,9 +131,9 @@ export function AboutSection() {
   return (
     <>
       <SEOHead
-        title="About Us | Bijou Group Sheffield HMO Management"
-        description="Learn about Bijou Group's legacy in Sheffield HMO management, our expertise, and how we help landlords maximize returns."
-        canonical="https://bijougroup.co.uk/about"
+        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+        canonical="https://bijourelocation.co.uk/about"
       />
       <LocalBusinessSchema
         name="Bijou Group"
@@ -180,32 +180,11 @@ export function AboutSection() {
         <div className="w-full flex items-center justify-center mt-10 sm:mt-12">
           <div className="flex flex-col items-center w-full">
             <div className="text-xs xs:text-sm sm:text-base md:text-lg text-white font-medium px-1 sm:px-0 font-space leading-[2.25] space-y-4">
-              <p ref={line1Ref} className="opacity-0">At <span className="gold-gradient-text font-medium">Bijou Group</span>, HMO management is more than a service - it's our legacy.</p>
-              <p ref={line2Ref} className="opacity-0">With years of experience managing HMO's across Sheffield, we know the local market inside out.</p>
-              <p ref={line3Ref} className="opacity-0">From student areas in S2 and S10 to professional house shares near Sheffield hospitals, our local knowledge ensures your property performs at its best.</p>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Why Sheffield Landlords Struggle with HMO Management</h2>
+              <p>At Bijou Relocation, HMO management is more than a service - it's our legacy. With years of experience managing HMOs across Sheffield, we know the local market inside out. From student areas in S2 and S10 to professional house shares near Sheffield hospitals, our local knowledge ensures your property performs at its best.</p>
+              <p>Whether you're navigating complex HMO licensing Sheffield requirements, dealing with problem tenants, or seeking to maximize your rental returns, we're here to provide expert guidance with a personal touch that sets us apart from other letting agents.</p>
+              <p><strong>Our guarantee:</strong> No voids, full compliance, and transparent fees. We handle everything so you can focus on building your property portfolio.</p>
             </div>
-            <div className="text-xs xs:text-sm sm:text-base md:text-lg text-white font-medium px-1 sm:px-0 font-space leading-[2.25] mt-6 space-y-4">
-              <p ref={line4Ref} className="opacity-0">Whether you're navigating complex HMO licensing Sheffield requirements,</p>
-              <p ref={line5Ref} className="opacity-0">dealing with problem tenants, or seeking to maximize your rental returns,</p>
-              <p ref={line6Ref} className="opacity-0">we're here to provide expert guidance with a personal touch that sets us apart from other letting agents.</p>
-            </div>
-            <ul ref={listRef} className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12 text-white text-sm sm:text-base font-space w-full max-w-2xl mx-auto opacity-0">
-              <li className="flex items-center gap-2 sm:gap-3">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#EFBF04] text-white text-base font-bold">✓</span>
-                <span>No voids</span>
-              </li>
-              <li className="flex items-center gap-2 sm:gap-3">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#EFBF04] text-white text-base font-bold">✓</span>
-                <span>Full Compliance</span>
-              </li>
-              <li className="flex items-center gap-2 sm:gap-3">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#EFBF04] text-white text-base font-bold">✓</span>
-                <span>Transparent Fees</span>
-              </li>
-            </ul>
-            <p ref={finalParaRef} className="text-white text-xs xs:text-sm sm:text-base mt-6 font-space text-center leading-8 opacity-0">
-              <span className="text-[#EFBF04]">We handle everything so you can focus on building your property portfolio.</span>
-            </p>
           </div>
         </div>
       </div>

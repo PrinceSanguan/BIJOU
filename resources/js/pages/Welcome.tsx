@@ -23,11 +23,11 @@ export default function Welcome() {
     return (
         <>
             <SEOHead
-                title="Welcome | Bijou Group Sheffield HMO Management"
-                description="The Bijou Group: Comprehensive property management, sourcing, staging, tenant management, maintenance, and legal support for landlords and investors."
-                canonical="https://bijougroup.co.uk/"
+                title="HMO Management Sheffield | Stress-Free Property Solutions"
+                description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+                canonical="https://bijourelocation.co.uk/"
                 robots="index, follow"
-                hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/' }]}
+                hreflangs={[{ hreflang: 'en-gb', href: 'https://bijourelocation.co.uk/' }]}
             />
             <OrganizationSchema />
             <WebSiteSchema />

@@ -109,9 +109,9 @@ export function ContactSection({ enableScrollAnimation = false }: { enableScroll
   return (
     <>
       <SEOHead
-        title="Contact Us | Bijou Group Sheffield HMO Management"
-        description="Contact Bijou Group for expert HMO management in Sheffield. Landlords, investors, and tenants welcome. Get in touch today!"
-        canonical="https://bijougroup.co.uk/contact"
+        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+        canonical="https://bijourelocation.co.uk/contact"
       />
       <LocalBusinessSchema
         name="Bijou Group"

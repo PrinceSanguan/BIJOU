@@ -72,9 +72,9 @@ export function Cta({ enableScrollAnimation = true }: { enableScrollAnimation?: 
   return (
     <>
       <SEOHead
-        title="Stress-Free HMO Management | Bijou Group Sheffield"
-        description="Ready for stress-free HMO management in Sheffield? Join 150+ landlords who trust Bijou Group for guaranteed rent and expert property services."
-        canonical="https://bijougroup.co.uk/cta"
+        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+        canonical="https://bijourelocation.co.uk/cta"
       />
       <LocalBusinessSchema
         name="Bijou Group"

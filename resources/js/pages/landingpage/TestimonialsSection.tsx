@@ -91,9 +91,9 @@ export function TestimonialsSection({ enableScrollAnimation = false }: { enableS
   return (
     <>
       <SEOHead
-        title="Testimonials | Bijou Group Sheffield HMO Management"
-        description="See what our clients say about Bijou Group's HMO management services in Sheffield. Real reviews from landlords and investors."
-        canonical="https://bijougroup.co.uk/testimonials"
+        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+        canonical="https://bijourelocation.co.uk/testimonials"
       />
       <LocalBusinessSchema
         name="Bijou Group"

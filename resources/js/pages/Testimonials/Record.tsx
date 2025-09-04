@@ -110,13 +110,13 @@ const Record: React.FC = () => {
 	return (
 		<>
 			<SEOHead
-				title="Proven Track Record | Bijou Group Sheffield HMO Management"
-				description="Discover Bijou Group's proven track record: high client retention, fast tenant placement, 24/7 support, and 100% compliance for Sheffield landlords."
-				canonical="https://bijougroup.co.uk/testimonials/track-record"
+				title="Sheffield Landlord Results & Track Record | Bijou Group"
+				description="See our client retention, fast tenant placement, 24/7 support, and 100% compliance for Sheffield landlords. Real results, proven performance."
+				canonical="https://bijougroup.co.uk/sheffield-property-management-results"
 			/>
 			<LocalBusinessSchema
 				name="Bijou Group"
-				url="https://bijougroup.co.uk/testimonials/track-record"
+				url="https://bijougroup.co.uk/sheffield-property-management-results"
 				address={{
 					street: '70 Clarkehouse Road',
 					city: 'Sheffield',

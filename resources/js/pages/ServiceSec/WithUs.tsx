@@ -110,14 +110,14 @@ const WithUs: React.FC = () => {
 
   return (
   <>
-    <SEOHead
-      title="Why Sheffield Landlords Stick With Us | Bijou Group"
-      description="Discover why landlords choose Bijou Group for HMO management in Sheffield. Local expertise, fast tenant placement, and honest advice."
-      canonical="https://bijougroup.co.uk/services/with-us"
-    />
+      <SEOHead
+        title="Property Management Services Sheffield | Bijou Group"
+        description="Sheffield property management made simple. Rent collection, arrears, maintenance & tenant find services for landlords & investors. Get a free consult."
+        canonical="https://bijougroup.co.uk/sheffield-property-management-services"
+      />
     <LocalBusinessSchema
       name="Bijou Group"
-      url="https://bijougroup.co.uk/services/with-us"
+        url="https://bijougroup.co.uk/sheffield-property-management-services"
       address={{
         street: "70 Clarkehouse Road",
         city: "Sheffield",

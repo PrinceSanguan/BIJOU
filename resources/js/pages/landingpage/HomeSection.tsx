@@ -3,19 +3,19 @@ import { SEOHead } from '../../components/SEOHead';
 import { LocalBusinessSchema } from '../../components/LocalBusinessSchema';
 import { animate, text, stagger } from 'animejs';
 
-export function HomeSection() {
 
+export function HomeSection() {
   const [shineOnce, setShineOnce] = useState(false);
   const [shineHold, setShineHold] = useState(false);
-  const sectionRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoVisible, setVideoVisible] = useState(false);
-  const infinityRef = useRef(null);
-  const hmoRef = useRef(null);
-  const stressFreeRef = useRef(null);
-  const descRef = useRef(null);
-  const landlordBtnRef = useRef(null);
-  const propertiesBtnRef = useRef(null);
+  const infinityRef = useRef<HTMLSpanElement>(null);
+  const hmoRef = useRef<HTMLSpanElement>(null);
+  const stressFreeRef = useRef<HTMLSpanElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const landlordBtnRef = useRef<HTMLButtonElement>(null);
+  const propertiesBtnRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -60,7 +60,7 @@ export function HomeSection() {
 
 
   useEffect(() => {
-    const animatePop = (ref, delay = 0, duration = 750) => {
+    const animatePop = <T extends HTMLElement | null>(ref: React.RefObject<T>, delay = 0, duration = 750) => {
       if (ref.current) {
         animate(
           ref.current,
@@ -86,9 +86,9 @@ export function HomeSection() {
   return (
     <>
       <SEOHead
-        title="HMO Management Sheffield | Bijou Group"
-        description="Sheffield's trusted HMO management specialists. Stress-free property solutions for landlords and investors."
-        canonical="https://bijougroup.co.uk/"
+        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+        canonical="https://bijourelocation.co.uk/"
       />
       <LocalBusinessSchema
         name="Bijou Group"
@@ -120,6 +120,8 @@ export function HomeSection() {
         poster="/images/11532497.png"
         preload="none"
         style={{ opacity: videoVisible ? 1 : 0, transition: 'opacity 0.6s' }}
+        // SEO: Add alt text for accessibility
+        aria-label="Bijou Group team managing HMO property in Sheffield"
       />
       {/* Edge vignette overlay (top, bottom, left, right) and dark overlay */}
       <div className="absolute inset-0 z-10 pointer-events-none">
@@ -173,20 +175,20 @@ export function HomeSection() {
 
         {/* Buttons - stacked on mobile, side by side on larger screens */}
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-none mx-auto w-full">
-          <button
-            ref={landlordBtnRef}
-            className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden cursor-pointer"
-            onClick={() => window.location.href = '/contact'}
-          >
-            I'm a Landlord
-          </button>
-          <button
-            ref={propertiesBtnRef}
-            className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden cursor-pointer"
-            onClick={() => window.location.href = '/contact'}
-          >
-            I'm Looking for Properties
-          </button>
+            <button
+              ref={landlordBtnRef}
+              className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden cursor-pointer"
+              onClick={() => window.location.href = '/contact'}
+            >
+              Want to Increase Your Returns?
+            </button>
+            <button
+              ref={propertiesBtnRef}
+              className="hero-shine-btn inline-block px-4 sm:px-5 py-2.5 sm:py-2 bg-white text-[#4f4e44] font-medium tracking-widest text-xs transition-all duration-300 rounded hover:bg-[#FFD700] hover:text-[#4f4e44] shadow-xl w-full sm:w-auto relative overflow-hidden cursor-pointer"
+              onClick={() => window.location.href = '/contact'}
+            >
+              I'm Looking for Properties
+            </button>
         </div>
       </div>
 
