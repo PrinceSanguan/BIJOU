@@ -1,12 +1,52 @@
 import React from 'react';
+import { SEOHead } from '../../../components/SEOHead';
 
 const TenantFindContent: React.FC = () => (
   <>
-    <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif">Tenant Find Services Sheffield – Find Reliable Tenants Fast</h1>
+    <SEOHead
+      title="Tenant Find Services Sheffield – Find Reliable Tenants Fast | Bijou Group"
+      description="Advertising, viewings, and rigorous tenant referencing for Sheffield landlords. Fill your property quickly with quality, compliant tenants."
+      canonical="https://bijougroup.co.uk/services/tenant-find"
+      og={{
+        title: "Tenant Find Services Sheffield – Find Reliable Tenants Fast",
+        description: "Advertising, viewings, and rigorous tenant referencing for Sheffield landlords. Fill your property quickly with quality, compliant tenants.",
+        url: "https://bijougroup.co.uk/services/tenant-find",
+        image: "/images/servicesimg/tenant-find.jpg"
+      }}
+      twitter={{
+        title: "Tenant Find Services Sheffield – Find Reliable Tenants Fast",
+        description: "Advertising, viewings, and rigorous tenant referencing for Sheffield landlords. Fill your property quickly with quality, compliant tenants."
+      }}
+    />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How quickly can you find tenants for my Sheffield property?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most well-presented properties attract quality enquiries within 24-48 hours. Our proven screening process typically secures fully referenced tenants within 7-14 days."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you specialise in student lettings and HMO properties?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we're HMO specialists covering both student and professional shared accommodation. We understand Sheffield's licensing requirements and find compatible housemates for shared properties."
+            }
+          }
+        ]
+      })}
+    </script>
+  <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif" aria-label="Tenant Find Services Sheffield – Find Reliable Tenants Fast">Tenant Find Services Sheffield – Find Reliable Tenants Fast</h1>
     <h2 className="text-2xl font-bold text-center mt-6">We handle advertising, viewings, and rigorous tenant referencing to fill your property quickly with quality, compliant tenants who protect your rental income.</h2>
     <div className="text-center mt-4 mb-8">
-      <a href="#" className="bg-[#EFBF04] text-[#0E5248] px-6 py-3 rounded font-bold mr-4">Book Free Property Valuation</a>
-      <a href="#" className="bg-[#0E5248] text-[#EFBF04] px-6 py-3 rounded font-bold">WhatsApp: Quick Quote</a>
+  <a href="#" className="bg-[#EFBF04] text-[#0E5248] px-6 py-3 rounded font-bold mr-4" aria-label="Book Free Property Valuation">Book Free Property Valuation</a>
+  <a href="#" className="bg-[#0E5248] text-[#EFBF04] px-6 py-3 rounded font-bold" aria-label="WhatsApp: Quick Quote">WhatsApp: Quick Quote</a>
     </div>
     <h2 className="text-2xl font-bold mt-10">Stop Losing Money to Empty Properties and Problem Tenants</h2>
     <p className="mt-4 text-lg text-center">Vacant properties in Sheffield cost landlords £150+ daily in lost rental income. Poor tenant selection leads to rent arrears, property damage, and expensive eviction processes that can take months to resolve.</p>

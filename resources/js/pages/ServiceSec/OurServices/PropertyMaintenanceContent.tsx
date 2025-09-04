@@ -1,8 +1,48 @@
 import React from 'react';
+import { SEOHead } from '../../../components/SEOHead';
 
 const PropertyMaintenanceContent: React.FC = () => (
   <>
-    <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif">Property Maintenance & Repairs in Sheffield</h1>
+    <SEOHead
+      title="Property Maintenance & Repairs in Sheffield | Bijou Group"
+      description="Professional property maintenance and repairs for Sheffield landlords. Vetted tradespeople, compliance, and rapid response for safe, top-condition rentals."
+      canonical="https://bijougroup.co.uk/services/property-maintenance"
+      og={{
+        title: "Property Maintenance & Repairs in Sheffield",
+        description: "Professional property maintenance and repairs for Sheffield landlords. Vetted tradespeople, compliance, and rapid response for safe, top-condition rentals.",
+        url: "https://bijougroup.co.uk/services/property-maintenance",
+        image: "/images/servicesimg/property-maintenance.jpg"
+      }}
+      twitter={{
+        title: "Property Maintenance & Repairs in Sheffield",
+        description: "Professional property maintenance and repairs for Sheffield landlords. Vetted tradespeople, compliance, and rapid response for safe, top-condition rentals."
+      }}
+    />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How quickly do you respond to emergency repairs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our 24/7 emergency hotline ensures response within 2 hours for urgent issues like heating failures, water leaks, or electrical faults. Non-emergency repairs are typically scheduled within 24-48 hours."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you provide maintenance services for HMO properties?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we specialise in HMO maintenance including fire safety systems, electrical testing, gas safety checks, and licensing compliance."
+            }
+          }
+        ]
+      })}
+    </script>
+  <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif" aria-label="Property Maintenance & Repairs in Sheffield">Property Maintenance & Repairs in Sheffield</h1>
     <h2 className="text-2xl font-bold text-center mt-6">Keep your property safe, compliant, and in top condition with our vetted network of professional tradespeople.</h2>
     <div className="text-center mt-4 mb-8">
       <a href="#" className="bg-[#EFBF04] text-[#0E5248] px-6 py-3 rounded font-bold mr-4">Book Free Property Assessment</a>

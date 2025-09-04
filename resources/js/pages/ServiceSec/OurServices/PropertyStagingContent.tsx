@@ -1,11 +1,51 @@
 import React from 'react';
+import { SEOHead } from '../../../components/SEOHead';
 
 const PropertyStagingContent: React.FC = () => (
   <>
+    <SEOHead
+      title="Property Staging Sheffield | Professional Room Setup Services | Bijou Group"
+      description="Transform empty rentals into tenant magnets. Professional staging fills properties 40% faster with higher rents."
+      canonical="https://bijougroup.co.uk/services/property-staging"
+      og={{
+        title: "Property Staging Sheffield | Professional Room Setup Services",
+        description: "Transform empty rentals into tenant magnets. Professional staging fills properties 40% faster with higher rents.",
+        url: "https://bijougroup.co.uk/services/property-staging",
+        image: "/images/servicesimg/property-staging.jpg"
+      }}
+      twitter={{
+        title: "Property Staging Sheffield | Professional Room Setup Services",
+        description: "Transform empty rentals into tenant magnets. Professional staging fills properties 40% faster with higher rents."
+      }}
+    />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does property staging help landlords?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Staged properties rent 40% faster than unstaged equivalents, command £50-80 higher monthly rents, and 85% receive multiple tenant applications."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you offer staging for HMOs and student properties?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we offer rapid turnaround staging for HMO rooms, student property staging, family home transformation, and executive-level staging for professional lets."
+            }
+          }
+        ]
+      })}
+    </script>
     {/* HERO SECTION */}
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8 font-robot-serif">Property Staging Sheffield | Professional Room Setup Services</h1>
+      <h1 className="text-5xl md:text-7xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8 font-robot-serif" aria-label="Property Staging Sheffield | Professional Room Setup Services">Property Staging Sheffield | Professional Room Setup Services</h1>
         <h2 className="text-2xl font-bold text-center mt-6">Transform empty rentals into tenant magnets. Professional staging that fills properties 40% faster with higher rents.</h2>
         <p className="mt-4 text-lg text-center">Empty rooms don't rent. Staged properties do. We've staged over 500 Sheffield rental properties, reducing void periods from months to weeks whilst commanding premium rents that justify the investment.</p>
         <div className="text-center mt-4 mb-8">

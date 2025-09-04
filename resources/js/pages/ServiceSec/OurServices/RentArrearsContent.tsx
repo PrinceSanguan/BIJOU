@@ -1,11 +1,51 @@
 import React from 'react';
+import { SEOHead } from '../../../components/SEOHead';
 
 const RentArrearsContent: React.FC = () => (
   <>
+    <SEOHead
+      title="Rent Arrears Management Sheffield | Bijou Group"
+      description="Professional rent arrears recovery for Sheffield landlords. Communication, payment plans, and legal support to recover your money."
+      canonical="https://bijougroup.co.uk/services/rent-arrears"
+      og={{
+        title: "Rent Arrears Management Sheffield",
+        description: "Professional rent arrears recovery for Sheffield landlords. Communication, payment plans, and legal support to recover your money.",
+        url: "https://bijougroup.co.uk/services/rent-arrears",
+        image: "/images/servicesimg/rent-arrears.jpg"
+      }}
+      twitter={{
+        title: "Rent Arrears Management Sheffield",
+        description: "Professional rent arrears recovery for Sheffield landlords. Communication, payment plans, and legal support to recover your money."
+      }}
+    />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do you recover rent arrears professionally?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We use professional communication, realistic payment plans, and legal support when necessary to recover rent arrears for Sheffield landlords."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is your recovery rate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We recover money in 78% of cases we take on, with an average recovery of £2,100 per property."
+            }
+          }
+        ]
+      })}
+    </script>
     {/* HERO SECTION */}
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8 font-robot-serif">Rent Arrears Management Sheffield</h1>
+      <h1 className="text-5xl md:text-7xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8 font-robot-serif" aria-label="Rent Arrears Management Sheffield">Rent Arrears Management Sheffield</h1>
         <h2 className="text-2xl font-bold text-center mt-6">Stop chasing rent. We'll get your money back professionally - without destroying tenant relationships</h2>
         <p className="mt-4 text-lg text-center">One month behind becomes three. Suddenly you're £2,500 down and your tenant's avoiding your calls. We've recovered over £180,000 in unpaid rent for Sheffield landlords this year alone - through proper communication, realistic payment plans, and when necessary, court action that actually works.</p>
         <div className="text-center mt-4 mb-8">

@@ -180,8 +180,8 @@ export function AboutSection() {
         <div className="w-full flex items-center justify-center mt-10 sm:mt-12">
           <div className="flex flex-col items-center w-full">
             <div className="text-xs xs:text-sm sm:text-base md:text-lg text-white font-medium px-1 sm:px-0 font-space leading-[2.25] space-y-4">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Why Sheffield Landlords Struggle with HMO Management</h2>
-              <p>At Bijou Relocation, HMO management is more than a service - it's our legacy. With years of experience managing HMOs across Sheffield, we know the local market inside out. From student areas in S2 and S10 to professional house shares near Sheffield hospitals, our local knowledge ensures your property performs at its best.</p>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 gold-gradient-text">Why Sheffield Landlords Struggle with HMO Management</h2>
+              <p>At <span className="gold-gradient-text">Bijou Relocation</span>, HMO management is more than a service - it's our legacy. With years of experience managing HMOs across Sheffield, we know the local market inside out. From student areas in S2 and S10 to professional house shares near Sheffield hospitals, our local knowledge ensures your property performs at its best.</p>
               <p>Whether you're navigating complex HMO licensing Sheffield requirements, dealing with problem tenants, or seeking to maximize your rental returns, we're here to provide expert guidance with a personal touch that sets us apart from other letting agents.</p>
               <p><strong>Our guarantee:</strong> No voids, full compliance, and transparent fees. We handle everything so you can focus on building your property portfolio.</p>
             </div>

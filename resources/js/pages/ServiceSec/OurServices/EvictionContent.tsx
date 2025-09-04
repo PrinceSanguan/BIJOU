@@ -1,8 +1,48 @@
 import React from 'react';
+import { SEOHead } from '../../../components/SEOHead';
 
 const EvictionContent: React.FC = () => (
   <>
-    <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif">Evictions Made Simple, Legal & Stress-Free</h1>
+    <SEOHead
+      title="Evictions Made Simple, Legal & Stress-Free | Bijou Group"
+      description="Legal eviction support for Sheffield landlords. Fast, compliant possession recovery and court representation."
+      canonical="https://bijougroup.co.uk/services/eviction-support"
+      og={{
+        title: "Evictions Made Simple, Legal & Stress-Free",
+        description: "Legal eviction support for Sheffield landlords. Fast, compliant possession recovery and court representation.",
+        url: "https://bijougroup.co.uk/services/eviction-support",
+        image: "/images/servicesimg/eviction-support.jpg"
+      }}
+      twitter={{
+        title: "Evictions Made Simple, Legal & Stress-Free",
+        description: "Legal eviction support for Sheffield landlords. Fast, compliant possession recovery and court representation."
+      }}
+    />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does the eviction process typically take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Section 21 cases average 3-4 months from notice to possession. Section 8 cases vary depending on grounds but typically 4-6 months. Our professional approach minimises delays significantly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you attend court hearings with landlords?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, full court representation is included. Our team presents your case whilst you can attend for support or leave everything to us."
+            }
+          }
+        ]
+      })}
+    </script>
+  <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif" aria-label="Evictions Made Simple, Legal & Stress-Free">Evictions Made Simple, Legal & Stress-Free</h1>
     <h2 className="text-2xl font-bold text-center mt-6">From difficult tenants to court proceedings, we handle the legal side so you can take back control of your property – fast and fairly.</h2>
     <div className="text-center mt-4 mb-8">
       <a href="#" className="bg-[#EFBF04] text-[#0E5248] px-6 py-3 rounded font-bold">Get Legal Eviction Support Today</a>

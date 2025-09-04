@@ -1,8 +1,48 @@
 import React from 'react';
+import { SEOHead } from '../../../components/SEOHead';
 
 const RentManagementContent: React.FC = () => (
   <>
-    <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif">Rent Management & Collection in Sheffield</h1>
+    <SEOHead
+      title="Rent Management & Collection in Sheffield | Bijou Group"
+      description="Automated rent management and collection for Sheffield landlords. Reduce arrears, ensure on-time payments, and keep your finances stress-free."
+      canonical="https://bijougroup.co.uk/services/rent-management"
+      og={{
+        title: "Rent Management & Collection in Sheffield",
+        description: "Automated rent management and collection for Sheffield landlords. Reduce arrears, ensure on-time payments, and keep your finances stress-free.",
+        url: "https://bijougroup.co.uk/services/rent-management",
+        image: "/images/servicesimg/rent-management.jpg"
+      }}
+      twitter={{
+        title: "Rent Management & Collection in Sheffield",
+        description: "Automated rent management and collection for Sheffield landlords. Reduce arrears, ensure on-time payments, and keep your finances stress-free."
+      }}
+    />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How quickly is rent typically collected each month?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "With direct debit systems, 85% of tenants pay automatically on the due date. Remaining payments are collected within 48-72 hours through our proactive reminder system and tenant contact procedures."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does your service work effectively for HMO properties?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. We specialise in HMO rent management, handling multiple tenant payments per property, room-by-room tracking, and coordinated collection from guarantors when necessary."
+            }
+          }
+        ]
+      })}
+    </script>
+  <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif" aria-label="Rent Management & Collection in Sheffield">Rent Management & Collection in Sheffield</h1>
     <h2 className="text-2xl font-bold text-center mt-6">Ensure your rental income is always on time, reduce arrears, and keep your finances completely stress-free with our automated rent management system.</h2>
     <div className="text-center mt-4 mb-8">
       <a href="#" className="bg-[#EFBF04] text-[#0E5248] px-6 py-3 rounded font-bold mr-4">Get Free Consultation</a>

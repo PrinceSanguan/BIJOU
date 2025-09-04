@@ -1,8 +1,48 @@
 import React from 'react';
+import { SEOHead } from '../../../components/SEOHead';
 
 const PropertyComplianceContent: React.FC = () => (
   <>
-    <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif">Stay Safe, Sheffield Property Compliance Experts</h1>
+    <SEOHead
+      title="Stay Safe, Sheffield Property Compliance Experts | Bijou Group"
+      description="Gas Safety, EICR, EPC, and HMO licensing handled for Sheffield landlords. Full compliance management and legal protection."
+      canonical="https://bijougroup.co.uk/services/property-compliance"
+      og={{
+        title: "Stay Safe, Sheffield Property Compliance Experts",
+        description: "Gas Safety, EICR, EPC, and HMO licensing handled for Sheffield landlords. Full compliance management and legal protection.",
+        url: "https://bijougroup.co.uk/services/property-compliance",
+        image: "/images/servicesimg/property-compliance.jpg"
+      }}
+      twitter={{
+        title: "Stay Safe, Sheffield Property Compliance Experts",
+        description: "Gas Safety, EICR, EPC, and HMO licensing handled for Sheffield landlords. Full compliance management and legal protection."
+      }}
+    />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you handle HMO licensing requirements?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we specialise in Sheffield's selective and additional HMO licensing, including application support and ongoing compliance management."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How far in advance do you provide renewal reminders?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We send alerts three months, one month, and two weeks before expiry, allowing proper planning without last-minute pressure."
+            }
+          }
+        ]
+      })}
+    </script>
+  <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif" aria-label="Stay Safe, Sheffield Property Compliance Experts">Stay Safe, Sheffield Property Compliance Experts</h1>
     <h2 className="text-2xl font-bold text-center mt-6">From Gas Safety to EICR and EPC – we handle every legal requirement so your property is always safe, compliant, and worry-free.</h2>
     <div className="text-center mt-4 mb-8">
       <a href="#" className="bg-[#EFBF04] text-[#0E5248] px-6 py-3 rounded font-bold mr-4">Book Free Compliance Check</a>

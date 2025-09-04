@@ -1,15 +1,55 @@
 import React from 'react';
+import { SEOHead } from '../../../components/SEOHead';
 
 const CheckinCheckoutContent: React.FC = () => (
   <>
+    <SEOHead
+      title="Professional Check-ins and Check-outs in Sheffield | Bijou Group"
+      description="Eliminate disputes and protect your investment with comprehensive move-in and move-out procedures. Sheffield's trusted check-in and check-out service for landlords."
+      canonical="https://bijougroup.co.uk/services/checkin-checkout"
+      og={{
+        title: "Professional Check-ins and Check-outs in Sheffield",
+        description: "Comprehensive move-in and move-out procedures for landlords. Reduce disputes and protect your property.",
+        url: "https://bijougroup.co.uk/services/checkin-checkout",
+        image: "/images/servicesimg/checkin-checkout.jpg"
+      }}
+      twitter={{
+        title: "Professional Check-ins and Check-outs in Sheffield",
+        description: "Comprehensive move-in and move-out procedures for landlords. Reduce disputes and protect your property."
+      }}
+    />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does a professional check-in or check-out take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our thorough check-ins and check-outs typically take 90-120 minutes depending on property size, ensuring comprehensive documentation without rushing critical details."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What documentation do you provide after each inspection?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Complete documentation package includes high-resolution photographs, detailed condition reports, signed tenant acknowledgments, and meter readings with digital copies for your records."
+            }
+          }
+        ]
+      })}
+    </script>
     {/* HERO SECTION */}
-    <section className="py-16 px-4">
+    <section className="py-16 px-4" aria-labelledby="checkin-hero-title">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8 font-robot-serif">Professional Check-ins and Check-outs in Sheffield</h1>
+        <h1 id="checkin-hero-title" className="text-5xl md:text-7xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8 font-robot-serif">Professional Check-ins and Check-outs in Sheffield</h1>
         <h2 className="text-2xl font-bold text-center mt-6">Thorough Documentation & Accountability for Every Tenancy Transition</h2>
         <p className="mt-4 text-lg text-center">Eliminate disputes and protect your investment with comprehensive move-in and move-out procedures.</p>
         <div className="text-center mt-4 mb-8">
-          <a href="#" className="bg-[#EFBF04] text-[#0E5248] px-6 py-3 rounded font-bold">Book Check-in Service</a>
+          <a href="#" className="bg-[#EFBF04] text-[#0E5248] px-6 py-3 rounded font-bold" aria-label="Book professional check-in service">Book Check-in Service</a>
         </div>
       </div>
     </section>
@@ -48,24 +88,24 @@ const CheckinCheckoutContent: React.FC = () => (
       </div>
     </section>
     {/* SUCCESS STORIES SECTION */}
-    <section className="py-8 px-4">
+    <section className="py-8 px-4" aria-labelledby="success-stories-title">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-[#0E5248] text-center mb-6">Landlord Success Stories</h2>
-        <blockquote className="border-l-4 border-[#EFBF04] pl-4 italic mb-4">
+        <h2 id="success-stories-title" className="text-3xl font-bold text-[#0E5248] text-center mb-6">Landlord Success Stories</h2>
+        <blockquote className="border-l-4 border-[#EFBF04] pl-4 italic mb-4" aria-label="Success story from Lisa K, HMO Landlord">
           "Bijou Group's check-out service identified £800 of legitimate damages my previous agent missed. Their documentation was so thorough the tenant couldn't dispute the charges." Lisa K., HMO Landlord, Broomhill
         </blockquote>
-        <blockquote className="border-l-4 border-[#EFBF04] pl-4 italic mb-4">
+        <blockquote className="border-l-4 border-[#EFBF04] pl-4 italic mb-4" aria-label="Success story from Mark T, Portfolio Landlord">
           "Professional service from start to finish. Their check-in process prevented disputes that cost me thousands with my last tenants. Worth every penny for the peace of mind." Mark T., Portfolio Landlord, Sheffield
         </blockquote>
-        <blockquote className="border-l-4 border-[#EFBF04] pl-4 italic mb-4">
+        <blockquote className="border-l-4 border-[#EFBF04] pl-4 italic mb-4" aria-label="Success story from Rachel S, Buy-to-Let Investor">
           "Excellent attention to detail. Their photo documentation and reports are incredibly thorough, and they handle everything professionally. My tenants appreciate the transparency too." Rachel S., Buy-to-Let Investor, Ecclesall
         </blockquote>
       </div>
     </section>
     {/* FAQ SECTION */}
-    <section className="py-8 px-4">
+    <section className="py-8 px-4" aria-labelledby="faq-title">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold text-[#0E5248] text-center mb-6">Frequently Asked Questions</h2>
+        <h2 id="faq-title" className="text-3xl font-bold text-[#0E5248] text-center mb-6">Frequently Asked Questions</h2>
         <h3 className="text-xl font-bold mt-4">How long does a professional check-in or check-out take?</h3>
         <p>Our thorough check-ins and check-outs typically take 90-120 minutes depending on property size, ensuring comprehensive documentation without rushing critical details.</p>
         <h3 className="text-xl font-bold mt-4">What documentation do you provide after each inspection?</h3>

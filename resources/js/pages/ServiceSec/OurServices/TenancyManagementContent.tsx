@@ -1,8 +1,48 @@
 import React from 'react';
+import { SEOHead } from '../../../components/SEOHead';
 
 const TenancyManagementContent: React.FC = () => (
   <>
-    <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif">Professional Tenancy Management for Today's Landlords</h1>
+    <SEOHead
+      title="Professional Tenancy Management for Today's Landlords | Bijou Group"
+      description="End-to-end tenancy management for landlords in Sheffield. Agreements, deposits, renewals, inspections, and compliance handled professionally."
+      canonical="https://bijougroup.co.uk/services/tenancy-management"
+      og={{
+        title: "Professional Tenancy Management for Today's Landlords",
+        description: "End-to-end tenancy management for landlords in Sheffield. Agreements, deposits, renewals, inspections, and compliance handled professionally.",
+        url: "https://bijougroup.co.uk/services/tenancy-management",
+        image: "/images/servicesimg/tenancy-management.jpg"
+      }}
+      twitter={{
+        title: "Professional Tenancy Management for Today's Landlords",
+        description: "End-to-end tenancy management for landlords in Sheffield. Agreements, deposits, renewals, inspections, and compliance handled professionally."
+      }}
+    />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does your tenancy management service include?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Complete end-to-end management covering agreements, deposits, inspections, renewals, tenant communications, maintenance coordination, and detailed reporting."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you ensure legal compliance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We stay current with all landlord legislation, handle deposit registration with approved schemes, coordinate safety certificates, and maintain detailed records."
+            }
+          }
+        ]
+      })}
+    </script>
+  <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif" aria-label="Professional Tenancy Management for Today's Landlords">Professional Tenancy Management for Today's Landlords</h1>
     <h2 className="text-2xl font-bold text-center mt-6">From tenancy agreements and deposits to renewals and inspections, we ensure your tenancies are compliant and professionally managed.</h2>
     <div className="text-center mt-4 mb-8">
       <a href="#" className="bg-[#EFBF04] text-[#0E5248] px-6 py-3 rounded font-bold mr-4">Request Your Free Consultation</a>

@@ -1,13 +1,53 @@
 import React from 'react';
+import { SEOHead } from '../../../components/SEOHead';
 
 const HmoBtlContent: React.FC = () => (
   <>
-    <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif">Complete HMO & BTL Property Management in Sheffield</h1>
+    <SEOHead
+      title="Complete HMO & BTL Property Management in Sheffield | Bijou Group"
+      description="Expert management for HMO and Buy-to-Let properties in Sheffield. Compliance, maintenance, and tenant sourcing handled for stress-free investment."
+      canonical="https://bijougroup.co.uk/services/hmo-btl-management"
+      og={{
+        title: "Complete HMO & BTL Property Management in Sheffield",
+        description: "Expert management for HMO and Buy-to-Let properties in Sheffield. Compliance, maintenance, and tenant sourcing handled for stress-free investment.",
+        url: "https://bijougroup.co.uk/services/hmo-btl-management",
+        image: "/images/servicesimg/hmo-btl.jpg"
+      }}
+      twitter={{
+        title: "Complete HMO & BTL Property Management in Sheffield",
+        description: "Expert management for HMO and Buy-to-Let properties in Sheffield. Compliance, maintenance, and tenant sourcing handled for stress-free investment."
+      }}
+    />
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are your management fees?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Between 8-12% of rental income depending on property type and services required. Most clients actually increase their net profit because we reduce void periods dramatically and solve problems before they become expensive disasters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you specialize in student accommodation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. We've worked with Sheffield students for over a decade. We understand academic calendars, group dynamics, deposit protection schemes, and how to handle the unique challenges of student lettings professionally."
+            }
+          }
+        ]
+      })}
+    </script>
+  <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif" aria-label="Complete HMO & BTL Property Management in Sheffield">Complete HMO & BTL Property Management in Sheffield</h1>
     <h2 className="text-2xl font-bold text-center mt-6">Stop losing sleep over problem tenants, compliance headaches, and empty properties</h2>
     <p className="mt-4 text-lg text-center">We've been managing HMO and Buy-to-Let properties across Sheffield for over a decade. Our clients don't chase rent, don't get 3am maintenance calls, and don't worry about council inspections. They just collect their monthly income.</p>
     <div className="text-center mt-4 mb-8">
-      <a href="#" className="bg-[#EFBF04] text-[#0E5248] px-6 py-3 rounded font-bold mr-4">Book a Free Chat</a>
-      <span className="font-bold">Call Karen: 0114 XXX XXXX</span>
+      <a href="#" className="bg-[#EFBF04] text-[#0E5248] px-6 py-3 rounded font-bold mr-4" aria-label="Book a Free Chat">Book a Free Chat</a>
+      <span className="font-bold" aria-label="Call Karen: 0114 XXX XXXX">Call Karen: 0114 XXX XXXX</span>
     </div>
     <h2 className="text-2xl font-bold mt-10">If You're a Sheffield Landlord, You Know The Drill...</h2>
     <ul className="list-disc ml-8 mt-4 text-lg">
