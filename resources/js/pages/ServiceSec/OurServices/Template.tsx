@@ -10,6 +10,21 @@ import { Cta } from '@/pages/landingpage/Cta';
 import { SEOHead } from '../../../components/SEOHead';
 import { LocalBusinessSchema } from '../../../components/LocalBusinessSchema';
 import { animate } from 'animejs';
+import HmoBtlContent from './HmoBtlContent';
+import TenancyManagementContent from './TenancyManagementContent';
+import TenantFindContent from './TenantFindContent';
+import RentManagementContent from './RentManagementContent';
+import PropertyMaintenanceContent from './PropertyMaintenanceContent';
+import PropertyComplianceContent from './PropertyComplianceContent';
+import EvictionContent from './EvictionContent';
+import RentArrearsContent from './RentArrearsContent';
+import PropertyStagingContent from './PropertyStagingContent';
+import InventoryContent from './InventoryContent';
+import MarketingContent from './MarketingContent';
+import PropertySourcingContent from './PropertySourcingContent';
+import ReformBillComplianceContent from './ReformBillComplianceContent';
+import CheckinCheckoutContent from './CheckinCheckoutContent';
+import LandlordSupportContent from './LandlordSupportContent';
 
 interface TemplateProps {
     service: Service;
@@ -678,18 +693,18 @@ export default function Template({ service }: TemplateProps) {
                     <div className="max-w-7xl mx-auto">
                         <h1 ref={titleRef} className="text-5xl md:text-7xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8 font-robot-serif opacity-0" style={{transform: 'translateY(30px)'}}>
                             {service.id === 12
-                                ? 'Full-Service HMO & Property Management in Sheffield'
+                                ? 'HMO Property Management Sheffield | Landlord & Letting Services South Yorkshire'
                                 : service.id === 6
-                                    ? 'Tenancy Management in Sheffield'
+                                    ? 'Tenancy & Property Letting Management Sheffield | Landlord Services'
                                     : service.id === 11
-                                        ? 'Tenant Find & Sheffield Property Management Services'
+                                        ? 'Tenant Find & Property Letting Sheffield | HMO Management Experts'
                                         : service.id === 1
-                                            ? 'Rent Arrears Management in Sheffield'
+                                            ? 'Rent Arrears & Property Rental Management Sheffield | Landlord Support'
                                             : service.id === 9
-                                                ? 'Property Maintenance and Repair Services in Sheffield'
+                                                ? 'Property Maintenance, Compliance & Repair Sheffield | Professional Management'
                                                 : service.id === 5
-                                                    ? 'Property Compliance & Certification in Sheffield'
-                                                    : 'Our Services'}
+                                                    ? 'Property Compliance Services Sheffield | HMO Licensing & Certification'
+                                                    : 'Property Management Sheffield | HMO, Letting, Landlord & Relocation Services'}
                         </h1>
                         {service.subtext && (
                             <div ref={subtextRef} className={`text-lg text-center text-[#0E5248] px-4 mt-2 mb-8 font-medium opacity-0${service.subtext === 'Stop losing sleep over problem tenants, compliance headaches, and empty properties' ? ' font-space-grotesk' : ''}`} style={{transform: 'translateY(20px)'}}>
@@ -719,30 +734,64 @@ export default function Template({ service }: TemplateProps) {
                                 }}
                             />
                         </div>
-                        <h1 ref={serviceTitleRef} className="text-2xl md:text-5xl font-bold text-[#0E5248] text-center px-4 font-robot-serif opacity-0" style={{transform: 'translateY(25px)'}}>
-                            {service.title}
-                        </h1>
-                        {(() => {
-                            const desc = service.description || '';
-                            const mid = Math.floor(desc.length / 2);
-                            // Find the nearest space after the midpoint for a clean split
-                            let splitIdx = desc.indexOf(' ', mid);
-                            if (splitIdx === -1) splitIdx = mid;
-                            const first = desc.slice(0, splitIdx).trim();
-                            const second = desc.slice(splitIdx).trim();
-                            return [first, second].map((para: string, idx: number) => (
-                                <p
-                                    key={idx}
-                                    ref={(el: HTMLParagraphElement | null) => {
-                                        paragraphRefs.current[idx] = el;
-                                    }}
-                                    className="text-xl text-center px-4 mt-10 font-space-grotesk text-green-700 opacity-0"
-                                    style={idx > 0 ? { marginTop: '1.5rem', transform: 'translateY(20px)' } : { transform: 'translateY(20px)' }}
-                                >
-                                    {para}
-                                </p>
-                            ));
-                        })()}
+                        {service.id === 12 ? (
+                            <HmoBtlContent />
+                        ) : service.id === 6 ? (
+                            <TenancyManagementContent />
+                        ) : service.id === 11 ? (
+                            <TenantFindContent />
+                        ) : service.id === 8 ? (
+                            <RentManagementContent />
+                        ) : service.id === 9 ? (
+                            <PropertyMaintenanceContent />
+                        ) : service.id === 5 ? (
+                            <PropertyComplianceContent />
+                        ) : service.id === 2 ? (
+                            <EvictionContent />
+                        ) : service.id === 1 ? (
+                            <RentArrearsContent />
+                        ) : service.id === 3 ? (
+                            <PropertyStagingContent />
+                        ) : service.id === 4 ? (
+                            <InventoryContent />
+                        ) : service.id === 13 ? (
+                            <MarketingContent />
+                        ) : service.id === 10 ? (
+                            <PropertySourcingContent />
+                        ) : service.id === 14 ? (
+                            <ReformBillComplianceContent />
+                        ) : service.id === 15 ? (
+                            <CheckinCheckoutContent />
+                        ) : service.id === 7 ? (
+                            <LandlordSupportContent />
+                        ) : (
+                            <>
+                                <h1 ref={serviceTitleRef} className="text-2xl md:text-5xl font-bold text-[#0E5248] text-center px-4 font-robot-serif opacity-0" style={{transform: 'translateY(25px)'}}>
+                                    {service.title}
+                                </h1>
+                                {(() => {
+                                    const desc = service.description || '';
+                                    const mid = Math.floor(desc.length / 2);
+                                    // Find the nearest space after the midpoint for a clean split
+                                    let splitIdx = desc.indexOf(' ', mid);
+                                    if (splitIdx === -1) splitIdx = mid;
+                                    const first = desc.slice(0, splitIdx).trim();
+                                    const second = desc.slice(splitIdx).trim();
+                                    return [first, second].map((para: string, idx: number) => (
+                                        <p
+                                            key={idx}
+                                            ref={(el: HTMLParagraphElement | null) => {
+                                                paragraphRefs.current[idx] = el;
+                                            }}
+                                            className="text-xl text-center px-4 mt-10 font-space-grotesk text-green-700 opacity-0"
+                                            style={idx > 0 ? { marginTop: '1.5rem', transform: 'translateY(20px)' } : { transform: 'translateY(20px)' }}
+                                        >
+                                            {para}
+                                        </p>
+                                    ));
+                                })()}
+                            </>
+                        )}
                     </div>
                 </section>
                 <div className="mt-12 mb-12">
