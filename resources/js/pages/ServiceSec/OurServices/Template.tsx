@@ -692,35 +692,7 @@ export default function Template({ service }: TemplateProps) {
                 <section className="py-16 px-4">
                     <div className="max-w-7xl mx-auto">
                         <h1 ref={titleRef} className="text-5xl md:text-7xl font-bold text-[#EFBF04] text-center px-4 mb-8 mt-8 font-robot-serif opacity-0" style={{transform: 'translateY(30px)'}}>
-                            {service.id === 12
-                                ? 'HMO & Property Management Sheffield | Bijou Group'
-                                : service.id === 6
-                                    ? 'Tenancy Management Sheffield | Bijou Group'
-                                    : service.id === 11
-                                        ? 'Tenant Find & Property Management Sheffield | Bijou Group'
-                                        : service.id === 1
-                                            ? 'Rent Arrears Management Sheffield | Bijou Group'
-                                            : service.id === 9
-                                                ? 'Property Maintenance & Repair Sheffield | Bijou Group'
-                                                : service.id === 5
-                                                    ? 'Property Compliance & Certification Sheffield | Bijou Group'
-                                                    : service.id === 10
-                                                        ? 'Bespoke Property Sourcing in Sheffield | Bijou Group'
-                                                        : service.id === 8
-                                                            ? 'Rent Management & Collection Sheffield | Bijou Group'
-                                                            : service.id === 3
-                                                                ? 'Property Staging & Room Setup Sheffield | Bijou Group'
-                                                                : service.id === 4
-                                                                    ? 'Inventories with Photographic Evidence | Bijou Group'
-                                                                    : service.id === 13
-                                                                        ? 'Marketing for Rooms & Units in Sheffield | Bijou'
-                                                                        : service.id === 14
-                                                                            ? 'Renters Compliance Advice for Sheffield Landlords | Bijou'
-                                                                            : service.id === 15
-                                                                                ? 'Sheffield Rental Success: Check-ins & Check-outs | Bijou'
-                                                                                : service.id === 7
-                                                                                    ? 'Landlord Support & Advice Sheffield | Bijou Group'
-                                                                                    : 'Property Management Services Sheffield | Bijou Group'}
+                            Our Services
                         </h1>
                         {service.subtext && (
                             <div ref={subtextRef} className={`text-lg text-center text-[#0E5248] px-4 mt-2 mb-8 font-medium opacity-0${service.subtext === 'Stop losing sleep over problem tenants, compliance headaches, and empty properties' ? ' font-space-grotesk' : ''}`} style={{transform: 'translateY(20px)'}}>
@@ -743,7 +715,7 @@ export default function Template({ service }: TemplateProps) {
                                                     : service.id === 5
                                                         ? 'Sheffield landlord receiving property compliance certification support'
                                                         : service.title}
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover rounded-[2.5rem]"
                                 onError={(e) => {
                                     const target = e.target as HTMLImageElement;
                                     target.src = '/images/servicesimg/20240415_134340~2.jpg';
