@@ -4,8 +4,8 @@ import { SEOHead } from '../../../components/SEOHead';
 const TenantFindContent: React.FC = () => (
   <>
     <SEOHead
-      title="Tenant Find Services Sheffield – Find Reliable Tenants Fast | Bijou Group"
-  description="Advertising, viewings, and rigorous tenant referencing for Sheffield landlords. Bijou Group fills your property quickly with quality, fully referenced, compliant tenants—protecting your income and reducing risk."
+      title="Tenant Find Services Sheffield | Bijou Group"
+      description="Advertising, viewings, and rigorous tenant referencing for Sheffield landlords. Bijou Group fills your property quickly with quality, fully referenced, compliant tenants—protecting your income and reducing risk. Our service includes marketing, tenant screening, legal compliance, and fast turnaround to keep your property occupied and profitable."
       canonical="https://bijougroup.co.uk/services/tenant-find"
       og={{
         title: "Tenant Find Services Sheffield – Find Reliable Tenants Fast",

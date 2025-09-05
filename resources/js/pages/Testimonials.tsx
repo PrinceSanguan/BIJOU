@@ -21,7 +21,7 @@ export default function Testimonials() {
     <>
       <SEOHead
         title="Property Management Testimonials Sheffield | Bijou Group"
-        description="Read genuine testimonials from Sheffield landlords who trust Bijou Group for HMO property management. Discover real experiences, stress-free solutions, guaranteed rent, and full compliance. See why property owners recommend us."
+        description="Read genuine testimonials from Sheffield landlords who trust Bijou Group for HMO property management. Discover real experiences, stress-free solutions, guaranteed rent, and full compliance. See why property owners recommend us for reliable, transparent, and results-driven property management. Our clients share their stories of success, peace of mind, increased rental returns, and the benefits of working with a dedicated, expert team that puts landlords first. Join the many satisfied clients who have experienced the Bijou difference."
         canonical="https://bijougroup.co.uk/sheffield-property-management-testimonials"
         robots="index, follow"
         hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/sheffield-property-management-testimonials' }]}
@@ -63,14 +63,22 @@ export default function Testimonials() {
       />
       <HeaderBlack />
       <main className="container mx-auto py-12 cursor-default" role="main">
-        <h1 className="text-4xl md:text-6xl font-bold text-center text-[#EFBF04] my-8 font-serif">
-          {/* Removed non-design heading per Figma design system */}
-        </h1>
-        <Hero />
-        <TestimonialsSection enableScrollAnimation={true} />
-        <TrustedCompaniesSection />
-        <MissionandVision />
-        <Record />
+        <section>
+          <Hero />
+          <TestimonialsSection enableScrollAnimation={true} />
+        </section>
+        <section aria-labelledby="trusted-companies-section">
+          <h2 id="trusted-companies-section" className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900">Trusted Companies</h2>
+          <TrustedCompaniesSection />
+        </section>
+        <section aria-labelledby="mission-vision-section">
+          <h2 id="mission-vision-section" className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900">Our Mission & Vision</h2>
+          <MissionandVision />
+        </section>
+        <section aria-labelledby="record-section">
+          <h2 id="record-section" className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900">Our Track Record</h2>
+          <Record />
+        </section>
         <Cta />
       </main>
       <Footer enableScrollAnimation={true} />

@@ -5,7 +5,7 @@ const RentArrearsContent: React.FC = () => (
   <>
     <SEOHead
       title="Rent Arrears Management Sheffield | Bijou Group"
-  description="Professional rent arrears recovery for Sheffield landlords. Bijou Group uses expert communication, payment plans, and legal support to recover your money quickly, reduce losses, and protect your rental income."
+      description="Professional rent arrears recovery for Sheffield landlords. Bijou Group uses expert communication, payment plans, and legal support to recover your money quickly, reduce losses, and protect your rental income. Our proven strategies maximize recovery rates, minimize tenant disputes, and ensure your rental business remains profitable and stress-free."
       canonical="https://bijougroup.co.uk/services/rent-arrears"
       og={{
         title: "Rent Arrears Management Sheffield",

@@ -4,18 +4,18 @@ import { SEOHead } from '../../../components/SEOHead';
 const PropertyComplianceContent: React.FC = () => (
   <>
     <SEOHead
-      title="Stay Safe, Sheffield Property Compliance Experts | Bijou Group"
-  description="Stay safe and fully compliant with Sheffield’s property regulations. Bijou Group handles Gas Safety, EICR, EPC, HMO licensing, renewals, and legal protection for landlords—complete compliance management and expert support for peace of mind."
+      title="Property Compliance Services Sheffield | Bijou Group"
+      description="Stay safe and fully compliant with Sheffield’s property regulations. Bijou Group manages Gas Safety, EICR, EPC, HMO licensing, renewals, and legal protection for landlords. Our complete compliance management includes reminders, documentation, and hands-on support, ensuring your property is always legal, safe, and protected from costly penalties. Trust our expert team for peace of mind and reliable compliance solutions."
       canonical="https://bijougroup.co.uk/services/property-compliance"
       og={{
-        title: "Stay Safe, Sheffield Property Compliance Experts",
-  description: "Stay safe and fully compliant with Sheffield’s property regulations. Bijou Group handles Gas Safety, EICR, EPC, HMO licensing, renewals, and legal protection for landlords—complete compliance management and expert support for peace of mind.",
+        title: "Property Compliance Services Sheffield | Bijou Group",
+        description: "Stay safe and fully compliant with Sheffield’s property regulations. Bijou Group manages Gas Safety, EICR, EPC, HMO licensing, renewals, and legal protection for landlords. Our complete compliance management includes reminders, documentation, and hands-on support, ensuring your property is always legal, safe, and protected from costly penalties. Trust our expert team for peace of mind and reliable compliance solutions.",
         url: "https://bijougroup.co.uk/services/property-compliance",
         image: "/images/servicesimg/property-compliance.jpg"
       }}
       twitter={{
-        title: "Stay Safe, Sheffield Property Compliance Experts",
-  description: "Stay safe and fully compliant with Sheffield’s property regulations. Bijou Group handles Gas Safety, EICR, EPC, HMO licensing, renewals, and legal protection for landlords—complete compliance management and expert support for peace of mind."
+        title: "Property Compliance Services Sheffield | Bijou Group",
+        description: "Stay safe and fully compliant with Sheffield’s property regulations. Bijou Group manages Gas Safety, EICR, EPC, HMO licensing, renewals, and legal protection for landlords. Our complete compliance management includes reminders, documentation, and hands-on support, ensuring your property is always legal, safe, and protected from costly penalties. Trust our expert team for peace of mind and reliable compliance solutions."
       }}
     />
     <script type="application/ld+json">

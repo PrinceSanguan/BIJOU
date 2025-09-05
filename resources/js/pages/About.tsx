@@ -22,8 +22,8 @@ export default function About() {
   return (
     <>
       <SEOHead
-        title="About Bijou Relocation | HMO Property Management Sheffield Experts"
-        description="Discover the story, values, and expertise behind Bijou Relocation, Sheffield's leading HMO property management specialists. 20+ years' experience, guaranteed rent, and tailored landlord solutions for stress-free property ownership. Learn why landlords trust us."
+        title="About Bijou Relocation | Sheffield HMO Property Management"
+        description="Discover the story, values, and expertise behind Bijou Relocation, Sheffield's leading HMO property management specialists. With over 20 years' experience, we offer guaranteed rent, tailored landlord solutions, and a commitment to stress-free property ownership. Learn why landlords across Sheffield trust our team for reliable, compliant, and profitable HMO management services that maximize returns and minimize hassle. Our dedicated experts provide hands-on support, transparent communication, and a proven track record of delivering exceptional results for property owners."
         canonical="https://bijourelocation.co.uk/about-us"
         robots="index, follow"
         hreflangs={[{ hreflang: 'en-gb', href: 'https://bijourelocation.co.uk/about-us' }]}
