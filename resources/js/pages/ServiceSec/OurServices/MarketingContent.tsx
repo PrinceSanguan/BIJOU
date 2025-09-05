@@ -4,8 +4,8 @@ import { SEOHead } from '../../../components/SEOHead';
 const MarketingContent: React.FC = () => (
   <>
     <SEOHead
-      title="Marketing for Rooms & Units in Sheffield | Bijou"
-  description="Fill vacancies 3x faster with Bijou’s expert marketing for rooms and units in Sheffield. Attract quality tenants, maximise rental income, and stand out with professional photos, targeted listings, and proven strategies for landlords."
+      title="Marketing for Rooms & Units Sheffield | Fill Vacancies Fast"
+      description="Bijou Group’s Marketing for Rooms & Units in Sheffield fills vacancies up to 3x faster. Attract quality tenants, maximize rental income, and stand out with professional photos, targeted listings, and proven strategies. Our expert team helps landlords achieve full occupancy and premium rents with ease."
       canonical="https://bijougroup.co.uk/services/marketing-for-rooms-units"
       og={{
         title: "Marketing for Rooms & Units in Sheffield | Bijou",

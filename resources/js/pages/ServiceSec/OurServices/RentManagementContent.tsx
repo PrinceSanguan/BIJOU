@@ -4,8 +4,8 @@ import { SEOHead } from '../../../components/SEOHead';
 const RentManagementContent: React.FC = () => (
   <>
     <SEOHead
-      title="Rent Management & Collection Sheffield | Bijou Group"
-      description="Automated rent management and collection for Sheffield landlords. Bijou Group reduces arrears, ensures on-time payments, and keeps your finances stress-free with direct debit, reminders, and full compliance support. Our service streamlines your rental income and provides transparent reporting."
+      title="Rent Management Services Sheffield | Hassle-Free Collection"
+      description="Bijou Group’s Rent Management service in Sheffield automates rent collection, reduces arrears, and ensures on-time payments for landlords. Enjoy stress-free finances with direct debit, automated reminders, and full compliance support. Our transparent reporting and expert team streamline your rental income, so you can focus on growing your property portfolio with confidence."
       canonical="https://bijougroup.co.uk/services/rent-management"
       og={{
         title: "Rent Management & Collection in Sheffield",

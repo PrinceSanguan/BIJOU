@@ -4,8 +4,8 @@ import { SEOHead } from '../../../components/SEOHead';
 const ReformBillComplianceContent: React.FC = () => (
   <>
     <SEOHead
-      title="Renters Reform Bill Compliance Sheffield | Bijou Group"
-      description="Stay compliant with the Renters Reform Bill in Sheffield. Bijou Group’s expert compliance advice helps landlords avoid £30k fines, protect rental income, and implement new legal requirements with tailored support and up-to-date guidance. We provide step-by-step implementation, legal updates, and ongoing support."
+      title="Renters Reform Bill Compliance Sheffield | Expert Landlord Help"
+      description="Bijou Group’s Renters Reform Bill Compliance service in Sheffield helps landlords avoid £30,000 fines and protect rental income. Our expert team provides tailored advice, step-by-step implementation, and ongoing legal updates to ensure you meet every new requirement. Stay compliant, avoid costly mistakes, and keep your property business safe and profitable as the law evolves."
       canonical="https://bijougroup.co.uk/services/renters-reform-bill-compliance"
       og={{
         title: "Renters Reform Bill Compliance Sheffield | Bijou Group",

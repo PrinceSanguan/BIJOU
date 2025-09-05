@@ -4,8 +4,8 @@ import { SEOHead } from '../../../components/SEOHead';
 const LandlordSupportContent: React.FC = () => (
   <>
     <SEOHead
-      title="Landlord Support & Advice Sheffield | Bijou Group"
-  description="Get expert landlord support in Sheffield with Bijou Group. Reduce voids, resolve disputes, grow your rental portfolio, and access trusted local property advice, compliance help, and hands-on guidance for every stage of your property journey."
+      title="Landlord Support Sheffield | Expert Advice & Portfolio Help"
+      description="Bijou Group’s Landlord Support service in Sheffield provides expert advice, dispute resolution, and portfolio growth strategies. Access trusted local property guidance, compliance help, and hands-on support for every stage of your property journey. Reduce voids, resolve issues, and grow your rental business with confidence."
       canonical="https://bijougroup.co.uk/services/landlord-support-advice"
       og={{
         title: "Landlord Support & Advice Sheffield | Bijou Group",

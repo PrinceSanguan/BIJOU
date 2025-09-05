@@ -4,8 +4,8 @@ import { SEOHead } from '../../../components/SEOHead';
 const CheckinCheckoutContent: React.FC = () => (
   <>
     <SEOHead
-      title="Professional Check-ins and Check-outs in Sheffield | Bijou Group"
-      description="Eliminate disputes and protect your investment with comprehensive move-in and move-out procedures. Sheffield's trusted check-in and check-out service for landlords."
+      title="Check-in & Check-out Sheffield | Dispute-Free Procedures"
+      description="Bijou Group’s Check-in & Check-out service in Sheffield eliminates disputes and protects your investment with comprehensive move-in and move-out procedures. Trusted by landlords for detailed documentation, high-res photos, and smooth tenant transitions. Ensure legal compliance and peace of mind at every tenancy change."
       canonical="https://bijougroup.co.uk/services/checkin-checkout"
       og={{
         title: "Professional Check-ins and Check-outs in Sheffield",

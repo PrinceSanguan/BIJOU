@@ -21,7 +21,7 @@ export default function Services() {
     <>
       <SEOHead
         title="Property Management Services Sheffield | Bijou Group"
-        description="Discover comprehensive property management services in Sheffield with Bijou Group. We handle rent collection, arrears, maintenance, tenant find, compliance, and more for HMO and single-let landlords. Our expert team maximizes your rental income, ensures full legal compliance, and delivers hassle-free management tailored to your needs. Trusted by landlords and investors for reliable, transparent, and results-driven property solutions. Book your free consultation today and experience the Bijou difference."
+        description="Discover comprehensive property management services in Sheffield with Bijou Group. We handle rent collection, arrears, maintenance, tenant find, compliance, and more for HMO and single-let landlords. Our expert team maximizes your rental income, ensures full legal compliance, and delivers hassle-free management tailored to your needs."
         canonical="https://bijougroup.co.uk/sheffield-property-management-services"
         robots="index, follow"
         hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/sheffield-property-management-services' }]}

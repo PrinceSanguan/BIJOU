@@ -4,8 +4,8 @@ import { SEOHead } from '../../../components/SEOHead';
 const PropertyMaintenanceContent: React.FC = () => (
   <>
     <SEOHead
-      title="Property Maintenance & Repairs in Sheffield | Bijou Group"
-  description="Professional property maintenance and repairs for Sheffield landlords. Bijou Group delivers rapid response, vetted tradespeople, full compliance, and proactive care to keep your rentals safe, legal, and in top condition year-round."
+      title="Property Maintenance Sheffield | Fast Repairs & Compliance"
+      description="Bijou Group’s Property Maintenance service in Sheffield delivers rapid response repairs, vetted tradespeople, and full compliance for landlords. We keep your rentals safe, legal, and in top condition year-round with proactive care, 24/7 emergency support, and expert HMO maintenance. Enjoy peace of mind and protect your investment."
       canonical="https://bijougroup.co.uk/services/property-maintenance"
       og={{
         title: "Property Maintenance & Repairs in Sheffield",

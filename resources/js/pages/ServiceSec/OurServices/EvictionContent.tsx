@@ -4,8 +4,8 @@ import { SEOHead } from '../../../components/SEOHead';
 const EvictionContent: React.FC = () => (
   <>
     <SEOHead
-      title="Evictions Made Simple, Legal & Stress-Free | Bijou Group"
-      description="Legal eviction support for Sheffield landlords. Fast, compliant possession recovery and court representation."
+      title="Eviction Support Sheffield | Fast, Legal Possession Help"
+      description="Bijou Group’s Eviction Support in Sheffield provides legal eviction services for landlords. We deliver fast, compliant possession recovery, full court representation, and expert guidance through every step. Protect your property, minimize stress, and ensure legal compliance with our professional eviction solutions."
       canonical="https://bijougroup.co.uk/services/eviction-support"
       og={{
         title: "Evictions Made Simple, Legal & Stress-Free",
