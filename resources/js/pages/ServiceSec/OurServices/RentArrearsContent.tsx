@@ -4,8 +4,8 @@ import { SEOHead } from '../../../components/SEOHead';
 const RentArrearsContent: React.FC = () => (
   <>
     <SEOHead
-      title="Rent Arrears Recovery Sheffield | Fast, Professional Solutions"
-      description="Bijou Group’s Rent Arrears Recovery service in Sheffield helps landlords recover overdue rent quickly and professionally. Our expert team uses proven communication, tailored payment plans, and legal support to maximize recovery rates, reduce losses, and protect your rental income. We minimize tenant disputes and provide transparent updates throughout the process."
+      title="Rent Arrears Recovery Sheffield | Fast, Professional Help"
+      description="Bijou Group’s Rent Arrears Recovery in Sheffield helps landlords recover overdue rent quickly and professionally. Our expert team uses proven communication, payment plans, and legal support to maximize recovery rates, reduce losses, and protect your rental income."
       canonical="https://bijougroup.co.uk/services/rent-arrears"
       og={{
         title: "Rent Arrears Management Sheffield",

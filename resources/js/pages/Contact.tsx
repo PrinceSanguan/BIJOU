@@ -61,7 +61,7 @@ export default function Contact() {
     <>
       <SEOHead
         title="Contact Us | Bijou Group Sheffield HMO Management"
-        description="Get in touch with Bijou Group, Sheffield's HMO property management experts. Contact us for a free consultation, landlord support, or to discuss tailored solutions for your property needs. Our team is dedicated to providing prompt, professional assistance for all your property management, compliance, and investment questions."
+        description="Contact Bijou Group, Sheffield’s HMO property management experts, for a free consultation, landlord support, or tailored solutions. Our team provides prompt, professional help for all property management, compliance, and investment needs."
         canonical="https://bijougroup.co.uk/contact"
         robots="index, follow"
         hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/contact' }]}

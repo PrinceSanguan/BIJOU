@@ -23,7 +23,7 @@ export default function About() {
     <>
       <SEOHead
         title="About Bijou Relocation | Sheffield HMO Property Management"
-        description="Discover the story, values, and expertise behind Bijou Relocation, Sheffield's leading HMO property management specialists. With over 20 years' experience, we offer guaranteed rent, tailored landlord solutions, and a commitment to stress-free property ownership. Learn why landlords trust our team for reliable, compliant, and profitable HMO management services."
+        description="Discover the story, values, and expertise behind Bijou Relocation, Sheffield’s leading HMO property management specialists. With 20+ years’ experience, we offer guaranteed rent, tailored landlord solutions, and a commitment to stress-free, compliant property ownership."
         canonical="https://bijourelocation.co.uk/about-us"
         robots="index, follow"
         hreflangs={[{ hreflang: 'en-gb', href: 'https://bijourelocation.co.uk/about-us' }]}

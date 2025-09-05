@@ -4,8 +4,8 @@ import { SEOHead } from '../../../components/SEOHead';
 const TenancyManagementContent: React.FC = () => (
   <>
     <SEOHead
-      title="Sheffield Tenancy Management | Bijou Group Property Experts"
-      description="End-to-end tenancy management for Sheffield landlords. Bijou Group handles agreements, deposits, renewals, inspections, compliance, tenant relations, and reporting—professional, stress-free property management. Our service ensures legal compliance, tenant satisfaction, and maximized returns."
+      title="Tenancy Management Sheffield | Stress-Free Landlord Service"
+      description="Bijou Group’s Tenancy Management in Sheffield provides end-to-end service for landlords—handling agreements, deposits, renewals, inspections, compliance, tenant relations, and reporting. Enjoy legal compliance, tenant satisfaction, and maximized returns with our professional, stress-free property management."
       canonical="https://bijougroup.co.uk/services/tenancy-management"
       og={{
         title: "Professional Tenancy Management for Today's Landlords",

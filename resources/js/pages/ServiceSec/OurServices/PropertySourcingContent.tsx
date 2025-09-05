@@ -5,7 +5,7 @@ const PropertySourcingContent: React.FC = () => (
   <>
     <SEOHead
       title="Property Sourcing Sheffield | Profitable Investments Fast"
-      description="Bijou Group’s Property Sourcing service in Sheffield finds profitable investments tailored to your goals. Save time, avoid costly mistakes, and secure high-return deals with our expert local knowledge, risk assessment, and end-to-end support. We help you build a successful property portfolio with confidence and efficiency."
+      description="Bijou Group’s Property Sourcing in Sheffield finds profitable investments tailored to your goals. Save time, avoid costly mistakes, and secure high-return deals with our expert local knowledge, risk assessment, and end-to-end support. Build your portfolio with confidence."
       canonical="https://bijougroup.co.uk/services/property-sourcing"
       og={{
         title: "Bespoke Property Sourcing in Sheffield",

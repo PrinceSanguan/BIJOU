@@ -5,8 +5,8 @@ import { SEOHead } from '../../../components/SEOHead';
 const HmoBtlContent: React.FC = () => (
   <>
     <SEOHead
-      title="HMO & BTL Management Sheffield | Complete Landlord Service"
-      description="Bijou Group’s HMO & BTL Management in Sheffield provides expert management for Houses in Multiple Occupation and Buy-to-Let properties. We handle compliance, maintenance, and tenant sourcing for stress-free investment. Maximize your rental income and protect your property with our comprehensive landlord solutions."
+      title="HMO & BTL Management Sheffield | Complete Landlord Help"
+      description="Bijou Group’s HMO & BTL Management in Sheffield provides expert management for Houses in Multiple Occupation and Buy-to-Let properties. We handle compliance, maintenance, and tenant sourcing for stress-free investment."
       canonical="https://bijougroup.co.uk/services/hmo-btl-management"
       og={{
         title: "Complete HMO & BTL Property Management in Sheffield",

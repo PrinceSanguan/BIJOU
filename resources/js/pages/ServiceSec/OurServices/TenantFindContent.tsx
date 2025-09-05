@@ -5,7 +5,7 @@ const TenantFindContent: React.FC = () => (
   <>
     <SEOHead
       title="Tenant Find Services in Sheffield | Fast, Reliable Tenant Placement"
-      description="Bijou Group’s Tenant Find service in Sheffield offers expert advertising, viewings, and rigorous tenant referencing. We fill your property quickly with fully referenced, compliant tenants—protecting your income, reducing risk, and ensuring legal compliance. Our comprehensive service includes marketing, tenant screening, and all paperwork, so you can enjoy peace of mind and a steady rental income."
+      description="Bijou Group’s Tenant Find service in Sheffield offers expert advertising, viewings, and rigorous tenant referencing. We fill your property quickly with fully referenced, compliant tenants—protecting your income, reducing risk, and ensuring legal compliance. Marketing, screening, and all paperwork included."
       canonical="https://bijougroup.co.uk/services/tenant-find"
       og={{
         title: "Tenant Find Services Sheffield – Find Reliable Tenants Fast",

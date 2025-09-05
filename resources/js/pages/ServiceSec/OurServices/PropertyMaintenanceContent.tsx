@@ -5,7 +5,7 @@ const PropertyMaintenanceContent: React.FC = () => (
   <>
     <SEOHead
       title="Property Maintenance Sheffield | Fast Repairs & Compliance"
-      description="Bijou Group’s Property Maintenance service in Sheffield delivers rapid response repairs, vetted tradespeople, and full compliance for landlords. We keep your rentals safe, legal, and in top condition year-round with proactive care, 24/7 emergency support, and expert HMO maintenance. Enjoy peace of mind and protect your investment."
+      description="Bijou Group’s Property Maintenance in Sheffield delivers rapid response repairs, vetted tradespeople, and full compliance for landlords. We keep your rentals safe, legal, and in top condition year-round with proactive care and 24/7 emergency support."
       canonical="https://bijougroup.co.uk/services/property-maintenance"
       og={{
         title: "Property Maintenance & Repairs in Sheffield",

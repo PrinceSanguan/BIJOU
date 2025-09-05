@@ -5,7 +5,7 @@ const PropertyStagingContent: React.FC = () => (
   <>
     <SEOHead
       title="Property Staging Sheffield | Fast Letting & Higher Rents"
-      description="Bijou Group’s Property Staging service in Sheffield transforms empty rentals into tenant magnets. Our expert team stages and styles your property to fill it 40% faster, command higher rents, and attract quality tenants. We offer rapid turnaround for HMOs, student lets, and family homes—maximizing your rental income and minimizing vacancy."
+      description="Bijou Group’s Property Staging in Sheffield transforms empty rentals into tenant magnets. Our expert team stages and styles your property to fill it 40% faster, command higher rents, and attract quality tenants. Rapid turnaround for HMOs, student lets, and family homes."
       canonical="https://bijougroup.co.uk/services/property-staging"
       og={{
         title: "Property Staging Sheffield | Professional Room Setup Services",

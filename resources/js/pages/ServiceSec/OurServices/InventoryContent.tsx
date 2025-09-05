@@ -5,7 +5,7 @@ const InventoryContent: React.FC = () => (
   <>
     <SEOHead
       title="Inventories Sheffield | Photographic Evidence & Reports"
-      description="Bijou Group’s Inventories service in Sheffield protects your deposits and avoids costly disputes with court-ready photographic evidence. We provide detailed reports, expert documentation, and legally compliant inventories for stress-free property management. Safeguard your rental investment with our professional inventory solutions."
+      description="Bijou Group’s Inventories in Sheffield protects your deposits and avoids costly disputes with court-ready photographic evidence. We provide detailed reports, expert documentation, and legally compliant inventories for stress-free property management."
       canonical="https://bijougroup.co.uk/services/inventories-photographic-evidence"
       og={{
         title: "Inventories with Photographic Evidence | Bijou Group",

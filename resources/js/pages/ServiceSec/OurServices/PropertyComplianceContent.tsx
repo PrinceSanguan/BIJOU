@@ -5,7 +5,7 @@ const PropertyComplianceContent: React.FC = () => (
   <>
     <SEOHead
       title="Property Compliance Sheffield | Full Legal Protection Help"
-      description="Bijou Group’s Property Compliance service in Sheffield keeps landlords safe and fully legal. We manage Gas Safety, EICR, EPC, HMO licensing, renewals, and legal protection. Our complete compliance management includes reminders, documentation, and hands-on support—ensuring your property is always legal, safe, and protected from costly penalties."
+      description="Bijou Group’s Property Compliance in Sheffield keeps landlords safe and fully legal. We manage Gas Safety, EICR, EPC, HMO licensing, renewals, and legal protection. Our complete compliance management includes reminders, documentation, and hands-on support."
       canonical="https://bijougroup.co.uk/services/property-compliance"
       og={{
         title: "Property Compliance Services Sheffield | Bijou Group",
