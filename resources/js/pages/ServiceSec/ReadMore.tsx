@@ -94,11 +94,11 @@ function ReadMore() {
     };
     return (
         <>
-            <SEOHead
+           {/*  <SEOHead
                 title="Property Management Services Sheffield | Bijou Group"
                 description="Sheffield property management made simple. Rent collection, arrears, maintenance & tenant find services for landlords & investors. Get a free consult."
                 canonical="https://bijourelocation.co.uk/sheffield-property-management-services"
-            />
+            /> */}
             <LocalBusinessSchema
                 name="Bijou Group"
                 url="https://bijougroup.co.uk/services/read-more"

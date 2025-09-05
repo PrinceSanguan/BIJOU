@@ -211,11 +211,11 @@ const TeamTestimonials: React.FC = () => {
 
   return (
     <>
-      <SEOHead
+      {/* <SEOHead
         title="About Bijou Relocation | HMO Property Management Sheffield Experts"
         description="Learn about Bijou Relocation – Sheffield’s trusted HMO property management experts. 20+ years’ experience, guaranteed rent & hassle-free landlord solutions."
         canonical="https://bijourelocation.co.uk/about-us"
-      />
+      /> */}
       {/* Organization Schema for SEO */}
       <script type="application/ld+json">{`
       {

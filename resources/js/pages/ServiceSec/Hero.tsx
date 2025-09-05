@@ -299,11 +299,11 @@ function Hero() {
 
   return (
     <section className="relative w-full pt-10 sm:pt-14 md:pt-20 pb-0 px-1 sm:px-4 md:px-6 bg-white text-black overflow-x-hidden min-h-[80vh] flex items-center justify-center mt-8">
-      <SEOHead
+      {/* <SEOHead
         title="Property Management Services Sheffield | Bijou Group"
         description="Sheffield property management made simple. Rent collection, arrears, maintenance & tenant find services for landlords & investors. Get a free consult."
         canonical="https://bijourelocation.co.uk/sheffield-property-management-services"
-      />
+      /> */}
       <LocalBusinessSchema
         name="Bijou Group"
         url="https://bijougroup.co.uk/services/hero"

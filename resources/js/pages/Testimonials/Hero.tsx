@@ -120,11 +120,11 @@ const Hero: React.FC<HeroProps> = ({
     };
     return (
         <>
-            <SEOHead
+            {/* <SEOHead
                 title="Property Management Testimonials Sheffield | Bijou Group"
                 description="Real reviews from Sheffield landlords. Discover how Bijou Group delivers stress-free property management, guaranteed rent, and compliance."
                 canonical="https://bijougroup.co.uk/sheffield-property-management-testimonials"
-            />
+            /> */}
             <LocalBusinessSchema
                 name="Bijou Group"
                 url="https://bijougroup.co.uk/sheffield-property-management-testimonials"
