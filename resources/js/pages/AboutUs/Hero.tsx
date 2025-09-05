@@ -136,7 +136,7 @@ const Hero: React.FC = () => {
             />
             <section ref={sectionRef} className={styles.heroSection}>
                 <div className={styles.heroContainer}>
-                    <h1 ref={titleRef} className={`${styles.heroTitle} opacity-0`}>About Bijou Relocation – Experts in HMO Property Management Sheffield</h1>
+                    <h1 ref={titleRef} className={`${styles.heroTitle} opacity-0`}>About Us</h1>
                     <p ref={descRef} className={`${styles.heroDesc} opacity-0`}>
                         When you need proven HMO property management Sheffield expertise that delivers results, Bijou Relocation stands as your trusted partner. Founded by Karen Hodgson, our company combines over 20 years of housing sector expertise with 15+ years of family business background and 8+ years of dedicated business leadership. We specialise in comprehensive property management, strategic property sourcing, professional staging, tenant management, and complete legal support for landlords across Sheffield and South Yorkshire.
                     </p>

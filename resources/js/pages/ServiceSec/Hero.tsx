@@ -327,7 +327,7 @@ function Hero() {
               <div ref={textSectionRef} className="text-center mb-8 sm:mb-12 md:mb-16 px-1 sm:px-2 opacity-0">
                 <div className="flex flex-row items-center justify-center -mt-2">
                   <h1 className="font-medium leading-tight relative inline-block px-2 sm:px-6 md:px-8 py-2 sm:py-3 gold-title font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[96px]" style={{fontFamily: 'Roboto Serif, serif'}}>
-                    <span className="gold-gradient-title-static">Sheffield Property Management & Landlord Services</span>
+                    <span className="gold-gradient-title-static">Our Services</span>
                   </h1>
                 </div>
                 <div className="flex justify-center w-full mt-1">
