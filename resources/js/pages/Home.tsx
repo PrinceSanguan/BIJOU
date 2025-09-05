@@ -21,8 +21,8 @@ export default function Home() {
   return (
     <>
       <SEOHead
-        title="Home | Bijou Group Sheffield HMO Management"
-        description="Bijou Group: Sheffield's trusted HMO property management experts. Guaranteed rent, compliance, tenant sourcing, and more for landlords."
+        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
         canonical="https://bijougroup.co.uk/"
         robots="index, follow"
         hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/' }]}
