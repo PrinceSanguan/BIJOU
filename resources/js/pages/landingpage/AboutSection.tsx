@@ -130,11 +130,6 @@ export function AboutSection() {
 
   return (
     <>
-      <SEOHead
-        title="HMO Management Sheffield | Stress-Free Property Solutions"
-        description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
-        canonical="https://bijourelocation.co.uk/about"
-      />
       <LocalBusinessSchema
         name="Bijou Group"
         url="https://bijougroup.co.uk/about"
