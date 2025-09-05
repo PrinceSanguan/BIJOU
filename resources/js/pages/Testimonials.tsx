@@ -21,7 +21,7 @@ export default function Testimonials() {
     <>
       <SEOHead
         title="Property Management Testimonials Sheffield | Bijou Group"
-        description="Real reviews from Sheffield landlords. Discover how Bijou Group delivers stress-free property management, guaranteed rent, and compliance."
+        description="Read genuine testimonials from Sheffield landlords who trust Bijou Group for HMO property management. Discover real experiences, stress-free solutions, guaranteed rent, and full compliance. See why property owners recommend us."
         canonical="https://bijougroup.co.uk/sheffield-property-management-testimonials"
         robots="index, follow"
         hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/sheffield-property-management-testimonials' }]}

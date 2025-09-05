@@ -20,7 +20,7 @@ export default function Blog() {
     <>
       <SEOHead
         title="Blog | Bijou Group Sheffield HMO Management"
-        description="Read the latest articles, tips, and news for Sheffield landlords from Bijou Group. HMO management, compliance, investment, and more."
+        description="Stay informed with expert articles, landlord tips, HMO management advice, compliance updates, and Sheffield property investment news from Bijou Group. Your go-to resource for successful property management."
         canonical="https://bijougroup.co.uk/blog"
         robots="index, follow"
         hreflangs={[{ hreflang: 'en-gb', href: 'https://bijougroup.co.uk/blog' }]}

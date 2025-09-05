@@ -1,33 +1,32 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Head } from '@inertiajs/react';
 
 interface SEOHeadProps {
   title: string;
   description: string;
   canonical: string;
+  robots?: string;
+  hreflangs?: Array<{ hreflang: string; href: string }>;
   meta?: Array<{ name: string; content: string }>;
   og?: { [key: string]: string };
   twitter?: { [key: string]: string };
+  jsonLd?: object | object[];
   children?: React.ReactNode;
 }
 
-interface Hreflang {
-  href: string;
-  hreflang: string;
-}
-
-export const SEOHead: React.FC<SEOHeadProps & { robots?: string; hreflangs?: Hreflang[] }> = ({
+export const SEOHead: React.FC<SEOHeadProps> = ({
   title,
   description,
   canonical,
+  robots = 'index, follow',
+  hreflangs = [],
   meta = [],
   og = {},
   twitter = {},
+  jsonLd,
   children,
-  robots = "index, follow",
-  hreflangs = [],
 }) => (
-  <Helmet>
+  <Head>
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
@@ -46,6 +45,10 @@ export const SEOHead: React.FC<SEOHeadProps & { robots?: string; hreflangs?: Hre
     {Object.entries(twitter).map(([name, content]) => (
       <meta key={name} name={`twitter:${name}`} content={content} />
     ))}
+    {/* JSON-LD Schema */}
+    {jsonLd && (
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    )}
     {children}
-  </Helmet>
+  </Head>
 );

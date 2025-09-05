@@ -21,7 +21,26 @@ export default function Home() {
   return (
     <>
       <SEOHead
-        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        title="You are my coding assistant. I’m working on a Laravel + Inertia.js + React project. 
+Right now I have a problem with my meta tags and SEO:
+
+1. On a **fresh load**, the app shows the default <title> from app.blade.php instead of the correct title/description. 
+2. On **navigation inside the app**, the meta tags update correctly using my SEOHead component. 
+3. I want consistent SEO-friendly <title>, <meta>, canonical, hreflang, OpenGraph, and Twitter card tags on BOTH fresh load and SPA navigation.
+
+Here’s what I need you to do in my codebase:
+- Fix app.blade.php so it no longer hardcodes a <title>. Instead, rely fully on @inertiaHead. 
+- Refactor my SEOHead component to use Inertia’s <Head> (from @inertiajs/react) instead of react-helmet, so meta tags render on first load too. 
+- Keep support for: title, description, robots, canonical, hreflang, extra meta tags, OpenGraph, and Twitter card. 
+- Make sure SEOHead is typed in TypeScript and reusable across all pages.
+- Optionally: allow SEOHead to accept JSON-LD schema so I don’t need multiple schema components.
+
+Output: 
+1. The corrected app.blade.php head section. 
+2. The refactored SEOHead.tsx component. 
+3. Example usage of SEOHead in a page. 
+4. Short explanation of why this fixes the fresh load vs navigation mismatch.
+"
         description="Sheffield’s trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
         canonical="https://bijougroup.co.uk/"
         robots="index, follow"

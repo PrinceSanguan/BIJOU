@@ -99,6 +99,21 @@ export function Faq() {
 
   return (
   <section ref={sectionRef} className="w-full py-16 px-4 bg-white" aria-labelledby="faq-title">
+     {/*  <SEOHead
+        title="HMO Management Sheffield | Stress-Free Property Solutions"
+        description="Sheffield's trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+        canonical="https://bijourelocation.co.uk/faq"
+        og={{
+          title: "HMO Management Sheffield | Stress-Free Property Solutions",
+          description: "Sheffield's trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!",
+          url: "https://bijourelocation.co.uk/faq",
+          image: "/logo.svg"
+        }}
+        twitter={{
+          title: "HMO Management Sheffield | Stress-Free Property Solutions",
+          description: "Sheffield's trusted HMO management specialists. Guaranteed rent, no voids, full compliance. Book your free consultation with Bijou Group today!"
+        }}
+      /> */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
